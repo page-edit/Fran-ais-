@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Fran&ccedil;ais pour mon amour Halima &#10084;&#65039;</title>
+<style>
+
+:root{
+  --rose:#ff5c8a; --rose2:#ff8fb1; --violet:#7c5cff; --bleu:#3ecfff; --vert:#22c98a;
+  --or:#ffc75f; --sombre:#1b1230; --sombre2:#2a1b4d; --clair:#fff7fb; --gris:#6b6480;
+  --ombre:0 12px 34px rgba(60,20,80,.18);
+  --r:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  background:linear-gradient(160deg,#fff0f6 0%,#f3f0ff 45%,#eafaff 100%);
+  color:var(--sombre); min-height:100vh; overflow-x:hidden; position:relative;
+}
+/* ---------- décor animé ---------- */
+.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.45;z-index:0;animation:flotte 18s ease-in-out infinite}
+.b1{width:420px;height:420px;background:#ffb3cd;top:-120px;left:-100px}
+.b2{width:380px;height:380px;background:#c3b6ff;bottom:-140px;right:-80px;animation-delay:-6s}
+.b3{width:300px;height:300px;background:#9be8ff;top:40%;right:20%;animation-delay:-11s}
+@keyframes flotte{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,25px) scale(.95)}}
+.coeurs{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.coeur{position:absolute;font-size:18px;opacity:.35;animation:monte linear infinite}
+@keyframes monte{0%{transform:translateY(105vh) rotate(0);opacity:0}10%{opacity:.4}100%{transform:translateY(-12vh) rotate(360deg);opacity:0}}
+
+.wrap{position:relative;z-index:2;max-width:1080px;margin:0 auto;padding:0 16px 120px}
+
+/* ---------- en-tête ---------- */
+header.top{
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(255,255,255,.78);border-bottom:1px solid rgba(124,92,255,.14);
+}
+.topin{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
+.logo .bulle{width:38px;height:38px;border-radius:14px;background:linear-gradient(135deg,var(--rose),var(--violet));display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 6px 16px rgba(255,92,138,.4)}
+.logo small{display:block;font-weight:600;font-size:.7rem;color:var(--rose);letter-spacing:.4px}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav.tabs button{
+  border:0;background:transparent;padding:9px 14px;border-radius:999px;cursor:pointer;
+  font-weight:700;font-size:.88rem;color:var(--gris);transition:.2s;font-family:inherit
+}
+nav.tabs button:hover{background:rgba(124,92,255,.1);color:var(--violet)}
+nav.tabs button.on{background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;box-shadow:0 6px 16px rgba(124,92,255,.32)}
+.hud{display:flex;gap:8px;align-items:center}
+.chip{display:flex;align-items:center;gap:5px;background:#fff;border:2px solid #ffe3ee;border-radius:999px;padding:5px 11px;font-weight:800;font-size:.82rem;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.chip.xp{border-color:#ffe9c2}.chip.streak{border-color:#ffd9d9}
+.langsel{display:flex;background:#fff;border:2px solid #eee6ff;border-radius:999px;overflow:hidden}
+.langsel button{border:0;background:transparent;padding:6px 10px;font-size:.8rem;font-weight:800;cursor:pointer;color:var(--gris);font-family:inherit}
+.langsel button.on{background:var(--violet);color:#fff}
+
+/* ---------- héros ---------- */
+.hero{text-align:center;padding:46px 20px 34px;position:relative}
+.dedicace{
+  display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#fff,#ffeff6);
+  border:2px dashed var(--rose);color:var(--rose);font-weight:800;padding:8px 18px;border-radius:999px;
+  font-size:.9rem;box-shadow:var(--ombre);animation:pulse 2.6s ease-in-out infinite
+}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.08;margin:18px 0 10px;font-weight:900;
+  background:linear-gradient(120deg,var(--rose),var(--violet) 55%,var(--bleu));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{color:var(--gris);font-size:1.05rem;max-width:640px;margin:0 auto 22px;line-height:1.6}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{
+  border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:.95rem;padding:14px 26px;border-radius:999px;
+  background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;box-shadow:0 10px 24px rgba(255,92,138,.35);transition:.18s
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(255,92,138,.45)}
+.btn.ghost{background:#fff;color:var(--violet);box-shadow:var(--ombre)}
+.btn.sm{padding:9px 16px;font-size:.85rem}
+.btn.vert{background:linear-gradient(135deg,#22c98a,#3ecfff);box-shadow:0 10px 24px rgba(34,201,138,.32)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+
+/* ---------- cartes ---------- */
+.card{background:rgba(255,255,255,.9);border-radius:var(--r);padding:22px;box-shadow:var(--ombre);border:1px solid rgba(255,255,255,.7)}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g4{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+h2.sec{font-size:1.6rem;margin:34px 0 6px;font-weight:900}
+p.secsub{color:var(--gris);margin-bottom:18px}
+
+.modcard{cursor:pointer;position:relative;overflow:hidden;transition:.2s;border-top:6px solid var(--rose)}
+.modcard:hover{transform:translateY(-6px)}
+.modcard .ico{font-size:2.4rem}
+.modcard h3{margin:8px 0 4px;font-size:1.12rem}
+.modcard p{color:var(--gris);font-size:.86rem;line-height:1.5}
+.bar{height:9px;background:#f0ecff;border-radius:99px;overflow:hidden;margin-top:14px}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--vert),var(--bleu));border-radius:99px;transition:width .5s}
+.tag{display:inline-block;background:#f4f0ff;color:var(--violet);font-size:.7rem;font-weight:800;padding:3px 9px;border-radius:99px;margin-top:8px}
+
+/* ---------- mots ---------- */
+.mot{display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:13px 16px;box-shadow:0 4px 14px rgba(80,40,120,.07);transition:.15s}
+.mot:hover{transform:translateX(4px)}
+.mot .em{font-size:1.8rem;width:42px;text-align:center}
+.mot .txt{flex:1;min-width:0}
+.mot .fr{font-weight:800;font-size:1.05rem}
+.mot .ph{color:var(--rose);font-size:.8rem;font-weight:700}
+.mot .tr{color:var(--gris);font-size:.9rem}
+.rtl{direction:rtl;text-align:right;font-size:1.02rem}
+.spk{border:0;background:#f3efff;color:var(--violet);width:40px;height:40px;border-radius:50%;font-size:1.1rem;cursor:pointer;transition:.15s;flex-shrink:0}
+.spk:hover{background:var(--violet);color:#fff;transform:scale(1.1)}
+
+/* ---------- flashcards ---------- */
+.fc{perspective:1200px;height:280px;max-width:440px;margin:0 auto}
+.fcin{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip .fcin{transform:rotateY(180deg)}
+.fcf,.fcb{position:absolute;inset:0;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:22px;text-align:center;box-shadow:var(--ombre)}
+.fcf{background:linear-gradient(140deg,#fff,#fff2f7);border:3px solid #ffd7e6}
+.fcb{background:linear-gradient(140deg,var(--violet),var(--rose));color:#fff;transform:rotateY(180deg)}
+.fcf .big{font-size:3.4rem}.fcf .w{font-size:2rem;font-weight:900}
+.fcb .w{font-size:1.7rem;font-weight:900}
+
+/* ---------- quiz ---------- */
+.qbox{max-width:620px;margin:0 auto}
+.qq{font-size:1.5rem;font-weight:900;text-align:center;margin:6px 0 4px}
+.opts{display:grid;gap:10px;margin-top:18px}
+.opt{border:2px solid #ece7ff;background:#fff;border-radius:16px;padding:15px 18px;font-size:1.02rem;font-weight:700;cursor:pointer;text-align:left;font-family:inherit;transition:.15s;color:var(--sombre)}
+.opt:hover:not(:disabled){border-color:var(--violet);transform:translateX(5px)}
+.opt.bon{border-color:var(--vert);background:#e8fbf3;color:#0d7a54}
+.opt.mauvais{border-color:#ff6b6b;background:#ffeded;color:#c02b2b}
+.fb{margin-top:16px;padding:14px 16px;border-radius:16px;font-weight:800;text-align:center;animation:pop .3s}
+.fb.ok{background:#e8fbf3;color:#0d7a54}.fb.no{background:#ffeded;color:#c02b2b}
+@keyframes pop{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ---------- divers jeux ---------- */
+.memo{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:520px;margin:0 auto}
+.mc{aspect-ratio:1;border-radius:16px;border:0;cursor:pointer;font-family:inherit;font-weight:800;font-size:.9rem;
+  background:linear-gradient(135deg,var(--violet),var(--rose));color:transparent;display:grid;place-items:center;padding:6px;transition:.25s;box-shadow:0 6px 14px rgba(90,50,140,.2)}
+.mc.open{background:#fff;color:var(--sombre);border:2px solid var(--violet)}
+.mc.done{background:#e8fbf3;color:#0d7a54;border:2px solid var(--vert);opacity:.7;cursor:default}
+.mc span{pointer-events:none}
+.jetons{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;min-height:56px;padding:12px;background:#faf7ff;border-radius:16px;border:2px dashed #ddd2ff}
+.jeton{border:0;background:#fff;border:2px solid var(--violet);color:var(--violet);font-weight:800;padding:9px 14px;border-radius:12px;cursor:pointer;font-family:inherit;font-size:.95rem;transition:.15s}
+.jeton:hover{background:var(--violet);color:#fff}
+.zone{min-height:64px;background:linear-gradient(135deg,#fff,#f7f2ff);border-radius:16px;border:2px solid #e6dcff;display:flex;flex-wrap:wrap;gap:9px;padding:12px;align-items:center;justify-content:center;margin-bottom:12px}
+input.saisie{width:100%;padding:15px 18px;border-radius:16px;border:2px solid #e6dcff;font-size:1.1rem;font-family:inherit;font-weight:700;text-align:center;outline:0}
+input.saisie:focus{border-color:var(--violet);box-shadow:0 0 0 4px rgba(124,92,255,.14)}
+.pendu{font-size:2.2rem;letter-spacing:.35rem;text-align:center;font-weight:900;margin:14px 0;word-break:break-word}
+.lettres{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.lettres button{width:40px;height:40px;border-radius:12px;border:2px solid #e6dcff;background:#fff;font-weight:800;cursor:pointer;font-family:inherit;font-size:.95rem;transition:.15s}
+.lettres button:hover:not(:disabled){background:var(--violet);color:#fff;border-color:var(--violet)}
+.lettres button:disabled{opacity:.3;cursor:not-allowed}
+.vies{font-size:1.4rem;letter-spacing:3px;text-align:center}
+
+/* ---------- alphabet / sons ---------- */
+.alpha{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.al{background:#fff;border:2px solid #f0e9ff;border-radius:16px;padding:12px 6px;text-align:center;cursor:pointer;transition:.15s}
+.al:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:0 8px 18px rgba(255,92,138,.18)}
+.al b{display:block;font-size:1.5rem}
+.al small{color:var(--rose);font-weight:800}
+
+/* ---------- grammaire ---------- */
+.acc{background:#fff;border-radius:18px;box-shadow:0 4px 14px rgba(80,40,120,.07);overflow:hidden;margin-bottom:12px}
+.acc>button{width:100%;text-align:left;border:0;background:transparent;padding:17px 20px;font-weight:800;font-size:1.02rem;cursor:pointer;font-family:inherit;display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--sombre)}
+.acc .corps{display:none;padding:0 20px 20px;line-height:1.75;color:#3d3357}
+.acc.open .corps{display:block;animation:pop .25s}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:.94rem}
+td,th{padding:8px 10px;border-bottom:1px solid #f0ecff;text-align:left}
+th{color:var(--violet);font-size:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.astuce{background:linear-gradient(135deg,#fff6fa,#f6f2ff);border-left:5px solid var(--rose);padding:12px 16px;border-radius:12px;margin-top:12px;font-size:.93rem}
+
+/* ---------- badges / progrès ---------- */
+.badge{background:#fff;border-radius:18px;padding:18px;text-align:center;box-shadow:0 4px 14px rgba(80,40,120,.07);opacity:.4;filter:grayscale(1);transition:.3s}
+.badge.gagne{opacity:1;filter:none;box-shadow:0 8px 22px rgba(255,199,95,.35);border:2px solid var(--or)}
+.badge .b{font-size:2.3rem}
+.badge h4{font-size:.92rem;margin:6px 0 3px}
+.badge p{font-size:.76rem;color:var(--gris)}
+.stat{background:linear-gradient(135deg,#fff,#fdf7ff);border-radius:18px;padding:18px;text-align:center;box-shadow:0 4px 14px rgba(80,40,120,.07)}
+.stat b{display:block;font-size:2rem;background:linear-gradient(120deg,var(--rose),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:.82rem;color:var(--gris);font-weight:700}
+
+/* ---------- toast + confettis ---------- */
+#toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(140%);z-index:200;
+  background:linear-gradient(135deg,var(--violet),var(--rose));color:#fff;padding:15px 26px;border-radius:999px;font-weight:800;
+  box-shadow:0 14px 34px rgba(124,92,255,.4);transition:transform .45s cubic-bezier(.2,1.4,.4,1);max-width:90vw;text-align:center}
+#toast.show{transform:translateX(-50%) translateY(0)}
+.conf{position:fixed;width:11px;height:11px;z-index:150;pointer-events:none;animation:tombe linear forwards}
+@keyframes tombe{to{transform:translateY(105vh) rotate(760deg);opacity:0}}
+
+.vue{display:none;animation:fade .35s}
+.vue.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.center{text-align:center}
+.mt{margin-top:16px}.mt2{margin-top:28px}
+.mini{font-size:.82rem;color:var(--gris)}
+.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.subtabs button{border:2px solid #eee6ff;background:#fff;padding:8px 15px;border-radius:999px;font-weight:800;font-size:.85rem;cursor:pointer;font-family:inherit;color:var(--gris)}
+.subtabs button.on{background:var(--violet);border-color:var(--violet);color:#fff}
+footer{text-align:center;padding:40px 20px;color:var(--gris);font-size:.88rem}
+footer b{color:var(--rose)}
+@media(max-width:640px){
+  .memo{grid-template-columns:repeat(3,1fr)}
+  nav.tabs{order:3;width:100%;justify-content:center}
+  .hud{margin-left:auto}
+}
+
+/* ================= AJOUTS v2 : RTL + composants ================= */
+html[dir="rtl"] body{font-family:"Segoe UI","Tahoma","Arial","Noto Naskh Arabic",system-ui,sans-serif}
+html[dir="rtl"] nav.tabs{margin-left:0;margin-right:auto}
+html[dir="rtl"] .hud{margin-left:0}
+html[dir="rtl"] .opt{text-align:right}
+html[dir="rtl"] .opt:hover:not(:disabled){transform:translateX(-5px)}
+html[dir="rtl"] .mot:hover{transform:translateX(-4px)}
+html[dir="rtl"] td,html[dir="rtl"] th{text-align:right}
+html[dir="rtl"] .astuce{border-left:0;border-right:5px solid var(--rose)}
+html[dir="rtl"] .acc>button{text-align:right}
+html[dir="rtl"] .modcard{border-top:6px solid var(--rose)}
+html[dir="rtl"] .logo small{letter-spacing:0}
+html[dir="rtl"] .ltrbox{direction:ltr;text-align:left}
+html[dir="rtl"] .dlg.moi{border-right:0;border-left:5px solid var(--bleu)}
+html[dir="rtl"] .dlg.lui{border-right:0;border-left:5px solid #ddd6f5}
+.ltrbox{direction:ltr}
+.rtlbox{direction:rtl;text-align:right}
+
+/* dialogue */
+.dlg{background:#fff;border-radius:16px;padding:14px 16px;margin-bottom:10px;box-shadow:0 4px 12px rgba(80,40,120,.07);display:flex;gap:12px;align-items:flex-start}
+.dlg.lui{border-right:5px solid #ddd6f5}
+.dlg.moi{border-right:5px solid var(--bleu);background:linear-gradient(135deg,#fff,#f2fbff)}
+.dlg .who{font-size:.72rem;font-weight:800;color:var(--gris);text-transform:uppercase;letter-spacing:.5px}
+.dlg .l1{font-weight:800;font-size:1.05rem;margin-top:2px}
+.dlg .l2{color:var(--gris);font-size:.9rem;margin-top:3px}
+
+/* relie les paires */
+.relie{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:560px;margin:0 auto}
+.relie button{border:2px solid #e6dcff;background:#fff;border-radius:14px;padding:12px 8px;font-family:inherit;font-weight:800;cursor:pointer;font-size:.95rem;transition:.15s;color:var(--sombre)}
+.relie button:hover:not(:disabled){border-color:var(--violet)}
+.relie button.sel{background:var(--violet);color:#fff;border-color:var(--violet)}
+.relie button.ok{background:#e8fbf3;color:#0d7a54;border-color:var(--vert);cursor:default;opacity:.65}
+.relie button.no{background:#ffeded;border-color:#ff6b6b}
+
+/* chrono */
+.chrono{font-size:2.2rem;font-weight:900;text-align:center;color:var(--rose)}
+.progtxt{display:flex;justify-content:space-between;font-size:.82rem;font-weight:800;color:var(--gris);margin-bottom:6px}
+.son{background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 4px 12px rgba(80,40,120,.07);display:flex;gap:12px;align-items:center}
+.son .s{font-size:1.35rem;font-weight:900;color:var(--violet);min-width:74px}
+.jeucard{cursor:pointer;text-align:center;transition:.2s}
+.jeucard:hover{transform:translateY(-6px)}
+.jeucard .ico{font-size:2.6rem}
+.jeucard h3{margin:8px 0 4px;font-size:1.08rem}
+.jeucard p{color:var(--gris);font-size:.85rem;line-height:1.5}
+.lettreamour{background:linear-gradient(135deg,#fff6fa,#f6f2ff);border:2px dashed var(--rose);border-radius:22px;padding:24px;line-height:1.9;font-size:1rem}
+
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="coeurs" id="coeurs"></div>
+
+<header class="top">
+  <div class="topin">
+    <div class="logo">
+      <div class="bulle">&#127467;&#127479;</div>
+      <div><span id="marque">Fran&ccedil;ais Facile</span><small id="dedi">pour mon amour Halima &#10084;&#65039;</small></div>
+    </div>
+    <nav class="tabs" id="nav"></nav>
+    <div class="hud">
+      <div class="chip xp">&#11088; <span id="hudXp">0</span></div>
+      <div class="chip streak">&#128293; <span id="hudStreak">0</span></div>
+      <div class="langsel" id="langsel">
+        <button data-l="fr" class="on">FR</button>
+        <button data-l="ar">&#1593;&#1585;&#1576;&#1610;</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <section id="v-accueil" class="vue on"></section>
+  <section id="v-lecons" class="vue"></section>
+  <section id="v-module" class="vue"></section>
+  <section id="v-alphabet" class="vue"></section>
+  <section id="v-jeux" class="vue"></section>
+  <section id="v-grammaire" class="vue"></section>
+  <section id="v-progres" class="vue"></section>
+</div>
+
+<footer>
+  <span id="footTxt">Fait avec &#10084;&#65039;, patience et beaucoup de tendresse pour <b>mon amour Halima</b>.</span><br>
+  <span class="mini" id="footTxt2">Chaque mot appris te rapproche un peu plus de moi. Bon courage, ma vie ! &#128144;</span>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   DONNÉES 1/2 — Modules de vocabulaire (français ⇄ arabe)
+   Chaque mot : fr = français, ph = prononciation en lettres latines,
+                pa = prononciation en lettres arabes, ar = traduction, em = emoji
+   ============================================================ */
+const MODULES_A = [
+{
+  id:"salutations", ico:"👋", niv:1,
+  t:{fr:"Dire bonjour", ar:"نسلّم على الناس"},
+  d:{fr:"Les tout premiers mots : saluer, remercier, être poli.", ar:"لكلمات لولى: تسلّم، تشكر، وتكون مؤدبة."},
+  mots:[
+    {fr:"Bonjour", ph:"bon-jour", pa:"بونجور", ar:"صباح الخير / السلام عليكم", em:"☀️"},
+    {fr:"Bonsoir", ph:"bon-soir", pa:"بونسوار", ar:"مسا الخير", em:"🌆"},
+    {fr:"Bonne nuit", ph:"bon nui", pa:"بون نوي", ar:"تصبح على خير", em:"🌙"},
+    {fr:"Salut", ph:"sa-lu", pa:"سالو", ar:"سلام (بين الصحاب)", em:"🙋"},
+    {fr:"Au revoir", ph:"o re-vwar", pa:"أو روفوار", ar:"بسلامة", em:"👋"},
+    {fr:"À bientôt", ph:"a byin-to", pa:"آ بيانطو", ar:"نتلاقاو قريب", em:"⏳"},
+    {fr:"À demain", ph:"a de-min", pa:"آ دومان", ar:"نتلاقاو غدوة", em:"📅"},
+    {fr:"À tout à l'heure", ph:"a tou ta leur", pa:"آ توتالور", ar:"نتلاقاو من بعد", em:"🕐"},
+    {fr:"Merci", ph:"mèr-si", pa:"مِرسي", ar:"صحّيت / شكرا", em:"🙏"},
+    {fr:"Merci beaucoup", ph:"mèr-si bo-kou", pa:"مِرسي بوكو", ar:"صحّيت بزاف", em:"💐"},
+    {fr:"De rien", ph:"de ryin", pa:"دو ريان", ar:"بلا مزيّة", em:"😊"},
+    {fr:"Je vous en prie", ph:"je vou zan pri", pa:"جو فوزان پري", ar:"مرحبا بيك", em:"🤝"},
+    {fr:"S'il vous plaît", ph:"sil vou plè", pa:"سيل فو پلي", ar:"من فضلك (رسمي)", em:"🤲"},
+    {fr:"S'il te plaît", ph:"sil te plè", pa:"سيل تو پلي", ar:"يعيشك (بين الصحاب)", em:"🙏"},
+    {fr:"Excusez-moi", ph:"eks-ku-zé mwa", pa:"إكسكوزي موا", ar:"سمح لي", em:"🙇"},
+    {fr:"Pardon", ph:"par-don", pa:"پاردون", ar:"سامحني", em:"😔"},
+    {fr:"Oui", ph:"wi", pa:"وي", ar:"إيه / واه", em:"✅"},
+    {fr:"Non", ph:"non", pa:"نون", ar:"لا", em:"❌"},
+    {fr:"Peut-être", ph:"peu-tètr", pa:"پوتيتر", ar:"بلاك / يمكن", em:"🤔"},
+    {fr:"D'accord", ph:"da-kor", pa:"داكور", ar:"صافي / أوكي", em:"👌"},
+    {fr:"Comment ça va ?", ph:"ko-man sa va", pa:"كومان سا فا", ar:"واش راكي؟", em:"😊"},
+    {fr:"Ça va bien", ph:"sa va byin", pa:"سا فا بيان", ar:"راني لاباس", em:"👍"},
+    {fr:"Ça va mal", ph:"sa va mal", pa:"سا فا مال", ar:"ماراني شي مليحة", em:"😞"},
+    {fr:"Et vous ?", ph:"é vou", pa:"إي فو", ar:"ونتِ؟", em:"❓"},
+    {fr:"Bienvenue", ph:"byin-ve-nu", pa:"بيانفونو", ar:"مرحبا بيك", em:"🎉"},
+    {fr:"Bonne journée", ph:"bon jour-né", pa:"بون جورني", ar:"نهار سعيد", em:"🌞"},
+    {fr:"Bon appétit", ph:"bo na-pé-ti", pa:"بوناپيتي", ar:"بالصحة والراحة", em:"🍽️"},
+    {fr:"Bonne chance", ph:"bon chans", pa:"بون شانس", ar:"ربي يوفقك", em:"🍀"}
+  ],
+  dialogue:[
+    {q:"Bonjour madame, comment ça va ?", qa:"صباح الخير مدام، واش راكي؟", r:"Bonjour ! Ça va bien, merci. Et vous ?", ra:"صباح الخير! راني لاباس، صحّيت. ونتِ؟"},
+    {q:"Très bien, merci. Bonne journée !", qa:"لاباس، صحّيت. نهار سعيد!", r:"Merci, à vous aussi. Au revoir !", ra:"صحّيت، وحتى نتِ. بسلامة!"},
+    {q:"À demain, Halima !", qa:"نتلاقاو غدوة يا حليمة!", r:"À demain, bonne soirée !", ra:"نتلاقاو غدوة، عشية زينة!"}
+  ]
+},
+{
+  id:"presentation", ico:"🪪", niv:1,
+  t:{fr:"Se présenter", ar:"تعرّفي بروحك"},
+  d:{fr:"Dire ton nom, ton âge, d'où tu viens, où tu habites.", ar:"قولي سميتك، عمرك، منين راكي، ووين تسكني."},
+  mots:[
+    {fr:"Je m'appelle Halima", ph:"je ma-pèl a-li-ma", pa:"جو ماپيل حليمة", ar:"سميتي حليمة", em:"💖"},
+    {fr:"Comment vous appelez-vous ?", ph:"ko-man vou za-plé vou", pa:"كومان فوزاپلي فو", ar:"واش سميتك؟", em:"❓"},
+    {fr:"Enchantée", ph:"an-chan-té", pa:"أونشونتي", ar:"متشرفة بيك", em:"🤝"},
+    {fr:"le prénom", ph:"le pré-non", pa:"لو پرينون", ar:"السميّة", em:"📝"},
+    {fr:"le nom de famille", ph:"le non de fa-mi-ye", pa:"لو نون دو فامي", ar:"اللقب", em:"👨‍👩‍👧"},
+    {fr:"J'ai vingt-cinq ans", ph:"jé vin-sink an", pa:"جي فان سانك أون", ar:"عندي خمسة وعشرين عام", em:"🎂"},
+    {fr:"Quel âge avez-vous ?", ph:"kèl aj a-vé vou", pa:"كيل آج آفي فو", ar:"شحال عمرك؟", em:"🕰️"},
+    {fr:"Je suis algérienne", ph:"je sui al-jé-ri-èn", pa:"جو سوي الجيريان", ar:"راني جزائرية", em:"🇩🇿"},
+    {fr:"Je viens de…", ph:"je vyin de", pa:"جو فيان دو", ar:"أنا جاية من…", em:"✈️"},
+    {fr:"J'habite à Liège", ph:"ja-bit a lyèj", pa:"جابيت آ لييج", ar:"نسكن في لييج", em:"🏠"},
+    {fr:"Où habitez-vous ?", ph:"ou a-bi-té vou", pa:"أو آبيتي فو", ar:"وين تسكن؟", em:"📍"},
+    {fr:"l'adresse", ph:"la-drès", pa:"لادريس", ar:"العنوان", em:"🏡"},
+    {fr:"le numéro de téléphone", ph:"le nu-mé-ro", pa:"لو نوميرو", ar:"نمرة التيليفون", em:"📱"},
+    {fr:"Je parle arabe", ph:"je parl a-rab", pa:"جو پارل عرب", ar:"نهدر بالعربية", em:"🗣️"},
+    {fr:"J'apprends le français", ph:"ja-pran le fran-sè", pa:"جاپرون لو فرونسي", ar:"نتعلّم الفرنسية", em:"📚"},
+    {fr:"Je parle un peu français", ph:"un peu fran-sè", pa:"آن پو فرونسي", ar:"نهدر شويّة فرنسية", em:"🤏"},
+    {fr:"Je ne comprends pas", ph:"je ne kon-pran pa", pa:"جو نو كومپرون پا", ar:"مافهمتش", em:"🤷"},
+    {fr:"Pouvez-vous répéter ?", ph:"pou-vé vou ré-pé-té", pa:"پوفي فو ريپيتي", ar:"تقدر تعاود؟", em:"🔁"},
+    {fr:"Parlez plus lentement", ph:"par-lé plu lan-te-man", pa:"پارلي پلو لونتمون", ar:"هدر بشويّة", em:"🐢"},
+    {fr:"Je suis mariée", ph:"je sui ma-ryé", pa:"جو سوي مارييه", ar:"راني متزوجة", em:"💍"},
+    {fr:"Je suis célibataire", ph:"sé-li-ba-tèr", pa:"سيليباتير", ar:"مازال ما تزوجتش", em:"🙋‍♀️"},
+    {fr:"J'ai deux enfants", ph:"jé deu zan-fan", pa:"جي دوزونفون", ar:"عندي زوج دراري", em:"🧸"},
+    {fr:"le pays", ph:"le pè-i", pa:"لو پيي", ar:"البلاد", em:"🌍"},
+    {fr:"la nationalité", ph:"na-sio-na-li-té", pa:"ناسيوناليتي", ar:"الجنسية", em:"🛂"},
+    {fr:"Comment ça s'écrit ?", ph:"ko-man sa sé-kri", pa:"كومان سا سيكري", ar:"كيفاش تتكتب؟", em:"✏️"}
+  ],
+  dialogue:[
+    {q:"Bonjour, comment vous appelez-vous ?", qa:"سلام، واش سميتك؟", r:"Je m'appelle Halima, et vous ?", ra:"سميتي حليمة، ونتَ؟"},
+    {q:"Moi, c'est Karim. Vous habitez où ?", qa:"أنا كريم. وين تسكني؟", r:"J'habite à Liège, mais je viens d'Algérie.", ra:"نسكن في لييج، بصح أنا من الجزائر."},
+    {q:"Vous parlez très bien français !", qa:"راكي تهدري مليح بالفرنسية!", r:"Merci ! J'apprends tous les jours.", ra:"صحّيت! راني نتعلّم كل نهار."}
+  ]
+},
+{
+  id:"famille", ico:"👨‍👩‍👧", niv:1,
+  t:{fr:"La famille", ar:"العائلة"},
+  d:{fr:"Parler des gens qu'on aime.", ar:"نهدرو على الناس لي نحبوهم."},
+  mots:[
+    {fr:"la famille", ph:"la fa-mi-ye", pa:"لا فامي", ar:"العائلة", em:"👨‍👩‍👧"},
+    {fr:"la mère / maman", ph:"la mèr", pa:"لا مير", ar:"الوالدة / ماما", em:"👩"},
+    {fr:"le père / papa", ph:"le pèr", pa:"لو پير", ar:"الوالد / بابا", em:"👨"},
+    {fr:"le frère", ph:"le frèr", pa:"لو فرير", ar:"الخو / خويا", em:"👦"},
+    {fr:"la sœur", ph:"la seur", pa:"لا سور", ar:"الأخت / ختي", em:"👧"},
+    {fr:"le fils", ph:"le fis", pa:"لو فيس", ar:"الولد", em:"🧒"},
+    {fr:"la fille", ph:"la fi-ye", pa:"لا في", ar:"البنت", em:"👧"},
+    {fr:"le mari", ph:"le ma-ri", pa:"لو ماري", ar:"الراجل", em:"🤵"},
+    {fr:"la femme", ph:"la fam", pa:"لا فام", ar:"المرا", em:"👰"},
+    {fr:"les enfants", ph:"lé zan-fan", pa:"ليزونفون", ar:"الدراري", em:"🧸"},
+    {fr:"les parents", ph:"lé pa-ran", pa:"لي پارون", ar:"الوالدين", em:"👪"},
+    {fr:"le grand-père", ph:"le gran pèr", pa:"لو غرون پير", ar:"الجد", em:"👴"},
+    {fr:"la grand-mère", ph:"la gran mèr", pa:"لا غرون مير", ar:"الجدة", em:"👵"},
+    {fr:"l'oncle", ph:"lonkl", pa:"لونكل", ar:"العم / الخال", em:"🧔"},
+    {fr:"la tante", ph:"la tant", pa:"لا تونت", ar:"العمة / الخالة", em:"👩‍🦰"},
+    {fr:"le cousin", ph:"le kou-zin", pa:"لو كوزان", ar:"ولد العم", em:"👦"},
+    {fr:"la cousine", ph:"la kou-zin", pa:"لا كوزين", ar:"بنت العم", em:"👧"},
+    {fr:"le bébé", ph:"le bé-bé", pa:"لو بيبي", ar:"البيبي", em:"👶"},
+    {fr:"le voisin", ph:"le vwa-zin", pa:"لو فوازان", ar:"الجار", em:"🏘️"},
+    {fr:"l'ami / l'amie", ph:"la-mi", pa:"لامي", ar:"الصاحب / الصاحبة", em:"🫂"},
+    {fr:"mon amour", ph:"mo na-mour", pa:"مونامور", ar:"حبيبي / حبيبتي", em:"❤️"},
+    {fr:"le cœur", ph:"le keur", pa:"لو كور", ar:"القلب", em:"💗"},
+    {fr:"la maison de famille", ph:"la mè-zon", pa:"لا ميزون", ar:"دار العائلة", em:"🏡"},
+    {fr:"le mariage", ph:"le ma-riaj", pa:"لو مارياج", ar:"العرس", em:"💒"},
+    {fr:"Tu as des frères et sœurs ?", ph:"tu a dé frèr", pa:"تو آ دي فرير", ar:"عندك خاوة وخواتات؟", em:"❓"}
+  ],
+  dialogue:[
+    {q:"Tu as des frères et sœurs ?", qa:"عندك خاوة وخواتات؟", r:"Oui, j'ai un frère et deux sœurs.", ra:"إيه، عندي خو وزوج خواتات."},
+    {q:"Où habite ta famille ?", qa:"وين تسكن عائلتك؟", r:"Ma famille habite en Algérie, je l'appelle souvent.", ra:"عائلتي تسكن في الجزائر، نعيّطلها بزاف."},
+    {q:"Tes parents vont bien ?", qa:"والديك لاباس عليهم؟", r:"Oui, merci. Ma mère est en bonne santé.", ra:"إيه صحّيت. ماما راهي لاباس."}
+  ]
+},
+{
+  id:"chiffres", ico:"🔢", niv:1,
+  t:{fr:"Les chiffres & l'heure", ar:"الأرقام والوقت"},
+  d:{fr:"Compter, donner un prix, dire l'heure et la date.", ar:"تحسبي، تقولي الثمن، الوقت والتاريخ."},
+  mots:[
+    {fr:"zéro", ph:"zé-ro", pa:"زيرو", ar:"زيرو (٠)", em:"0️⃣"},
+    {fr:"un", ph:"un", pa:"آن", ar:"واحد (١)", em:"1️⃣"},
+    {fr:"deux", ph:"deu", pa:"دو", ar:"زوج (٢)", em:"2️⃣"},
+    {fr:"trois", ph:"trwa", pa:"تروا", ar:"تلاتة (٣)", em:"3️⃣"},
+    {fr:"quatre", ph:"katr", pa:"كاتر", ar:"ربعة (٤)", em:"4️⃣"},
+    {fr:"cinq", ph:"sink", pa:"سانك", ar:"خمسة (٥)", em:"5️⃣"},
+    {fr:"six", ph:"sis", pa:"سيس", ar:"ستة (٦)", em:"6️⃣"},
+    {fr:"sept", ph:"sèt", pa:"سيت", ar:"سبعة (٧)", em:"7️⃣"},
+    {fr:"huit", ph:"uit", pa:"ويت", ar:"تمنية (٨)", em:"8️⃣"},
+    {fr:"neuf", ph:"neuf", pa:"نوف", ar:"تسعة (٩)", em:"9️⃣"},
+    {fr:"dix", ph:"dis", pa:"ديس", ar:"عشرة (١٠)", em:"🔟"},
+    {fr:"onze", ph:"onz", pa:"أونز", ar:"حداش (١١)", em:"1️⃣1️⃣"},
+    {fr:"douze", ph:"douz", pa:"دوز", ar:"طناش (١٢)", em:"1️⃣2️⃣"},
+    {fr:"treize", ph:"trèz", pa:"تريز", ar:"تلطاش (١٣)", em:"1️⃣3️⃣"},
+    {fr:"quinze", ph:"kinz", pa:"كانز", ar:"خمسطاش (١٥)", em:"1️⃣5️⃣"},
+    {fr:"vingt", ph:"vin", pa:"فان", ar:"عشرين (٢٠)", em:"2️⃣0️⃣"},
+    {fr:"trente", ph:"trant", pa:"ترونت", ar:"تلاتين (٣٠)", em:"3️⃣0️⃣"},
+    {fr:"quarante", ph:"ka-rant", pa:"كارونت", ar:"ربعين (٤٠)", em:"4️⃣0️⃣"},
+    {fr:"cinquante", ph:"sin-kant", pa:"سانكونت", ar:"خمسين (٥٠)", em:"5️⃣0️⃣"},
+    {fr:"soixante", ph:"swa-sant", pa:"سواسونت", ar:"ستين (٦٠)", em:"6️⃣0️⃣"},
+    {fr:"cent", ph:"san", pa:"سون", ar:"ميّة (١٠٠)", em:"💯"},
+    {fr:"mille", ph:"mil", pa:"ميل", ar:"ألف (١٠٠٠)", em:"🔢"},
+    {fr:"Quelle heure est-il ?", ph:"kè leur è til", pa:"كيلور إتيل", ar:"شحال في الساعة؟", em:"🕐"},
+    {fr:"Il est trois heures", ph:"i lè trwa zeur", pa:"إلي تروازور", ar:"الساعة تلاتة", em:"🕒"},
+    {fr:"et demie", ph:"é de-mi", pa:"إي دومي", ar:"ونص", em:"🕜"},
+    {fr:"et quart", ph:"é kar", pa:"إي كار", ar:"وربع", em:"🕞"},
+    {fr:"la minute", ph:"la mi-nut", pa:"لا مينوت", ar:"الدقيقة", em:"⏱️"},
+    {fr:"Ça coûte combien ?", ph:"sa kout kon-byin", pa:"سا كوت كومبيان", ar:"بشحال؟", em:"💶"},
+    {fr:"C'est trop cher", ph:"sè tro chèr", pa:"سي ترو شير", ar:"هذا غالي بزاف", em:"😲"},
+    {fr:"le premier", ph:"le pre-myé", pa:"لو پرومييه", ar:"الأول", em:"🥇"}
+  ],
+  dialogue:[
+    {q:"Quel âge as-tu ?", qa:"شحال عمرك؟", r:"J'ai vingt-cinq ans.", ra:"عندي خمسة وعشرين عام."},
+    {q:"Ça coûte combien, s'il vous plaît ?", qa:"بشحال من فضلك؟", r:"Ça coûte dix euros cinquante.", ra:"الثمن عشرة يورو وخمسين سنتيم."},
+    {q:"Quelle heure est-il ?", qa:"شحال في الساعة؟", r:"Il est trois heures et demie.", ra:"الساعة تلاتة ونص."}
+  ]
+},
+{
+  id:"couleurs", ico:"🎨", niv:1,
+  t:{fr:"Couleurs & formes", ar:"الألوان والأشكال"},
+  d:{fr:"Décrire les objets : couleur, taille, forme.", ar:"توصفي الحوايج: اللون، الكبر، الشكل."},
+  mots:[
+    {fr:"la couleur", ph:"la kou-leur", pa:"لا كولور", ar:"اللون", em:"🎨"},
+    {fr:"rouge", ph:"rouj", pa:"روج", ar:"أحمر", em:"🔴"},
+    {fr:"bleu", ph:"bleu", pa:"بلو", ar:"زرق", em:"🔵"},
+    {fr:"vert", ph:"vèr", pa:"فير", ar:"خضر", em:"🟢"},
+    {fr:"jaune", ph:"jon", pa:"جون", ar:"صفر", em:"🟡"},
+    {fr:"noir", ph:"nwar", pa:"نوار", ar:"كحل", em:"⚫"},
+    {fr:"blanc", ph:"blan", pa:"بلون", ar:"بيض", em:"⚪"},
+    {fr:"orange", ph:"o-ranj", pa:"أورونج", ar:"برتقالي", em:"🟠"},
+    {fr:"rose", ph:"roz", pa:"روز", ar:"وردي", em:"🌸"},
+    {fr:"violet", ph:"vio-lè", pa:"فيولي", ar:"بنفسجي", em:"🟣"},
+    {fr:"gris", ph:"gri", pa:"غري", ar:"رمادي", em:"🩶"},
+    {fr:"marron", ph:"ma-ron", pa:"مارون", ar:"قهوي", em:"🟤"},
+    {fr:"clair", ph:"klèr", pa:"كلير", ar:"فاتح", em:"💡"},
+    {fr:"foncé", ph:"fon-sé", pa:"فونسي", ar:"غامق", em:"🌑"},
+    {fr:"grand", ph:"gran", pa:"غرون", ar:"كبير", em:"🐘"},
+    {fr:"petit", ph:"pe-ti", pa:"پوتي", ar:"صغير", em:"🐭"},
+    {fr:"long", ph:"lon", pa:"لون", ar:"طويل", em:"📏"},
+    {fr:"court", ph:"kour", pa:"كور", ar:"قصير", em:"✂️"},
+    {fr:"rond", ph:"ron", pa:"رون", ar:"مدوّر", em:"⭕"},
+    {fr:"carré", ph:"ka-ré", pa:"كاري", ar:"مربّع", em:"⬜"},
+    {fr:"lourd", ph:"lour", pa:"لور", ar:"ثقيل", em:"🏋️"},
+    {fr:"léger", ph:"lé-jé", pa:"ليجي", ar:"خفيف", em:"🪶"},
+    {fr:"beau / belle", ph:"bo / bèl", pa:"بو / بيل", ar:"شباب / شبابة", em:"😍"},
+    {fr:"C'est de quelle couleur ?", ph:"de kèl kou-leur", pa:"دو كيل كولور", ar:"واش من لون؟", em:"❓"}
+  ],
+  dialogue:[
+    {q:"C'est de quelle couleur, ta robe ?", qa:"واش من لون الروب تاعك؟", r:"Elle est bleu foncé, avec des fleurs blanches.", ra:"راه زرق غامق، بالورد الأبيض."},
+    {q:"Tu préfères le rouge ou le vert ?", qa:"تحبي الأحمر ولا الخضر؟", r:"Je préfère le rouge, c'est plus joli.", ra:"نفضّل الأحمر، شباب كثر."},
+    {q:"Le sac noir, c'est le tien ?", qa:"الساك الكحل، تاعك؟", r:"Non, le mien est petit et marron.", ra:"لا، الساك تاعي صغير وقهوي."}
+  ]
+},
+{
+  id:"corps", ico:"🩺", niv:2,
+  t:{fr:"Le corps & la santé", ar:"الجسم والصحة"},
+  d:{fr:"Chez le médecin : dire où on a mal.", ar:"عند الطبيب: قولي وين راكي توجعك."},
+  mots:[
+    {fr:"le corps", ph:"le kor", pa:"لو كور", ar:"الجسم", em:"🧍"},
+    {fr:"la tête", ph:"la tèt", pa:"لا تيت", ar:"الراس", em:"🗣️"},
+    {fr:"les cheveux", ph:"lé che-veu", pa:"لي شوفو", ar:"الشعر", em:"💇"},
+    {fr:"les yeux", ph:"lé zieu", pa:"ليزيو", ar:"العينين", em:"👀"},
+    {fr:"le nez", ph:"le né", pa:"لو ني", ar:"النيف", em:"👃"},
+    {fr:"la bouche", ph:"la bouch", pa:"لا بوش", ar:"الفم", em:"👄"},
+    {fr:"les dents", ph:"lé dan", pa:"لي دون", ar:"السنان", em:"🦷"},
+    {fr:"l'oreille", ph:"lo-rèy", pa:"لوري", ar:"الوذن", em:"👂"},
+    {fr:"le cou", ph:"le kou", pa:"لو كو", ar:"الرقبة", em:"🧣"},
+    {fr:"le bras", ph:"le bra", pa:"لو برا", ar:"الذراع", em:"💪"},
+    {fr:"la main", ph:"la min", pa:"لا مان", ar:"اليد", em:"✋"},
+    {fr:"le doigt", ph:"le dwa", pa:"لو دوا", ar:"الصبع", em:"👆"},
+    {fr:"le dos", ph:"le do", pa:"لو دو", ar:"الظهر", em:"🦴"},
+    {fr:"le ventre", ph:"le vantr", pa:"لو فونتر", ar:"الكرش", em:"🫃"},
+    {fr:"la jambe", ph:"la janb", pa:"لا جونب", ar:"الساق", em:"🦵"},
+    {fr:"le pied", ph:"le pyé", pa:"لو پيي", ar:"الرجل", em:"🦶"},
+    {fr:"J'ai mal à la tête", ph:"jé mal a la tèt", pa:"جي مال آ لا تيت", ar:"راسي يوجعني", em:"🤕"},
+    {fr:"J'ai mal au ventre", ph:"jé mal o vantr", pa:"جي مال أو فونتر", ar:"كرشي توجعني", em:"😣"},
+    {fr:"Je suis malade", ph:"je sui ma-lad", pa:"جو سوي مالاد", ar:"راني مريضة", em:"🤒"},
+    {fr:"J'ai de la fièvre", ph:"jé de la fyèvr", pa:"جي دو لا فييفر", ar:"عندي السخانة", em:"🌡️"},
+    {fr:"le médecin", ph:"le méd-sin", pa:"لو ميدسان", ar:"الطبيب", em:"👨‍⚕️"},
+    {fr:"la pharmacie", ph:"la far-ma-si", pa:"لا فارماسي", ar:"الفارماسي", em:"💊"},
+    {fr:"le médicament", ph:"mé-di-ka-man", pa:"ميديكامون", ar:"الدوا", em:"💊"},
+    {fr:"l'ordonnance", ph:"lor-do-nans", pa:"لوردونونس", ar:"الوردونانس", em:"📄"},
+    {fr:"le rendez-vous", ph:"le ran-dé vou", pa:"لو رونديفو", ar:"الموعد / الرونديفو", em:"📅"},
+    {fr:"Je suis fatiguée", ph:"fa-ti-gé", pa:"فاتيغي", ar:"راني عيّانة", em:"🥱"},
+    {fr:"Ça fait mal ici", ph:"sa fè mal i-si", pa:"سا في مال إيسي", ar:"يوجعني هنا", em:"👉"},
+    {fr:"Je vais mieux", ph:"je vè myeu", pa:"جو في ميو", ar:"راني نتحسّن", em:"😌"}
+  ],
+  dialogue:[
+    {q:"Bonjour, qu'est-ce qui ne va pas ?", qa:"سلام، واش بيك؟", r:"J'ai mal à la tête depuis deux jours.", ra:"راسي يوجعني من يومين."},
+    {q:"Vous avez de la fièvre ?", qa:"عندك السخانة؟", r:"Oui, un peu. Et je suis très fatiguée.", ra:"إيه شويّة. وراني عيّانة بزاف."},
+    {q:"Prenez ce médicament trois fois par jour.", qa:"ديري هاذ الدوا تلات مرات في النهار.", r:"D'accord, merci beaucoup docteur.", ra:"صافي، صحّيت بزاف يا دكتور."}
+  ]
+},
+{
+  id:"vetements", ico:"👗", niv:2,
+  t:{fr:"Les vêtements", ar:"الحوايج / اللباس"},
+  d:{fr:"S'habiller, faire du shopping, donner sa taille.", ar:"تلبسي، تقضي، وتقولي القياس."},
+  mots:[
+    {fr:"les vêtements", ph:"lé vèt-man", pa:"لي فيتمون", ar:"الحوايج / اللباس", em:"👚"},
+    {fr:"la robe", ph:"la rob", pa:"لا روب", ar:"الروب", em:"👗"},
+    {fr:"le pantalon", ph:"le pan-ta-lon", pa:"لو پونتالون", ar:"السروال", em:"👖"},
+    {fr:"la jupe", ph:"la jup", pa:"لا جوپ", ar:"الجيب", em:"🩱"},
+    {fr:"la chemise", ph:"la che-miz", pa:"لا شوميز", ar:"القميجة", em:"👔"},
+    {fr:"le tee-shirt", ph:"le ti-cheurt", pa:"لو تي شيرت", ar:"التريكو", em:"👕"},
+    {fr:"le manteau", ph:"le man-to", pa:"لو مونطو", ar:"الكابي", em:"🧥"},
+    {fr:"la veste", ph:"la vèst", pa:"لا فيست", ar:"الفيست", em:"🧥"},
+    {fr:"le pull", ph:"le pul", pa:"لو پول", ar:"البيلو", em:"🧶"},
+    {fr:"les chaussures", ph:"lé cho-sur", pa:"لي شوسور", ar:"الصبابط", em:"👟"},
+    {fr:"les chaussettes", ph:"cho-sèt", pa:"شوسيت", ar:"التقاشر", em:"🧦"},
+    {fr:"le foulard", ph:"le fou-lar", pa:"لو فولار", ar:"الفولار / الحجاب", em:"🧕"},
+    {fr:"le sac", ph:"le sak", pa:"لو ساك", ar:"الساك", em:"👜"},
+    {fr:"les lunettes", ph:"lé lu-nèt", pa:"لي لونيت", ar:"النظّارات", em:"👓"},
+    {fr:"la taille", ph:"la tay", pa:"لا تاي", ar:"القياس / التاي", em:"📏"},
+    {fr:"Je cherche…", ph:"je chèrch", pa:"جو شيرش", ar:"نقلّب على…", em:"🔍"},
+    {fr:"Je peux essayer ?", ph:"je peu é-sè-yé", pa:"جو پو إسييه", ar:"نقدر نقيس؟", em:"🪞"},
+    {fr:"C'est trop grand", ph:"sè tro gran", pa:"سي ترو غرون", ar:"راه كبير بزاف", em:"📐"},
+    {fr:"C'est trop petit", ph:"sè tro pe-ti", pa:"سي ترو پوتي", ar:"راه صغير بزاف", em:"🤏"},
+    {fr:"la cabine d'essayage", ph:"ka-bin dé-sè-yaj", pa:"كابين ديسياج", ar:"بيت القياس", em:"🚪"},
+    {fr:"Ça vous va très bien", ph:"sa vou va", pa:"سا فو فا", ar:"يجيك مليح بزاف", em:"😍"},
+    {fr:"Je le prends", ph:"je le pran", pa:"جو لو پرون", ar:"نديه", em:"🛍️"}
+  ],
+  dialogue:[
+    {q:"Bonjour, je peux vous aider ?", qa:"سلام، نعاونك؟", r:"Oui, je cherche une robe bleue, s'il vous plaît.", ra:"إيه، نقلّب على روب زرق من فضلك."},
+    {q:"Quelle taille faites-vous ?", qa:"واش من قياس؟", r:"Je fais du 38. Je peux essayer ?", ra:"القياس تاعي ٣٨. نقدر نقيس؟"},
+    {q:"Bien sûr, la cabine est là-bas.", qa:"أكيد، بيت القياس لهيه.", r:"Merci ! C'est parfait, je la prends.", ra:"صحّيت! راه مليح، نديه."}
+  ]
+},
+{
+  id:"maison", ico:"🏠", niv:2,
+  t:{fr:"La maison & le quotidien", ar:"الدار والحياة اليومية"},
+  d:{fr:"Les pièces, les objets, et les gestes de chaque jour.", ar:"البيوت، الحوايج، وخدمة كل نهار."},
+  mots:[
+    {fr:"la maison", ph:"la mè-zon", pa:"لا ميزون", ar:"الدار", em:"🏠"},
+    {fr:"l'appartement", ph:"la-par-te-man", pa:"لاپارتمون", ar:"الأبارتمو", em:"🏢"},
+    {fr:"la porte", ph:"la port", pa:"لا بورت", ar:"الباب", em:"🚪"},
+    {fr:"la fenêtre", ph:"la fe-nètr", pa:"لا فونيتر", ar:"الشباك", em:"🪟"},
+    {fr:"la clé", ph:"la klé", pa:"لا كلي", ar:"المفتاح", em:"🔑"},
+    {fr:"la cuisine", ph:"la kui-zin", pa:"لا كويزين", ar:"الكوزينة", em:"🍳"},
+    {fr:"la chambre", ph:"la chanbr", pa:"لا شونبر", ar:"بيت النوم", em:"🛏️"},
+    {fr:"le salon", ph:"le sa-lon", pa:"لو سالون", ar:"الصالون", em:"🛋️"},
+    {fr:"la salle de bain", ph:"sal de bin", pa:"سال دو بان", ar:"الحمام", em:"🛁"},
+    {fr:"les toilettes", ph:"lé twa-lèt", pa:"لي تواليت", ar:"التواليت", em:"🚽"},
+    {fr:"le lit", ph:"le li", pa:"لو لي", ar:"الفراش", em:"🛌"},
+    {fr:"la table", ph:"la tabl", pa:"لا تابل", ar:"الطاولة", em:"🪑"},
+    {fr:"la chaise", ph:"la chèz", pa:"لا شيز", ar:"الكرسي", em:"💺"},
+    {fr:"le frigo", ph:"le fri-go", pa:"لو فريغو", ar:"الفريجيدار", em:"🧊"},
+    {fr:"l'assiette", ph:"la-syèt", pa:"لاسييت", ar:"الطبسي", em:"🍽️"},
+    {fr:"le verre", ph:"le vèr", pa:"لو فير", ar:"الكاس", em:"🥛"},
+    {fr:"se lever", ph:"se le-vé", pa:"سو لوفي", ar:"ينوض", em:"⏰"},
+    {fr:"se laver", ph:"se la-vé", pa:"سو لافي", ar:"يغسل روحه", em:"🚿"},
+    {fr:"s'habiller", ph:"sa-bi-yé", pa:"سابييه", ar:"يلبس", em:"👗"},
+    {fr:"faire le ménage", ph:"fèr le mé-naj", pa:"فير لو ميناج", ar:"ينظّف الدار", em:"🧹"},
+    {fr:"faire la cuisine", ph:"fèr la kui-zin", pa:"فير لا كويزين", ar:"يطيّب", em:"👩‍🍳"},
+    {fr:"faire la vaisselle", ph:"la vè-sèl", pa:"لا فيسيل", ar:"يغسل الماعن", em:"🧽"},
+    {fr:"dormir", ph:"dor-mir", pa:"دورمير", ar:"يرقد", em:"😴"},
+    {fr:"se reposer", ph:"se re-po-zé", pa:"سو روپوزي", ar:"يرتاح", em:"🛋️"},
+    {fr:"le loyer", ph:"le lwa-yé", pa:"لو لوايي", ar:"الكراء", em:"💶"},
+    {fr:"le chauffage", ph:"le cho-faj", pa:"لو شوفاج", ar:"الشوفاج", em:"🔥"}
+  ],
+  dialogue:[
+    {q:"Qu'est-ce que tu fais le matin ?", qa:"واش تديري في الصباح؟", r:"Je me lève à sept heures, puis je prépare le petit-déjeuner.", ra:"ننوض على السبعة، ومن بعد نوجّد الفطور."},
+    {q:"Ton appartement est grand ?", qa:"الأبارتمو تاعك كبير؟", r:"Il y a deux chambres, une cuisine et un salon.", ra:"فيه زوج بيوت، كوزينة وصالون."},
+    {q:"Tu as besoin d'aide ?", qa:"محتاجة معاونة؟", r:"Oui, je dois faire la vaisselle et le ménage.", ra:"إيه، لازم نغسل الماعن ونظّف."}
+  ]
+},
+{
+  id:"nourriture", ico:"🍽️", niv:2,
+  t:{fr:"Manger & boire", ar:"الماكلة والشراب"},
+  d:{fr:"Au marché, au café, au restaurant.", ar:"في السوق، القهوة، والريستو."},
+  mots:[
+    {fr:"l'eau", ph:"lo", pa:"لو", ar:"الما", em:"💧"},
+    {fr:"le pain", ph:"le pin", pa:"لو پان", ar:"الخبز", em:"🍞"},
+    {fr:"le lait", ph:"le lè", pa:"لو لي", ar:"الحليب", em:"🥛"},
+    {fr:"le thé", ph:"le té", pa:"لو تي", ar:"الأتاي / الشاي", em:"🍵"},
+    {fr:"le café", ph:"le ka-fé", pa:"لو كافي", ar:"القهوة", em:"☕"},
+    {fr:"le sucre", ph:"le sukr", pa:"لو سوكر", ar:"السكر", em:"🍬"},
+    {fr:"le sel", ph:"le sèl", pa:"لو سيل", ar:"الملح", em:"🧂"},
+    {fr:"l'huile", ph:"luil", pa:"لويل", ar:"الزيت", em:"🫒"},
+    {fr:"le beurre", ph:"le beur", pa:"لو بور", ar:"الزبدة", em:"🧈"},
+    {fr:"le fromage", ph:"le fro-maj", pa:"لو فروماج", ar:"الفرماج", em:"🧀"},
+    {fr:"l'œuf", ph:"leuf", pa:"لوف", ar:"البيضة", em:"🥚"},
+    {fr:"la viande", ph:"la vyand", pa:"لا فيوند", ar:"اللحم", em:"🥩"},
+    {fr:"le poulet", ph:"le pou-lè", pa:"لو پولي", ar:"الدجاج", em:"🍗"},
+    {fr:"le poisson", ph:"le pwa-son", pa:"لو پواسون", ar:"الحوت", em:"🐟"},
+    {fr:"le riz", ph:"le ri", pa:"لو ري", ar:"الروز", em:"🍚"},
+    {fr:"les pâtes", ph:"lé pat", pa:"لي پات", ar:"المقرونة", em:"🍝"},
+    {fr:"la soupe", ph:"la soup", pa:"لا سوپ", ar:"الشوربة", em:"🍲"},
+    {fr:"les légumes", ph:"lé lé-gum", pa:"ليليغوم", ar:"الخضرة", em:"🥕"},
+    {fr:"la tomate", ph:"la to-mat", pa:"لا تومات", ar:"الطماطم", em:"🍅"},
+    {fr:"la pomme de terre", ph:"pom de tèr", pa:"پوم دو تير", ar:"البطاطا", em:"🥔"},
+    {fr:"les fruits", ph:"lé frui", pa:"لي فروي", ar:"الفاكية", em:"🍎"},
+    {fr:"la pomme", ph:"la pom", pa:"لا پوم", ar:"التفاحة", em:"🍏"},
+    {fr:"l'orange", ph:"lo-ranj", pa:"لورونج", ar:"التشينة", em:"🍊"},
+    {fr:"le petit-déjeuner", ph:"pe-ti dé-jeu-né", pa:"پوتي ديجوني", ar:"الفطور", em:"🌅"},
+    {fr:"le déjeuner", ph:"dé-jeu-né", pa:"ديجوني", ar:"الغدا", em:"🍛"},
+    {fr:"le dîner", ph:"di-né", pa:"ديني", ar:"العشا", em:"🌙"},
+    {fr:"J'ai faim", ph:"jé fin", pa:"جي فان", ar:"راني جيعانة", em:"😋"},
+    {fr:"J'ai soif", ph:"jé swaf", pa:"جي سواف", ar:"راني عطشانة", em:"🥵"},
+    {fr:"C'est délicieux", ph:"sè dé-li-syeu", pa:"سي ديليسيو", ar:"راه بنين", em:"😍"},
+    {fr:"Je voudrais…", ph:"je vou-drè", pa:"جو فودري", ar:"حبّيت… (بأدب)", em:"🙋"},
+    {fr:"L'addition, s'il vous plaît", ph:"la-di-syon", pa:"لاديسيون", ar:"الحساب من فضلك", em:"🧾"},
+    {fr:"la carte / le menu", ph:"la kart", pa:"لا كارت", ar:"المينو / الكارت", em:"📋"}
+  ],
+  dialogue:[
+    {q:"Bonjour, vous désirez ?", qa:"سلام، واش تحبي؟", r:"Bonjour, je voudrais un thé, s'il vous plaît.", ra:"سلام، حبّيت أتاي من فضلك."},
+    {q:"Avec du sucre ?", qa:"بالسكر؟", r:"Non merci, sans sucre. Et un croissant.", ra:"لا صحّيت، بلا سكر. وكرواسان."},
+    {q:"Voilà, bon appétit !", qa:"هاك، بالصحة والراحة!", r:"Merci. L'addition, s'il vous plaît.", ra:"صحّيت. الحساب من فضلك."}
+  ]
+},
+{
+  id:"courses", ico:"🛒", niv:2,
+  t:{fr:"Les courses & l'argent", ar:"القضيان والدراهم"},
+  d:{fr:"Acheter, payer, comprendre les prix.", ar:"تشري، تخلّص، وتفهمي الأثمنة."},
+  mots:[
+    {fr:"faire les courses", ph:"fèr lé kours", pa:"فير لي كورس", ar:"نروح نقضي", em:"🛒"},
+    {fr:"le supermarché", ph:"su-pèr-mar-ché", pa:"سوپيرمارشي", ar:"السوبرمارشي", em:"🏬"},
+    {fr:"le marché", ph:"le mar-ché", pa:"لو مارشي", ar:"السوق", em:"🧺"},
+    {fr:"la boulangerie", ph:"bou-lan-je-ri", pa:"بولونجري", ar:"الكوشة / البولانجري", em:"🥖"},
+    {fr:"la caisse", ph:"la kès", pa:"لا كيس", ar:"الكاس (بلاصة الخلاص)", em:"🧾"},
+    {fr:"l'argent", ph:"lar-jan", pa:"لارجون", ar:"الدراهم", em:"💰"},
+    {fr:"l'euro", ph:"leu-ro", pa:"لورو", ar:"اليورو", em:"💶"},
+    {fr:"la monnaie", ph:"la mo-nè", pa:"لا موني", ar:"الصرف", em:"🪙"},
+    {fr:"la carte bancaire", ph:"kart ban-kèr", pa:"كارت بونكير", ar:"الكارت البنكي", em:"💳"},
+    {fr:"payer", ph:"pè-yé", pa:"پييه", ar:"يخلّص", em:"💸"},
+    {fr:"acheter", ph:"ach-té", pa:"أشتي", ar:"يشري", em:"🛍️"},
+    {fr:"vendre", ph:"vandr", pa:"فوندر", ar:"يبيع", em:"🏷️"},
+    {fr:"cher", ph:"chèr", pa:"شير", ar:"غالي", em:"💎"},
+    {fr:"pas cher", ph:"pa chèr", pa:"پا شير", ar:"رخيص", em:"👍"},
+    {fr:"la promotion", ph:"pro-mo-syon", pa:"پروموسيون", ar:"البرومو", em:"🔖"},
+    {fr:"le ticket", ph:"le ti-kè", pa:"لو تيكي", ar:"التيكي", em:"🧾"},
+    {fr:"le sac plastique", ph:"sak plas-tik", pa:"ساك پلاستيك", ar:"ساشي بلاستيك", em:"🛍️"},
+    {fr:"un kilo", ph:"un ki-lo", pa:"آن كيلو", ar:"كيلو", em:"⚖️"},
+    {fr:"une bouteille", ph:"un bou-tèy", pa:"أون بوتاي", ar:"قرعة", em:"🍾"},
+    {fr:"Je voudrais un kilo de tomates", ph:"un ki-lo de to-mat", pa:"آن كيلو دو تومات", ar:"حبّيت كيلو طماطم", em:"🍅"},
+    {fr:"C'est combien ?", ph:"sè kon-byin", pa:"سي كومبيان", ar:"بشحال؟", em:"❓"},
+    {fr:"Vous avez la monnaie ?", ph:"la mo-nè", pa:"لا موني", ar:"عندك الصرف؟", em:"🪙"},
+    {fr:"Je paie par carte", ph:"je pè par kart", pa:"جو پي پار كارت", ar:"نخلّص بالكارت", em:"💳"},
+    {fr:"C'est tout, merci", ph:"sè tou", pa:"سي تو", ar:"هذا كامل، صحّيت", em:"✅"}
+  ],
+  dialogue:[
+    {q:"Bonjour, vous désirez autre chose ?", qa:"سلام، تحبي حاجة أخرى؟", r:"Oui, un kilo de pommes, s'il vous plaît.", ra:"إيه، كيلو تفاح من فضلك."},
+    {q:"Voilà. Ça fait douze euros.", qa:"هاك. الكل طناش يورو.", r:"Je paie par carte, c'est possible ?", ra:"نخلّص بالكارت، ينفع؟"},
+    {q:"Bien sûr. Voici votre ticket.", qa:"أكيد. هذا التيكي تاعك.", r:"Merci beaucoup, bonne journée !", ra:"صحّيت بزاف، نهار سعيد!"}
+  ]
+}
+];
+
+/* ============================================================
+   DONNÉES 2/2 — Suite des modules
+   ============================================================ */
+const MODULES_B = [
+{
+  id:"ville", ico:"🚌", niv:3,
+  t:{fr:"En ville & les transports", ar:"في المدينة والترانسبور"},
+  d:{fr:"Demander son chemin, prendre le bus ou le train.", ar:"تسقسي على الطريق، تاخذي البيس ولا التران."},
+  mots:[
+    {fr:"la ville", ph:"la vil", pa:"لا فيل", ar:"المدينة", em:"🏙️"},
+    {fr:"la rue", ph:"la ru", pa:"لا رو", ar:"الزنقة", em:"🛣️"},
+    {fr:"la place", ph:"la plas", pa:"لا پلاس", ar:"الساحة", em:"⛲"},
+    {fr:"le magasin", ph:"le ma-ga-zin", pa:"لو مagazan", ar:"الحانوت", em:"🏪"},
+    {fr:"la gare", ph:"la gar", pa:"لا غار", ar:"المحطة", em:"🚉"},
+    {fr:"l'arrêt de bus", ph:"la-rè de bus", pa:"لاري دو بوس", ar:"محطة البيس", em:"🚏"},
+    {fr:"le bus", ph:"le bus", pa:"لو بوس", ar:"البيس", em:"🚌"},
+    {fr:"le train", ph:"le trin", pa:"لو تران", ar:"التران", em:"🚆"},
+    {fr:"le tram", ph:"le tram", pa:"لو ترام", ar:"الترامواي", em:"🚊"},
+    {fr:"la voiture", ph:"la vwa-tur", pa:"لا فواتور", ar:"الطوموبيل", em:"🚗"},
+    {fr:"le vélo", ph:"le vé-lo", pa:"لو فيلو", ar:"البيسكليت", em:"🚲"},
+    {fr:"à pied", ph:"a pyé", pa:"آ پيي", ar:"بالرجلين", em:"🚶"},
+    {fr:"le billet", ph:"le bi-yè", pa:"لو بيي", ar:"التيكي", em:"🎫"},
+    {fr:"l'hôpital", ph:"lo-pi-tal", pa:"لوپيتال", ar:"السبيطار", em:"🏥"},
+    {fr:"l'école", ph:"lé-kol", pa:"ليكول", ar:"المدرسة", em:"🏫"},
+    {fr:"la mairie", ph:"la mè-ri", pa:"لا ميري", ar:"البلدية", em:"🏛️"},
+    {fr:"la poste", ph:"la post", pa:"لا پوست", ar:"البوسطة", em:"📮"},
+    {fr:"la banque", ph:"la bank", pa:"لا بونك", ar:"البنك", em:"🏦"},
+    {fr:"le parc", ph:"le park", pa:"لو پارك", ar:"الجاردان", em:"🌳"},
+    {fr:"la mosquée", ph:"la mos-ké", pa:"لا موسكي", ar:"الجامع", em:"🕌"},
+    {fr:"à gauche", ph:"a goch", pa:"آ غوش", ar:"على اليسار", em:"⬅️"},
+    {fr:"à droite", ph:"a drwat", pa:"آ دروات", ar:"على اليمين", em:"➡️"},
+    {fr:"tout droit", ph:"tou drwa", pa:"تو دروا", ar:"نيشان قدّام", em:"⬆️"},
+    {fr:"en face", ph:"an fas", pa:"أون فاس", ar:"قبالة", em:"↔️"},
+    {fr:"à côté de", ph:"a ko-té de", pa:"آ كوتي دو", ar:"حذا", em:"👥"},
+    {fr:"loin", ph:"lwin", pa:"لوان", ar:"بعيد", em:"📏"},
+    {fr:"près", ph:"prè", pa:"پري", ar:"قريب", em:"📍"},
+    {fr:"Où est… ?", ph:"ou è", pa:"أو إي", ar:"وين راه…؟", em:"❓"},
+    {fr:"Je suis perdue", ph:"je sui pèr-du", pa:"جو سوي پيردو", ar:"راني ضايعة", em:"🧭"},
+    {fr:"Pouvez-vous m'aider ?", ph:"pou-vé vou mè-dé", pa:"پوفي فو مييدي", ar:"تقدر تعاوني؟", em:"🆘"},
+    {fr:"C'est loin d'ici ?", ph:"sè lwin di-si", pa:"سي لوان ديسي", ar:"بعيد من هنا؟", em:"🤔"}
+  ],
+  dialogue:[
+    {q:"Excusez-moi, où est la gare, s'il vous plaît ?", qa:"سمح لي، وين راهي المحطة من فضلك؟", r:"Allez tout droit, puis tournez à gauche.", ra:"امشي نيشان، ومن بعد دور على اليسار."},
+    {q:"C'est loin d'ici ?", qa:"بعيدة من هنا؟", r:"Non, c'est à cinq minutes à pied.", ra:"لا، خمس دقايق بالرجلين."},
+    {q:"Merci beaucoup, madame !", qa:"صحّيت بزاف مدام!", r:"Je vous en prie, bonne journée !", ra:"بلا مزيّة، نهار سعيد!"}
+  ]
+},
+{
+  id:"travail", ico:"💼", niv:3,
+  t:{fr:"Le travail & l'école", ar:"الخدمة والقراية"},
+  d:{fr:"Les métiers, chercher un travail, les papiers.", ar:"الخدمات، تقلّبي على خدمة، والأوراق."},
+  mots:[
+    {fr:"le travail", ph:"le tra-vay", pa:"لو ترافاي", ar:"الخدمة", em:"💼"},
+    {fr:"travailler", ph:"tra-va-yé", pa:"ترافايي", ar:"يخدم", em:"🛠️"},
+    {fr:"le métier", ph:"le mé-tyé", pa:"لو ميتيي", ar:"المهنة", em:"👷"},
+    {fr:"le patron", ph:"le pa-tron", pa:"لو پاترون", ar:"الشيف", em:"👔"},
+    {fr:"le collègue", ph:"le ko-lèg", pa:"لو كوليغ", ar:"الزميل في الخدمة", em:"🤝"},
+    {fr:"le bureau", ph:"le bu-ro", pa:"لو بورو", ar:"البيرو", em:"🏢"},
+    {fr:"l'usine", ph:"lu-zin", pa:"لوزين", ar:"المعمل", em:"🏭"},
+    {fr:"le salaire", ph:"le sa-lèr", pa:"لو سالير", ar:"الخلاص / الصالير", em:"💶"},
+    {fr:"le contrat", ph:"le kon-tra", pa:"لو كونترا", ar:"الكونترا", em:"📄"},
+    {fr:"le CV", ph:"le sé-vé", pa:"لو سي في", ar:"السي في", em:"📑"},
+    {fr:"l'entretien", ph:"lan-tre-tyin", pa:"لونترتيان", ar:"المقابلة", em:"🗣️"},
+    {fr:"chercher un travail", ph:"chèr-ché", pa:"شيرشي", ar:"يقلّب على خدمة", em:"🔍"},
+    {fr:"le médecin", ph:"méd-sin", pa:"ميدسان", ar:"طبيب", em:"👨‍⚕️"},
+    {fr:"l'infirmière", ph:"lin-fir-myèr", pa:"لانفيرميير", ar:"ممرضة", em:"👩‍⚕️"},
+    {fr:"le professeur", ph:"pro-fè-seur", pa:"پروفيسور", ar:"الأستاذ", em:"👨‍🏫"},
+    {fr:"le cuisinier", ph:"kui-zi-nyé", pa:"كويزينيي", ar:"طيّاب", em:"👨‍🍳"},
+    {fr:"le chauffeur", ph:"le cho-feur", pa:"لو شوفور", ar:"الشوفور", em:"🚕"},
+    {fr:"la coiffeuse", ph:"la kwa-feuz", pa:"لا كوافوز", ar:"الكوافيرة", em:"💇‍♀️"},
+    {fr:"la femme de ménage", ph:"fam de mé-naj", pa:"فام دو ميناج", ar:"خدّامة النظافة", em:"🧹"},
+    {fr:"l'étudiante", ph:"lé-tu-dyant", pa:"ليتودييونت", ar:"طالبة", em:"🎓"},
+    {fr:"apprendre", ph:"a-prandr", pa:"أپروندر", ar:"يتعلّم", em:"📚"},
+    {fr:"étudier", ph:"é-tu-dyé", pa:"إتوديي", ar:"يقرا", em:"✏️"},
+    {fr:"le cours", ph:"le kour", pa:"لو كور", ar:"الدرس", em:"🧑‍🏫"},
+    {fr:"les papiers", ph:"lé pa-pyé", pa:"لي پاپيي", ar:"الأوراق / الوثائق", em:"🗂️"},
+    {fr:"le rendez-vous", ph:"ran-dé vou", pa:"رونديفو", ar:"الموعد / الرونديفو", em:"📅"},
+    {fr:"Je cherche du travail", ph:"je chèrch du tra-vay", pa:"جو شيرش دو ترافاي", ar:"راني نقلّب على خدمة", em:"🙋‍♀️"},
+    {fr:"Je suis disponible", ph:"dis-po-nibl", pa:"ديسپونيبل", ar:"راني متفرّغة", em:"✅"}
+  ],
+  dialogue:[
+    {q:"Bonjour, vous cherchez du travail ?", qa:"سلام، راكي تقلّبي على خدمة؟", r:"Oui, j'ai apporté mon CV.", ra:"إيه، جبت السي في تاعي."},
+    {q:"Quelle est votre expérience ?", qa:"واش من تجربة عندك؟", r:"J'ai travaillé trois ans dans un restaurant.", ra:"خدمت تلات سنين في ريستو."},
+    {q:"Vous êtes disponible quand ?", qa:"وقتاش تكوني متفرّغة؟", r:"Je suis disponible tout de suite.", ra:"راني متفرّغة دروك."}
+  ]
+},
+{
+  id:"temps", ico:"🌦️", niv:3,
+  t:{fr:"Jours, mois & météo", ar:"الأيام والشهور والجو"},
+  d:{fr:"Les jours, les saisons, le temps qu'il fait.", ar:"الأيام، الفصول، وكيفاش راه الجو."},
+  mots:[
+    {fr:"lundi", ph:"lun-di", pa:"لاندي", ar:"نهار الإثنين", em:"1️⃣"},
+    {fr:"mardi", ph:"mar-di", pa:"ماردي", ar:"نهار الثلاثاء", em:"2️⃣"},
+    {fr:"mercredi", ph:"mèr-kre-di", pa:"ميركرودي", ar:"نهار الأربعاء", em:"3️⃣"},
+    {fr:"jeudi", ph:"jeu-di", pa:"جودي", ar:"نهار الخميس", em:"4️⃣"},
+    {fr:"vendredi", ph:"van-dre-di", pa:"فوندرودي", ar:"نهار الجمعة", em:"5️⃣"},
+    {fr:"samedi", ph:"sam-di", pa:"سامدي", ar:"نهار السبت", em:"6️⃣"},
+    {fr:"dimanche", ph:"di-manch", pa:"ديمونش", ar:"نهار الأحد", em:"7️⃣"},
+    {fr:"janvier", ph:"jan-vyé", pa:"جونفيي", ar:"جانفي", em:"❄️"},
+    {fr:"février", ph:"fé-vryé", pa:"فيفريي", ar:"فيفري", em:"🌬️"},
+    {fr:"mars", ph:"mars", pa:"مارس", ar:"مارس", em:"🌱"},
+    {fr:"avril", ph:"a-vril", pa:"أفريل", ar:"أفريل", em:"🌷"},
+    {fr:"mai", ph:"mè", pa:"مي", ar:"ماي", em:"🌸"},
+    {fr:"juin", ph:"juin", pa:"جوان", ar:"جوان", em:"☀️"},
+    {fr:"juillet", ph:"jui-yè", pa:"جويي", ar:"جويلية", em:"🏖️"},
+    {fr:"août", ph:"out", pa:"أوت", ar:"أوت", em:"🌻"},
+    {fr:"septembre", ph:"sèp-tanbr", pa:"سيپتونبر", ar:"سبتمبر", em:"🍂"},
+    {fr:"octobre", ph:"ok-tobr", pa:"أوكتوبر", ar:"أكتوبر", em:"🎃"},
+    {fr:"novembre", ph:"no-vanbr", pa:"نوفونبر", ar:"نوفمبر", em:"🌧️"},
+    {fr:"décembre", ph:"dé-sanbr", pa:"ديسونبر", ar:"ديسمبر", em:"⛄"},
+    {fr:"le matin", ph:"le ma-tin", pa:"لو ماتان", ar:"الصباح", em:"🌅"},
+    {fr:"l'après-midi", ph:"la-prè mi-di", pa:"لاپري ميدي", ar:"بعد الظهر", em:"🌤️"},
+    {fr:"le soir", ph:"le swar", pa:"لو سوار", ar:"العشية", em:"🌆"},
+    {fr:"la nuit", ph:"la nui", pa:"لا نوي", ar:"الليل", em:"🌃"},
+    {fr:"aujourd'hui", ph:"o-jour-dui", pa:"أوجوردوي", ar:"اليوم", em:"📅"},
+    {fr:"hier", ph:"yèr", pa:"يير", ar:"البارح", em:"⏪"},
+    {fr:"demain", ph:"de-min", pa:"دومان", ar:"غدوة", em:"⏩"},
+    {fr:"la semaine", ph:"la se-mèn", pa:"لا سومين", ar:"السيمانة", em:"🗓️"},
+    {fr:"Il fait beau", ph:"il fè bo", pa:"إيل في بو", ar:"الجو صافي", em:"☀️"},
+    {fr:"Il pleut", ph:"il pleu", pa:"إيل پلو", ar:"راهي تصبّ الشتا", em:"🌧️"},
+    {fr:"Il neige", ph:"il nèj", pa:"إيل نيج", ar:"راهي تطيّح الثلج", em:"❄️"},
+    {fr:"Il fait froid", ph:"il fè frwa", pa:"إيل في فروا", ar:"الجو بارد", em:"🥶"},
+    {fr:"Il fait chaud", ph:"il fè cho", pa:"إيل في شو", ar:"الجو سخون", em:"🔥"},
+    {fr:"le vent", ph:"le van", pa:"لو فون", ar:"الريح", em:"💨"}
+  ],
+  dialogue:[
+    {q:"On est quel jour aujourd'hui ?", qa:"واش من نهار اليوم؟", r:"Aujourd'hui, on est mercredi.", ra:"اليوم نهار الأربعاء."},
+    {q:"Quel temps fait-il dehors ?", qa:"كيفاش الجو برّا؟", r:"Il pleut un peu, mais il ne fait pas froid.", ra:"راهي تصبّ شويّة، بصح الجو ماشي بارد."},
+    {q:"Tu es libre samedi ?", qa:"راكي متفرّغة نهار السبت؟", r:"Oui, samedi matin je suis libre.", ra:"إيه، صباح السبت راني متفرّغة."}
+  ]
+},
+{
+  id:"sentiments", ico:"💖", niv:3,
+  t:{fr:"Sentiments & amour", ar:"المشاعر والحب"},
+  d:{fr:"Dire ce que tu ressens, et dire je t'aime.", ar:"تقولي واش راكي حاسة، وتقولي نحبك."},
+  mots:[
+    {fr:"heureuse", ph:"eu-reuz", pa:"أوروز", ar:"فرحانة", em:"😄"},
+    {fr:"triste", ph:"trist", pa:"تريست", ar:"محزونة", em:"😢"},
+    {fr:"fatiguée", ph:"fa-ti-gé", pa:"فاتيغي", ar:"عيّانة", em:"🥱"},
+    {fr:"contente", ph:"kon-tant", pa:"كونتونت", ar:"مبسوطة", em:"🙂"},
+    {fr:"en colère", ph:"an ko-lèr", pa:"أون كولير", ar:"متعصّبة", em:"😠"},
+    {fr:"inquiète", ph:"in-kyèt", pa:"انكييت", ar:"قلقانة", em:"😟"},
+    {fr:"J'ai peur", ph:"jé peur", pa:"جي پور", ar:"راني خايفة", em:"😰"},
+    {fr:"Je suis calme", ph:"je sui kalm", pa:"جو سوي كالم", ar:"راني مرتاحة", em:"😌"},
+    {fr:"Je t'aime", ph:"je tèm", pa:"جو تيم", ar:"نحبك", em:"❤️"},
+    {fr:"Tu me manques", ph:"tu me mank", pa:"تو مو مونك", ar:"وحشتيني", em:"🥺"},
+    {fr:"Je pense à toi", ph:"je pans a twa", pa:"جو پونس آ توا", ar:"نفكر فيك", em:"💭"},
+    {fr:"Tu es belle", ph:"tu è bèl", pa:"تو إي بيل", ar:"راكي شبابة", em:"🌹"},
+    {fr:"mon amour", ph:"mo na-mour", pa:"مونامور", ar:"حبيبتي", em:"💞"},
+    {fr:"ma chérie", ph:"ma ché-ri", pa:"ما شيري", ar:"عزيزتي", em:"💝"},
+    {fr:"Je suis fier de toi", ph:"fyèr de twa", pa:"فيير دو توا", ar:"راني فخور بيك", em:"🏆"},
+    {fr:"Courage !", ph:"kou-raj", pa:"كوراج", ar:"شدّي! / صبري!", em:"💪"},
+    {fr:"Je suis là pour toi", ph:"je sui la pour twa", pa:"جو سوي لا پور توا", ar:"راني هنا عليك", em:"🤗"},
+    {fr:"Ne t'inquiète pas", ph:"ne tin-kyèt pa", pa:"نو تانكييت پا", ar:"ماتقلقيش", em:"🫶"},
+    {fr:"Je suis désolée", ph:"dé-zo-lé", pa:"ديزولي", ar:"راني آسفة", em:"😔"},
+    {fr:"Ça me fait plaisir", ph:"sa me fè plè-zir", pa:"سا مو في پليزير", ar:"هذا يفرّحني", em:"😊"},
+    {fr:"J'aime beaucoup", ph:"jèm bo-kou", pa:"جيم بوكو", ar:"نحب بزاف", em:"💗"},
+    {fr:"Je n'aime pas", ph:"je nèm pa", pa:"جو نيم پا", ar:"ماناش نحب", em:"🙅‍♀️"},
+    {fr:"Félicitations !", ph:"fé-li-si-ta-syon", pa:"فيليسيتاسيون", ar:"مبروك!", em:"🎉"},
+    {fr:"le sourire", ph:"le sou-rir", pa:"لو سورير", ar:"الضحكة", em:"😊"},
+    {fr:"le bonheur", ph:"le bo-neur", pa:"لو بونور", ar:"الفرحة", em:"🌟"}
+  ],
+  dialogue:[
+    {q:"Comment tu te sens aujourd'hui ?", qa:"كيفاش راكي حاسة اليوم؟", r:"Je suis un peu fatiguée, mais je suis heureuse.", ra:"راني عيّانة شويّة، بصح فرحانة."},
+    {q:"Pourquoi tu es heureuse ?", qa:"علاش راكي فرحانة؟", r:"Parce que j'apprends le français et je pense à toi.", ra:"حيت راني نتعلّم الفرنسية ونفكر فيك."},
+    {q:"Je suis fier de toi, mon amour.", qa:"راني فخور بيك يا حبيبتي.", r:"Merci. Je t'aime aussi.", ra:"صحّيت. وأنا تاني نحبك."}
+  ]
+},
+{
+  id:"telephone", ico:"📱", niv:4,
+  t:{fr:"Téléphone & internet", ar:"التيليفون والأنترنت"},
+  d:{fr:"Appeler, écrire un message, utiliser internet.", ar:"تعيّطي، تكتبي مساج، وتستعملي الأنترنت."},
+  mots:[
+    {fr:"le téléphone", ph:"té-lé-fon", pa:"تيليفون", ar:"التيليفون", em:"📞"},
+    {fr:"le portable", ph:"por-tabl", pa:"پورتابل", ar:"البورطابل", em:"📱"},
+    {fr:"appeler", ph:"a-plé", pa:"أپلي", ar:"يعيّط", em:"☎️"},
+    {fr:"répondre", ph:"ré-pondr", pa:"ريپوندر", ar:"يجاوب", em:"🗣️"},
+    {fr:"Allô ?", ph:"a-lo", pa:"ألو", ar:"ألو؟", em:"👋"},
+    {fr:"Qui est à l'appareil ?", ph:"ki è ta la-pa-rèy", pa:"كي إتا لاپاري", ar:"شكون معايا؟", em:"❓"},
+    {fr:"Ne quittez pas", ph:"ne ki-té pa", pa:"نو كيتي پا", ar:"ماتقطعش", em:"⏳"},
+    {fr:"le message", ph:"le mè-saj", pa:"لو ميساج", ar:"المساج", em:"💬"},
+    {fr:"envoyer", ph:"an-vwa-yé", pa:"أونفوايي", ar:"يصيفط", em:"📤"},
+    {fr:"recevoir", ph:"re-se-vwar", pa:"روسوفوار", ar:"يوصله", em:"📥"},
+    {fr:"l'internet", ph:"lin-tèr-nèt", pa:"لانتيرنيت", ar:"الأنترنت", em:"🌐"},
+    {fr:"le wifi", ph:"le wi-fi", pa:"لو ويفي", ar:"الويفي", em:"📶"},
+    {fr:"le mot de passe", ph:"mo de pas", pa:"مو دو پاس", ar:"كلمة السر", em:"🔐"},
+    {fr:"l'ordinateur", ph:"lor-di-na-teur", pa:"لورديناتور", ar:"الأورديناتور", em:"💻"},
+    {fr:"la photo", ph:"la fo-to", pa:"لا فوتو", ar:"التصويرة", em:"📸"},
+    {fr:"la vidéo", ph:"la vi-dé-o", pa:"لا فيديو", ar:"الفيديو", em:"🎬"},
+    {fr:"l'application", ph:"la-pli-ka-syon", pa:"لاپليكاسيون", ar:"الأبليكاسيون", em:"📲"},
+    {fr:"la batterie", ph:"la ba-tri", pa:"لا باتري", ar:"البطري", em:"🔋"},
+    {fr:"charger", ph:"char-jé", pa:"شارجي", ar:"يشارجي", em:"🔌"},
+    {fr:"Ça ne marche pas", ph:"sa ne march pa", pa:"سا نو مارش پا", ar:"ماراهش يخدم", em:"⚠️"},
+    {fr:"Je te rappelle", ph:"je te ra-pèl", pa:"جو تو راپيل", ar:"نعاود نعيّطلك", em:"🔁"},
+    {fr:"le numéro", ph:"le nu-mé-ro", pa:"لو نوميرو", ar:"النمرة", em:"🔢"}
+  ],
+  dialogue:[
+    {q:"Allô, bonjour, qui est à l'appareil ?", qa:"ألو، سلام، شكون معايا؟", r:"Bonjour, c'est Halima. Je voudrais un rendez-vous.", ra:"سلام، أنا حليمة. حبّيت رونديفو."},
+    {q:"Bien sûr. Jeudi à dix heures, ça va ?", qa:"أكيد. نهار الخميس على العشرة، يجيك؟", r:"Oui, c'est parfait. Merci beaucoup.", ra:"إيه، مليح بزاف. صحّيت."},
+    {q:"Je vous envoie un message de confirmation.", qa:"نصيفطلك مساج تأكيد.", r:"D'accord, au revoir madame.", ra:"صافي، بسلامة مدام."}
+  ]
+},
+{
+  id:"urgence", ico:"🆘", niv:4,
+  t:{fr:"Urgences & administration", ar:"الأورجونس والإدارة"},
+  d:{fr:"Les mots qui sauvent : police, papiers, aide.", ar:"كلمات تنقذك: البوليس، الأوراق، المعاونة."},
+  mots:[
+    {fr:"Au secours !", ph:"o se-kour", pa:"أو سوكور", ar:"عاونوني!", em:"🆘"},
+    {fr:"Attention !", ph:"a-tan-syon", pa:"أتونسيون", ar:"رد بالك!", em:"⚠️"},
+    {fr:"l'urgence", ph:"lur-jans", pa:"لورجونس", ar:"الأورجونس", em:"🚨"},
+    {fr:"la police", ph:"la po-lis", pa:"لا پوليس", ar:"البوليس", em:"👮"},
+    {fr:"les pompiers", ph:"lé pon-pyé", pa:"لي پومپيي", ar:"البومبيي", em:"🚒"},
+    {fr:"l'ambulance", ph:"lan-bu-lans", pa:"لومبولونس", ar:"سيارة الإسعاف", em:"🚑"},
+    {fr:"un accident", ph:"un ak-si-dan", pa:"آن أكسيدون", ar:"أكسيدو", em:"💥"},
+    {fr:"le feu", ph:"le feu", pa:"لو فو", ar:"العافية / الحريقة", em:"🔥"},
+    {fr:"le voleur", ph:"le vo-leur", pa:"لو فولور", ar:"الشفّار", em:"🥷"},
+    {fr:"J'ai perdu mes papiers", ph:"pèr-du mé pa-pyé", pa:"پيردو مي پاپيي", ar:"ضيّعت أوراقي", em:"📄"},
+    {fr:"la carte d'identité", ph:"kart di-dan-ti-té", pa:"كارت ديدونتيتي", ar:"كارط ديدونتيتي", em:"🪪"},
+    {fr:"le passeport", ph:"le pas-por", pa:"لو پاسپور", ar:"الباسبور", em:"🛂"},
+    {fr:"le formulaire", ph:"for-mu-lèr", pa:"فورمولير", ar:"الإستيمارة", em:"📝"},
+    {fr:"signer", ph:"si-nyé", pa:"سينيي", ar:"يمضي", em:"✍️"},
+    {fr:"le guichet", ph:"le gi-chè", pa:"لو غيشي", ar:"الڤيشي", em:"🪟"},
+    {fr:"remplir", ph:"ran-plir", pa:"رونپلير", ar:"يعمّر", em:"🖊️"},
+    {fr:"la date de naissance", ph:"dat de nè-sans", pa:"دات دو نيسونس", ar:"تاريخ الميلاد", em:"🎂"},
+    {fr:"le dossier", ph:"le do-syé", pa:"لو دوسييه", ar:"الدوسي", em:"🗃️"},
+    {fr:"Appelez la police !", ph:"a-plé la po-lis", pa:"أپلي لا پوليس", ar:"عيّط للبوليس!", em:"📞"},
+    {fr:"J'ai besoin d'aide", ph:"be-zwin dèd", pa:"بوزوان ديد", ar:"راني محتاجة معاونة", em:"🙏"},
+    {fr:"C'est urgent", ph:"sè tur-jan", pa:"سيتورجون", ar:"راه مستعجل", em:"⏰"},
+    {fr:"Je ne parle pas bien français", ph:"je ne parl pa byin", pa:"جو نو پارل پا بيان", ar:"ماناش نهدر مليح بالفرنسية", em:"🗣️"}
+  ],
+  dialogue:[
+    {q:"Bonjour, quel est votre problème ?", qa:"سلام، واش بيك؟", r:"J'ai perdu mes papiers, c'est urgent.", ra:"ضيّعت أوراقي، راه مستعجل."},
+    {q:"Vous avez une pièce d'identité ?", qa:"معاك وثيقة هوية؟", r:"J'ai seulement mon passeport.", ra:"معايا غير الباسبور تاعي."},
+    {q:"D'accord, remplissez ce formulaire.", qa:"صافي، عمّري هاذ الإستيمارة.", r:"Pouvez-vous m'aider ? Je ne parle pas bien français.", ra:"تقدر تعاوني؟ ماناش نهدر مليح بالفرنسية."}
+  ]
+},
+{
+  id:"verbes", ico:"🏃", niv:4,
+  t:{fr:"Les 30 verbes essentiels", ar:"٣٠ فعل ضروري"},
+  d:{fr:"Avec ces verbes, tu peux tout dire.", ar:"بهاذ الأفعال تقدري تقولي كل شي."},
+  mots:[
+    {fr:"être", ph:"ètr", pa:"إتر", ar:"يكون", em:"🧍"},
+    {fr:"avoir", ph:"a-vwar", pa:"أفوار", ar:"عنده", em:"🤲"},
+    {fr:"aller", ph:"a-lé", pa:"ألي", ar:"يروح", em:"🚶"},
+    {fr:"faire", ph:"fèr", pa:"فير", ar:"يدير", em:"🛠️"},
+    {fr:"dire", ph:"dir", pa:"دير", ar:"يقول", em:"💬"},
+    {fr:"pouvoir", ph:"pou-vwar", pa:"پوفوار", ar:"يقدر", em:"💪"},
+    {fr:"vouloir", ph:"vou-lwar", pa:"فولوار", ar:"يحب / يبغي", em:"🙋"},
+    {fr:"devoir", ph:"de-vwar", pa:"دوفوار", ar:"لازم عليه", em:"📌"},
+    {fr:"savoir", ph:"sa-vwar", pa:"سافوار", ar:"يعرف", em:"🧠"},
+    {fr:"venir", ph:"ve-nir", pa:"فونير", ar:"يجي", em:"➡️"},
+    {fr:"prendre", ph:"prandr", pa:"پروندر", ar:"ياخذ", em:"✋"},
+    {fr:"donner", ph:"do-né", pa:"دوني", ar:"يعطي", em:"🎁"},
+    {fr:"parler", ph:"par-lé", pa:"پارلي", ar:"يهدر", em:"🗣️"},
+    {fr:"aimer", ph:"è-mé", pa:"إيمي", ar:"يحب", em:"❤️"},
+    {fr:"manger", ph:"man-jé", pa:"مونجي", ar:"ياكل", em:"🍽️"},
+    {fr:"boire", ph:"bwar", pa:"بوار", ar:"يشرب", em:"🥤"},
+    {fr:"dormir", ph:"dor-mir", pa:"دورمير", ar:"يرقد", em:"😴"},
+    {fr:"voir", ph:"vwar", pa:"فوار", ar:"يشوف", em:"👀"},
+    {fr:"entendre", ph:"an-tandr", pa:"أونتوندر", ar:"يسمع", em:"👂"},
+    {fr:"comprendre", ph:"kon-prandr", pa:"كومپروندر", ar:"يفهم", em:"💡"},
+    {fr:"attendre", ph:"a-tandr", pa:"أتوندر", ar:"يستنى", em:"⏳"},
+    {fr:"chercher", ph:"chèr-ché", pa:"شيرشي", ar:"يقلّب", em:"🔍"},
+    {fr:"trouver", ph:"trou-vé", pa:"تروفي", ar:"يلقى", em:"🎯"},
+    {fr:"acheter", ph:"ach-té", pa:"أشتي", ar:"يشري", em:"🛒"},
+    {fr:"payer", ph:"pè-yé", pa:"پييه", ar:"يخلّص", em:"💶"},
+    {fr:"ouvrir", ph:"ou-vrir", pa:"أوفرير", ar:"يحل", em:"🚪"},
+    {fr:"fermer", ph:"fèr-mé", pa:"فيرمي", ar:"يغلق / يسكّر", em:"🔒"},
+    {fr:"partir", ph:"par-tir", pa:"پارتير", ar:"يمشي", em:"👋"},
+    {fr:"rester", ph:"rès-té", pa:"ريستي", ar:"يبقى", em:"🪑"},
+    {fr:"aider", ph:"è-dé", pa:"إيدي", ar:"يعاون", em:"🤝"},
+    {fr:"travailler", ph:"tra-va-yé", pa:"ترافايي", ar:"يخدم", em:"💼"},
+    {fr:"apprendre", ph:"a-prandr", pa:"أپروندر", ar:"يتعلّم", em:"📚"}
+  ],
+  dialogue:[
+    {q:"Qu'est-ce que tu veux faire aujourd'hui ?", qa:"واش تحبي ديري اليوم؟", r:"Je veux apprendre et je dois travailler.", ra:"حبّيت نتعلّم ولازم نخدم."},
+    {q:"Tu peux venir avec moi ?", qa:"تقدري تجي معايا؟", r:"Oui, je peux, mais je dois partir à cinq heures.", ra:"إيه نقدر، بصح لازم نمشي على الخمسة."},
+    {q:"Tu comprends ce que je dis ?", qa:"راكي تفهمي واش نقول؟", r:"Je comprends un peu. Parle lentement, s'il te plaît.", ra:"نفهم شويّة. هدر بشويّة من فضلك."}
+  ]
+},
+{
+  id:"expressions", ico:"💬", niv:4,
+  t:{fr:"Expressions de tous les jours", ar:"كلام كل نهار"},
+  d:{fr:"Ce que les Français disent vraiment.", ar:"واش يقولو الفرنسيين بالصح."},
+  mots:[
+    {fr:"Ça marche !", ph:"sa march", pa:"سا مارش", ar:"صافي! / ماشي", em:"👌"},
+    {fr:"Pas de problème", ph:"pa de pro-blèm", pa:"پا دو پروبليم", ar:"ماكاش مشكل", em:"😎"},
+    {fr:"C'est pas grave", ph:"sè pa grav", pa:"سي پا غراف", ar:"ماشي مشكل", em:"🤷"},
+    {fr:"Bien sûr", ph:"byin sur", pa:"بيان سور", ar:"أكيد", em:"✅"},
+    {fr:"Tant pis", ph:"tan pi", pa:"تون پي", ar:"معليش", em:"😕"},
+    {fr:"Tant mieux", ph:"tan myeu", pa:"تون ميو", ar:"أحسن", em:"😀"},
+    {fr:"Ça dépend", ph:"sa dé-pan", pa:"سا ديپون", ar:"على حساب", em:"⚖️"},
+    {fr:"Je sais pas", ph:"je sè pa", pa:"جو سي پا", ar:"مانعرفش", em:"🤔"},
+    {fr:"Attends une minute", ph:"a-tan zun mi-nut", pa:"أتون أون مينوت", ar:"استنى دقيقة", em:"⏱️"},
+    {fr:"Dépêche-toi", ph:"dé-pèch twa", pa:"ديپيش توا", ar:"زرب", em:"🏃"},
+    {fr:"Doucement", ph:"dous-man", pa:"دوسمون", ar:"بشويّة", em:"🐢"},
+    {fr:"Voilà !", ph:"vwa-la", pa:"فوالا", ar:"هاهو!", em:"🎯"},
+    {fr:"C'est bon", ph:"sè bon", pa:"سي بون", ar:"مليح / صافي", em:"👍"},
+    {fr:"Ça suffit", ph:"sa su-fi", pa:"سا سوفي", ar:"يكفي / برّاكا", em:"✋"},
+    {fr:"Je n'ai pas le temps", ph:"pa le tan", pa:"پا لو تون", ar:"ماعنديش الوقت", em:"⌛"},
+    {fr:"Ça m'est égal", ph:"sa mè té-gal", pa:"سا ميتيغال", ar:"كيف كيف عندي", em:"😐"},
+    {fr:"Quelle chance !", ph:"kèl chans", pa:"كيل شونس", ar:"يا الزهر!", em:"🍀"},
+    {fr:"Comme ci comme ça", ph:"kom si kom sa", pa:"كوم سي كوم سا", ar:"نص نص", em:"🤏"},
+    {fr:"Tout de suite", ph:"tou de suit", pa:"توت سويت", ar:"دروك", em:"⚡"},
+    {fr:"Petit à petit", ph:"pe-ti ta pe-ti", pa:"پوتي تا پوتي", ar:"شويّة بشويّة", em:"🐜"},
+    {fr:"Ça vaut le coup", ph:"sa vo le kou", pa:"سا فو لو كو", ar:"يستاهل", em:"💎"},
+    {fr:"N'importe quoi !", ph:"nin-port kwa", pa:"نانپورت كوا", ar:"هدرة خاوية!", em:"🙄"},
+    {fr:"On y va !", ph:"o ni va", pa:"أوني فا", ar:"يالله نروحو!", em:"🚀"},
+    {fr:"Bon courage", ph:"bon kou-raj", pa:"بون كوراج", ar:"ربي يعاونك", em:"💪"}
+  ],
+  dialogue:[
+    {q:"On se voit demain à midi ?", qa:"نتلاقاو غدوة على الظهر؟", r:"Ça marche ! À demain.", ra:"صافي! نتلاقاو غدوة."},
+    {q:"Désolé, je suis en retard.", qa:"سامحني، راني معطّل.", r:"C'est pas grave, pas de problème.", ra:"ماشي مشكل، ماكاش مشكل."},
+    {q:"Le français, c'est difficile pour toi ?", qa:"الفرنسية صعيبة عليك؟", r:"Comme ci comme ça. J'apprends petit à petit.", ra:"نص نص. راني نتعلّم شويّة بشويّة."}
+  ]
+}
+];
+
+const MODULES = MODULES_A.concat(MODULES_B);
+
+/* ============================================================
+   DONNÉES 3 — Alphabet, sons, grammaire (bilingue), badges, phrases
+   ============================================================ */
+const ALPHABET = [
+  ["A","a","آ","Ami"],["B","bé","بي","Bonjour"],["C","cé","سي","Café"],["D","dé","دي","Deux"],
+  ["E","e","أو","Elle"],["F","èf","إف","Famille"],["G","jé","جي","Gare"],["H","ach","آش","Hôtel (muet)"],
+  ["I","i","إي","Ici"],["J","ji","جي","Jour"],["K","ka","كا","Kilo"],["L","èl","إل","Lune"],
+  ["M","èm","إم","Maman"],["N","èn","إن","Non"],["O","o","أو","Orange"],["P","pé","پي","Papa"],
+  ["Q","ku","كو","Quatre"],["R","èr","إر","Rue"],["S","ès","إس","Soleil"],["T","té","تي","Table"],
+  ["U","u","أو","Une"],["V","vé","في","Ville"],["W","double vé","دوبل في","Wagon"],["X","iks","إكس","Taxi"],
+  ["Y","i grec","إي غريك","Yeux"],["Z","zèd","زيد","Zéro"]
+];
+
+const SONS = [
+  {s:"OU", ex:"bonjour, vous, amour", pa:"او", fr:"Se prononce « ou », bouche en rond.", ar:"يتقرا « أو » وتدوّري شفايفك.", em:"👄"},
+  {s:"OI", ex:"moi, toi, boire", pa:"وا", fr:"Se prononce « wa ».", ar:"يتقرا « وا ».", em:"🌀"},
+  {s:"AN / EN", ex:"maman, enfant, comment", pa:"أون", fr:"Son nasal : l'air passe par le nez.", ar:"صوت من النيف: الهوا يخرج من النيف.", em:"👃"},
+  {s:"ON", ex:"bonjour, maison, non", pa:"أون", fr:"Nasal aussi, bouche plus fermée.", ar:"تاني من النيف، الفم مسكّر كثر.", em:"👃"},
+  {s:"IN / AIN", ex:"pain, matin, main", pa:"آن", fr:"Nasal, avec un léger sourire.", ar:"من النيف، مع ضحكة خفيفة.", em:"😁"},
+  {s:"É", ex:"café, été, parlé", pa:"إي", fr:"Bouche souriante, son court.", ar:"الفم يضحك، وصوت قصير.", em:"🙂"},
+  {s:"È / AI", ex:"mère, lait, très", pa:"إيه", fr:"Bouche plus ouverte que é.", ar:"الفم محلول كثر من é.", em:"😮"},
+  {s:"U", ex:"tu, rue, une", pa:"أو (مدوّرة)", fr:"Dis « i » mais avec les lèvres en rond.", ar:"قولي « إي » بصح دوّري شفايفك.", em:"😗"},
+  {s:"EU", ex:"deux, peur, heureux", pa:"أو", fr:"Entre « e » et « eu ».", ar:"بين « أُ » و« أو ».", em:"😐"},
+  {s:"CH", ex:"chat, chambre, chaud", pa:"ش", fr:"Comme le « ش » arabe.", ar:"كيما « ش » تاعنا نيشان.", em:"🤫"},
+  {s:"J / GE", ex:"jour, jeudi, manger", pa:"ج", fr:"Comme le « ج » égyptien doux.", ar:"كيما « ج » الناعمة.", em:"🗣️"},
+  {s:"GN", ex:"montagne, ligne", pa:"ني", fr:"Comme « ñ » espagnol.", ar:"كيما « ني » مربوطة.", em:"⛰️"},
+  {s:"ILL", ex:"famille, fille, travailler", pa:"يي", fr:"Se dit « iy ».", ar:"تتقرا « يي ».", em:"🗣️"},
+  {s:"R", ex:"rue, Paris, merci", pa:"غ", fr:"R français = du fond de la gorge, comme « غ ».", ar:"الرا الفرنسية تخرج من الحلق، تشبه « غ ».", em:"🎯"},
+  {s:"P / B", ex:"papa, bébé, pain", pa:"پ / ب", fr:"Attention : P et B sont différents !", ar:"ردي بالك: P و B ماشي كيف كيف! (پ و ب)", em:"⚠️"},
+  {s:"V / F", ex:"vous, ville, faim", pa:"ڤ / ف", fr:"V vibre, F non.", ar:"V فيها صوت (ڤ)، F بلا صوت (ف).", em:"🔊"}
+];
+
+const GRAMMAIRE = [
+{
+  t:{fr:"1. Le / La / Les — les articles", ar:"١. أدوات التعريف: Le / La / Les"},
+  c:{fr:`<p>En français, chaque nom est <b>masculin</b> ou <b>féminin</b>. Il faut apprendre le mot <b>avec son article</b>.</p>
+    <table><tr><th>Masculin</th><th>Féminin</th><th>Pluriel</th></tr>
+    <tr><td><b>le</b> livre</td><td><b>la</b> table</td><td><b>les</b> livres</td></tr>
+    <tr><td><b>un</b> ami</td><td><b>une</b> amie</td><td><b>des</b> amis</td></tr></table>
+    <div class="astuce">💡 N'apprends jamais « table », apprends « <b>la</b> table ».</div>`,
+     ar:`<p>في الفرنسية، كل اسم يا إما <b>مذكر</b> يا إما <b>مؤنث</b>. لازم تحفظي الكلمة <b>مع الأداة تاعها</b>.</p>
+    <table><tr><th>مذكر</th><th>مؤنث</th><th>جمع</th></tr>
+    <tr><td><b>le</b> livre (الكتاب)</td><td><b>la</b> table (الطاولة)</td><td><b>les</b> livres</td></tr>
+    <tr><td><b>un</b> ami (صاحب)</td><td><b>une</b> amie (صاحبة)</td><td><b>des</b> amis</td></tr></table>
+    <div class="astuce">💡 ماتحفظيش « table » وحدها، احفظي « <b>la</b> table ». الدماغ يحفظ الزوج مع بعض.</div>`}
+},
+{
+  t:{fr:"2. Les pronoms : je, tu, il, elle…", ar:"٢. الضمائر: je, tu, il, elle…"},
+  c:{fr:`<table><tr><th>Français</th><th>Prononciation</th><th>بالدارجة</th></tr>
+    <tr><td>je</td><td>jeu</td><td>أنا</td></tr><tr><td>tu</td><td>tu</td><td>نتَ / نتِ</td></tr>
+    <tr><td>il / elle</td><td>il / èl</td><td>هو / هي</td></tr><tr><td>nous</td><td>nou</td><td>حنا</td></tr>
+    <tr><td>vous</td><td>vou</td><td>نتوما (ولا احترام)</td></tr><tr><td>ils / elles</td><td>il / èl</td><td>هوما</td></tr></table>
+    <div class="astuce">💡 <b>tu</b> = famille et amis. <b>vous</b> = respect, inconnus, travail.</div>`,
+     ar:`<table><tr><th>الفرنسية</th><th>كيفاش تتقرا</th><th>المعنى</th></tr>
+    <tr><td>je</td><td>جو</td><td>أنا</td></tr><tr><td>tu</td><td>تو</td><td>نتَ / نتِ</td></tr>
+    <tr><td>il / elle</td><td>إيل / إيل</td><td>هو / هي</td></tr><tr><td>nous</td><td>نو</td><td>حنا</td></tr>
+    <tr><td>vous</td><td>فو</td><td>نتوما / للاحترام</td></tr><tr><td>ils / elles</td><td>إيل</td><td>هوما</td></tr></table>
+    <div class="astuce">💡 <b>tu</b> مع العائلة والصحاب. <b>vous</b> للاحترام، مع لي ماتعرفيهمش وفي الخدمة. هاذي مهمة بزاف!</div>`}
+},
+{
+  t:{fr:"3. Être et Avoir — les deux rois", ar:"٣. زوج الأفعال لي يحكمو: Être و Avoir"},
+  c:{fr:`<p>Les 2 verbes les plus utilisés. Apprends-les par cœur.</p>
+    <table><tr><th>ÊTRE (être)</th><th>AVOIR (posséder)</th></tr>
+    <tr><td>je <b>suis</b></td><td>j'<b>ai</b></td></tr><tr><td>tu <b>es</b></td><td>tu <b>as</b></td></tr>
+    <tr><td>il/elle <b>est</b></td><td>il/elle <b>a</b></td></tr><tr><td>nous <b>sommes</b></td><td>nous <b>avons</b></td></tr>
+    <tr><td>vous <b>êtes</b></td><td>vous <b>avez</b></td></tr><tr><td>ils <b>sont</b></td><td>ils <b>ont</b></td></tr></table>
+    <div class="astuce">💡 « J'ai faim », « j'ai 25 ans », « j'ai froid » → on utilise <b>avoir</b>, pas être !</div>`,
+     ar:`<p>زوج الأفعال لي يستعملوهم بزاف في الفرنسية. احفظيهم مليح ويولّي كل شي ساهل.</p>
+    <table><tr><th>ÊTRE (يكون)</th><th>AVOIR (عنده)</th></tr>
+    <tr><td>je <b>suis</b> (راني)</td><td>j'<b>ai</b> (عندي)</td></tr>
+    <tr><td>tu <b>es</b> (راكي)</td><td>tu <b>as</b> (عندك)</td></tr>
+    <tr><td>il/elle <b>est</b></td><td>il/elle <b>a</b></td></tr>
+    <tr><td>nous <b>sommes</b></td><td>nous <b>avons</b></td></tr>
+    <tr><td>vous <b>êtes</b></td><td>vous <b>avez</b></td></tr>
+    <tr><td>ils <b>sont</b></td><td>ils <b>ont</b></td></tr></table>
+    <div class="astuce">💡 ردي بالك! حنا نقولو « راني جيعانة » بصح الفرنسيين يقولو « <b>عندي</b> الجوع » = J'<b>ai</b> faim. وحتى العمر: J'<b>ai</b> 25 ans.</div>`}
+},
+{
+  t:{fr:"4. Les verbes en -ER (le groupe facile)", ar:"٤. أفعال -ER (الساهلين)"},
+  c:{fr:`<p>80 % des verbes finissent en <b>-ER</b> : parler, manger, aimer… Ils se conjuguent tous pareil.</p>
+    <table><tr><th>PARLER</th><th>Terminaison</th></tr>
+    <tr><td>je parl<b>e</b></td><td>-e</td></tr><tr><td>tu parl<b>es</b></td><td>-es</td></tr>
+    <tr><td>il/elle parl<b>e</b></td><td>-e</td></tr><tr><td>nous parl<b>ons</b></td><td>-ons</td></tr>
+    <tr><td>vous parl<b>ez</b></td><td>-ez</td></tr><tr><td>ils parl<b>ent</b></td><td>-ent (muet)</td></tr></table>
+    <div class="astuce">💡 « parle », « parles », « parlent » se prononcent <b>pareil</b> : « parl ».</div>`,
+     ar:`<p>٨٠٪ من الأفعال تسالي بـ <b>-ER</b>: parler (يهدر)، manger (ياكل)، aimer (يحب)… وكلهم يتصرّفو كيف كيف!</p>
+    <table><tr><th>PARLER (يهدر)</th><th>السالية</th></tr>
+    <tr><td>je parl<b>e</b> (نهدر)</td><td>-e</td></tr><tr><td>tu parl<b>es</b></td><td>-es</td></tr>
+    <tr><td>il/elle parl<b>e</b></td><td>-e</td></tr><tr><td>nous parl<b>ons</b></td><td>-ons</td></tr>
+    <tr><td>vous parl<b>ez</b></td><td>-ez</td></tr><tr><td>ils parl<b>ent</b></td><td>-ent (صامتة)</td></tr></table>
+    <div class="astuce">💡 خبر مليح: parle و parles و parlent يتقراو كامل كيف كيف « پارل ». الفرق غير في الكتابة!</div>`}
+},
+{
+  t:{fr:"5. Dire NON : la négation", ar:"٥. النفي: كيفاش نقولو لا"},
+  c:{fr:`<p>La formule magique : <b>ne … pas</b> autour du verbe.</p>
+    <table><tr><th>Positif</th><th>Négatif</th></tr>
+    <tr><td>Je parle français.</td><td>Je <b>ne</b> parle <b>pas</b> français.</td></tr>
+    <tr><td>C'est facile.</td><td>Ce <b>n'</b>est <b>pas</b> facile.</td></tr>
+    <tr><td>J'ai faim.</td><td>Je <b>n'</b>ai <b>pas</b> faim.</td></tr></table>
+    <div class="astuce">💡 À l'oral on dit souvent « je sais pas », « c'est pas grave ».</div>`,
+     ar:`<p>القاعدة السحرية: نحطو <b>ne … pas</b> حوالي الفعل (كيما زوج قواس).</p>
+    <table><tr><th>مثبت</th><th>منفي</th></tr>
+    <tr><td>Je parle français<br><small>نهدر بالفرنسية</small></td><td>Je <b>ne</b> parle <b>pas</b> français<br><small>ماناش نهدر بالفرنسية</small></td></tr>
+    <tr><td>C'est facile<br><small>راه ساهل</small></td><td>Ce <b>n'</b>est <b>pas</b> facile<br><small>ماشي ساهل</small></td></tr>
+    <tr><td>J'ai faim<br><small>راني جيعانة</small></td><td>Je <b>n'</b>ai <b>pas</b> faim<br><small>ماناش جيعانة</small></td></tr></table>
+    <div class="astuce">💡 في هدرة كل نهار، الفرنسيين يحيّدو « ne » ويقولو: « je sais pas » (مانعرفش)، « c'est pas grave » (ماشي مشكل). نتِ تاني تقدري!</div>`}
+},
+{
+  t:{fr:"6. Poser une question (3 façons)", ar:"٦. كيفاش تسقسي (٣ طرق)"},
+  c:{fr:`<p><b>1. Facile :</b> monte la voix à la fin → « Tu parles français ? »</p>
+    <p><b>2. Avec est-ce que :</b> « <b>Est-ce que</b> tu parles français ? »</p>
+    <p><b>3. Formel :</b> « <b>Parles-tu</b> français ? »</p>
+    <table><tr><th>Mot</th><th>Sens</th><th>Exemple</th></tr>
+    <tr><td>Où</td><td>وين</td><td>Où est la gare ?</td></tr><tr><td>Quand</td><td>وقتاش</td><td>Quand tu arrives ?</td></tr>
+    <tr><td>Comment</td><td>كيفاش</td><td>Comment ça va ?</td></tr><tr><td>Pourquoi</td><td>علاش</td><td>Pourquoi ?</td></tr>
+    <tr><td>Combien</td><td>شحال</td><td>Ça coûte combien ?</td></tr><tr><td>Qui</td><td>شكون</td><td>Qui est là ?</td></tr></table>`,
+     ar:`<p><b>١. الأسهل (في الهدرة):</b> رفعي صوتك في السالية ← « Tu parles français ? » (راكي تهدري بالفرنسية؟)</p>
+    <p><b>٢. بـ est-ce que:</b> « <b>Est-ce que</b> tu parles français ? » — تتقرا « إسكو ».</p>
+    <p><b>٣. رسمي:</b> « <b>Parles-tu</b> français ? » — نقلبو الفعل والضمير.</p>
+    <table><tr><th>الكلمة</th><th>كيفاش تتقرا</th><th>المعنى</th></tr>
+    <tr><td>Où</td><td>أو</td><td>وين</td></tr><tr><td>Quand</td><td>كون</td><td>وقتاش</td></tr>
+    <tr><td>Comment</td><td>كومون</td><td>كيفاش</td></tr><tr><td>Pourquoi</td><td>پوركوا</td><td>علاش</td></tr>
+    <tr><td>Combien</td><td>كومبيان</td><td>شحال</td></tr><tr><td>Qui</td><td>كي</td><td>شكون</td></tr>
+    <tr><td>Quoi / Que</td><td>كوا / كو</td><td>واش</td></tr></table>
+    <div class="astuce">💡 الطريقة لولى تكفيك في حياتك اليومية. ماتعيّيش روحك بالباقي في البداية.</div>`}
+},
+{
+  t:{fr:"7. Parler du passé (passé composé)", ar:"٧. نهدرو على لي فات"},
+  c:{fr:`<p>Formule : <b>avoir</b> (ou être) + participe passé.</p>
+    <table><tr><th>Présent</th><th>Passé</th></tr>
+    <tr><td>Je mange</td><td>J'<b>ai mangé</b></td></tr><tr><td>Je parle</td><td>J'<b>ai parlé</b></td></tr>
+    <tr><td>Je travaille</td><td>J'<b>ai travaillé</b></td></tr><tr><td>Je vais</td><td>Je <b>suis allée</b></td></tr></table>
+    <div class="astuce">💡 Verbes en -ER : enlève -ER, ajoute -É. mangER → mangÉ.</div>`,
+     ar:`<p>القاعدة: <b>avoir</b> (ولا être) + اسم المفعول.</p>
+    <table><tr><th>دروك</th><th>لي فات</th></tr>
+    <tr><td>Je mange (ناكل)</td><td>J'<b>ai mangé</b> (كليت)</td></tr>
+    <tr><td>Je parle (نهدر)</td><td>J'<b>ai parlé</b> (هدرت)</td></tr>
+    <tr><td>Je travaille (نخدم)</td><td>J'<b>ai travaillé</b> (خدمت)</td></tr>
+    <tr><td>Je vais (نروح)</td><td>Je <b>suis allée</b> (رحت)</td></tr></table>
+    <div class="astuce">💡 حيلة ساهلة: في أفعال -ER، حيّدي -ER وحطي -É. مثال: mangER ← mangÉ. ساهلة!</div>`}
+},
+{
+  t:{fr:"8. Parler du futur (très facile)", ar:"٨. نهدرو على لي جاي (ساهل بزاف)"},
+  c:{fr:`<p>Le plus simple : <b>aller</b> + verbe à l'infinitif.</p>
+    <table><tr><th>Phrase</th><th>Sens</th></tr>
+    <tr><td>Je <b>vais</b> manger</td><td>راح ناكل</td></tr><tr><td>Tu <b>vas</b> travailler</td><td>راح تخدم</td></tr>
+    <tr><td>On <b>va</b> apprendre</td><td>راح نتعلّمو</td></tr></table>`,
+     ar:`<p>الأسهل خلاص: <b>aller</b> (يروح) + الفعل كيما هو. كيما « راح » عندنا.</p>
+    <table><tr><th>الجملة</th><th>المعنى</th></tr>
+    <tr><td>Je <b>vais</b> manger</td><td>راح ناكل</td></tr>
+    <tr><td>Tu <b>vas</b> travailler</td><td>راح تخدمي</td></tr>
+    <tr><td>On <b>va</b> apprendre</td><td>راح نتعلّمو</td></tr>
+    <tr><td>Je <b>vais</b> partir</td><td>راح نمشي</td></tr></table>
+    <div class="astuce">💡 « Je vais apprendre le français » — هاذي جملة فرنسية بالصح، يستعملوها كل نهار 🎉</div>`}
+},
+{
+  t:{fr:"9. Les petits mots qui relient tout", ar:"٩. الكلمات الصغار لي تربط الهدرة"},
+  c:{fr:`<p style="line-height:2.1"><b>et</b> (و) · <b>ou</b> (ولا) · <b>mais</b> (بصح) · <b>parce que</b> (حيت) · <b>aussi</b> (تاني) ·
+    <b>très</b> (بزاف) · <b>un peu</b> (شويّة) · <b>beaucoup</b> (بزاف) · <b>toujours</b> (ديما) · <b>jamais</b> (عمري) ·
+    <b>souvent</b> (بالزاف تاع المرات) · <b>maintenant</b> (دروك) · <b>après</b> (من بعد) · <b>avant</b> (قبل) · <b>ici</b> (هنا) ·
+    <b>là-bas</b> (لهيه) · <b>avec</b> (مع) · <b>sans</b> (بلا) · <b>pour</b> (باش) · <b>dans</b> (في) ·
+    <b>sur</b> (على) · <b>sous</b> (تحت) · <b>bien</b> (مليح) · <b>mal</b> (خايب) · <b>peut-être</b> (بلاك) ·
+    <b>bien sûr</b> (أكيد) · <b>d'accord</b> (صافي) · <b>alors</b> (يعني) · <b>donc</b> (على هذا)</p>`,
+     ar:`<p>بهاذ الكلمات الصغار، جملك تولّي طويلة وطبيعية كثر:</p>
+    <table><tr><th>الفرنسية</th><th>كيفاش تتقرا</th><th>المعنى</th></tr>
+    <tr><td>et</td><td>إي</td><td>و</td></tr><tr><td>ou</td><td>أو</td><td>ولا</td></tr>
+    <tr><td>mais</td><td>مي</td><td>بصح</td></tr><tr><td>parce que</td><td>پارس كو</td><td>حيت</td></tr>
+    <tr><td>aussi</td><td>أوسي</td><td>تاني</td></tr><tr><td>très</td><td>تري</td><td>بزاف</td></tr>
+    <tr><td>un peu</td><td>آن پو</td><td>شويّة</td></tr><tr><td>beaucoup</td><td>بوكو</td><td>بزاف</td></tr>
+    <tr><td>toujours</td><td>توجور</td><td>ديما</td></tr><tr><td>jamais</td><td>جامي</td><td>عمري</td></tr>
+    <tr><td>maintenant</td><td>مانتنون</td><td>دروك</td></tr><tr><td>avec</td><td>أفيك</td><td>مع</td></tr>
+    <tr><td>sans</td><td>سون</td><td>بلا</td></tr><tr><td>pour</td><td>پور</td><td>باش / على</td></tr>
+    <tr><td>parce que</td><td>پارس كو</td><td>حيت</td></tr><tr><td>alors</td><td>ألور</td><td>إذن / يعني</td></tr></table>`}
+},
+{
+  t:{fr:"10. Phrases de secours (à connaître par cœur)", ar:"١٠. جمل تنقذك (احفظيهم مليح)"},
+  c:{fr:`<table><tr><th>Phrase</th><th>Quand l'utiliser</th></tr>
+    <tr><td>Je ne comprends pas.</td><td>Tu n'as pas compris</td></tr>
+    <tr><td>Pouvez-vous répéter ?</td><td>Trop rapide</td></tr>
+    <tr><td>Parlez plus lentement.</td><td>Trop vite</td></tr>
+    <tr><td>Comment on dit … en français ?</td><td>Tu cherches un mot</td></tr>
+    <tr><td>Qu'est-ce que ça veut dire ?</td><td>Mot inconnu</td></tr>
+    <tr><td>J'apprends le français.</td><td>Pour t'excuser gentiment</td></tr></table>
+    <div class="astuce">❤️ Avec ces 6 phrases tu peux survivre à n'importe quelle conversation.</div>`,
+     ar:`<p>هاذو ست جمل ينقذوك في أي حالة. احفظيهم مليح:</p>
+    <table><tr><th>الجملة</th><th>كيفاش تتقرا</th><th>وقتاش تستعمليها</th></tr>
+    <tr><td>Je ne comprends pas</td><td>جو نو كومپرون پا</td><td>مافهمتش</td></tr>
+    <tr><td>Pouvez-vous répéter ?</td><td>پوفي فو ريپيتي</td><td>هدر بالزربة</td></tr>
+    <tr><td>Parlez plus lentement</td><td>پارلي پلو لونتمون</td><td>تحبيه يهدر بشويّة</td></tr>
+    <tr><td>Comment on dit … ?</td><td>كومون أون دي</td><td>راكي تقلّبي على كلمة</td></tr>
+    <tr><td>Qu'est-ce que ça veut dire ?</td><td>كيسكو سا فو دير</td><td>كلمة ماتعرفيهاش</td></tr>
+    <tr><td>J'apprends le français</td><td>جاپرون لو فرونسي</td><td>باش تعتذري بلطف</td></tr></table>
+    <div class="astuce">❤️ حليمة، بهاذ الست جمل تقدري تفوتي أي هدرة. حتى واحد مايضحكش عليك — الناس يحترمو لي يحاول.</div>`}
+}
+];
+
+const BADGES=[
+  {id:"debut", ico:"🌱", t:{fr:"Premier pas",ar:"الخطوة لولى"}, d:{fr:"Ouvrir sa première leçon",ar:"حلّيتي أول درس"}},
+  {id:"xp50", ico:"⭐", t:{fr:"50 étoiles",ar:"٥٠ نجمة"}, d:{fr:"Gagner 50 XP",ar:"جمعتي ٥٠ نقطة"}},
+  {id:"xp200", ico:"🌟", t:{fr:"200 étoiles",ar:"٢٠٠ نجمة"}, d:{fr:"Gagner 200 XP",ar:"جمعتي ٢٠٠ نقطة"}},
+  {id:"xp500", ico:"💫", t:{fr:"500 étoiles",ar:"٥٠٠ نجمة"}, d:{fr:"Gagner 500 XP",ar:"جمعتي ٥٠٠ نقطة"}},
+  {id:"xp1000", ico:"🌠", t:{fr:"1000 étoiles",ar:"١٠٠٠ نجمة"}, d:{fr:"Gagner 1000 XP",ar:"جمعتي ١٠٠٠ نقطة"}},
+  {id:"quiz10", ico:"🎯", t:{fr:"Bonne visée",ar:"عين صايبة"}, d:{fr:"10 bonnes réponses",ar:"١٠ جوابات صحاح"}},
+  {id:"quiz50", ico:"🏹", t:{fr:"Championne du quiz",ar:"بطلة الكويز"}, d:{fr:"50 bonnes réponses",ar:"٥٠ جواب صحيح"}},
+  {id:"quiz200", ico:"🥇", t:{fr:"Experte",ar:"خبيرة"}, d:{fr:"200 bonnes réponses",ar:"٢٠٠ جواب صحيح"}},
+  {id:"memo", ico:"🧠", t:{fr:"Mémoire d'or",ar:"ذاكرة تاع ذهب"}, d:{fr:"Finir le jeu de mémoire",ar:"كمّلتي لعبة الذاكرة"}},
+  {id:"pendu", ico:"🎪", t:{fr:"Sauveteuse",ar:"منقذة"}, d:{fr:"Gagner au mot caché",ar:"ربحتي الكلمة المخبية"}},
+  {id:"phrase", ico:"🧩", t:{fr:"Architecte",ar:"مهندسة الجمل"}, d:{fr:"Construire 5 phrases",ar:"ركّبتي ٥ جمل"}},
+  {id:"oreille", ico:"👂", t:{fr:"Oreille fine",ar:"وذن حادة"}, d:{fr:"10 mots reconnus",ar:"عرفتي ١٠ كلمات"}},
+  {id:"mod3", ico:"📚", t:{fr:"Studieuse",ar:"مجتهدة"}, d:{fr:"Terminer 3 modules",ar:"كمّلتي ٣ دروس"}},
+  {id:"mod8", ico:"🎓", t:{fr:"Sérieuse",ar:"جادة"}, d:{fr:"Terminer 8 modules",ar:"كمّلتي ٨ دروس"}},
+  {id:"streak3", ico:"🔥", t:{fr:"3 jours de suite",ar:"٣ أيام ورا بعضاهم"}, d:{fr:"Réviser 3 jours d'affilée",ar:"راجعتي ٣ أيام"}},
+  {id:"streak7", ico:"🏅", t:{fr:"Une semaine !",ar:"سيمانة كاملة!"}, d:{fr:"7 jours d'affilée",ar:"٧ أيام ورا بعضاهم"}},
+  {id:"tout", ico:"👑", t:{fr:"Reine du français",ar:"ملكة الفرنسية"}, d:{fr:"Terminer tous les modules",ar:"كمّلتي الدروس الكل"}}
+];
+
+const PHRASES_JOUR=[
+  {fr:"Bonjour, je m'appelle Halima.", ph:"bon-jour, je ma-pèl a-li-ma", ar:"سلام، سميتي حليمة."},
+  {fr:"Je ne comprends pas, pouvez-vous répéter ?", ph:"je ne kon-pran pa", ar:"مافهمتش، تقدر تعاود؟"},
+  {fr:"J'apprends le français, doucement.", ph:"ja-pran le fran-sè", ar:"راني نتعلّم الفرنسية، بشويّة."},
+  {fr:"Merci beaucoup, c'est très gentil.", ph:"mèr-si bo-kou", ar:"صحّيت بزاف، راك مليح."},
+  {fr:"Excusez-moi, où sont les toilettes ?", ph:"ou son lé twa-lèt", ar:"سمح لي، وين راه التواليت؟"},
+  {fr:"Je voudrais un café, s'il vous plaît.", ph:"je vou-drè un ka-fé", ar:"حبّيت قهوة من فضلك."},
+  {fr:"Comment on dit ça en français ?", ph:"ko-man on di sa", ar:"كيفاش نقولو هذا بالفرنسية؟"}
+];
+
+/* Phrases pour le jeu « construis la phrase » */
+const PHRASES_JEU=[
+  {fr:"Je m'appelle Halima", ar:"سميتي حليمة"},
+  {fr:"Comment allez-vous aujourd'hui", ar:"واش راكي اليوم"},
+  {fr:"Je voudrais un café s'il vous plaît", ar:"حبّيت قهوة من فضلك"},
+  {fr:"Où est la gare s'il vous plaît", ar:"وين راهي المحطة من فضلك"},
+  {fr:"Je ne comprends pas très bien", ar:"مانفهمش مليح"},
+  {fr:"J'apprends le français tous les jours", ar:"نتعلّم الفرنسية كل نهار"},
+  {fr:"Ma famille habite très loin", ar:"عائلتي تسكن بعيد بزاف"},
+  {fr:"Il fait beau ce matin", ar:"الجو صافي هاذ الصباح"},
+  {fr:"Je t'aime mon amour", ar:"نحبك يا حبيبي"},
+  {fr:"Pouvez-vous répéter plus lentement", ar:"تقدر تعاود بشويّة"},
+  {fr:"Nous allons manger ensemble ce soir", ar:"نتعشاو مع بعض هاذ العشية"},
+  {fr:"Je suis fatiguée mais je suis heureuse", ar:"راني عيّانة بصح فرحانة"},
+  {fr:"J'ai besoin d'aide s'il vous plaît", ar:"راني محتاجة معاونة من فضلك"},
+  {fr:"Je cherche du travail ici", ar:"راني نقلّب على خدمة هنا"},
+  {fr:"Mes enfants vont à l'école", ar:"دراري تاعي يروحو للمدرسة"},
+  {fr:"Je paie par carte bancaire", ar:"نخلّص بالكارت البنكي"},
+  {fr:"J'ai mal à la tête depuis hier", ar:"راسي يوجعني من البارح"},
+  {fr:"Le bus arrive dans cinq minutes", ar:"البيس توصل بعد خمس دقايق"},
+  {fr:"Je voudrais prendre un rendez-vous", ar:"حبّيت ناخذ رونديفو"},
+  {fr:"C'est trop cher pour moi", ar:"هذا غالي بزاف عليا"}
+];
+
+/* ============================================================
+   I18N — Toute l'interface en français ET en arabe
+   ============================================================ */
+const T = {
+  fr:{
+    dir:"ltr", nom:"Français",
+    marque:"Français Facile", dedi:"pour mon amour Halima ❤️",
+    nav:{accueil:"🏡 Accueil", lecons:"📚 Leçons", alphabet:"🔤 Sons", jeux:"🎮 Jeux", grammaire:"📖 Grammaire", progres:"🏆 Progrès"},
+    dediBadge:"💌 Créé spécialement pour mon amour Halima",
+    heroT:"Apprends le français,<br>un petit pas à la fois",
+    heroP:"Ce site est fait pour toi, ma chérie. Pas de stress, pas d'examen : juste des mots, des sons, des jeux et beaucoup d'amour. Tu ne parles presque pas français ? Parfait — on commence tout au début, ensemble. 🌸",
+    btnStart:"🚀 Commencer maintenant", btnSons:"🔊 Écouter les sons", btnEcoute:"💬 Écoute-moi",
+    statMots:"mots découverts", statTotal:"mots au total", statXp:"étoiles ⭐", statJours:"jours de suite 🔥",
+    commentT:"Comment ça marche ? C'est très simple", commentP:"4 étapes, tous les jours, 10 minutes suffisent.",
+    etapes:[["1️⃣","Écoute","Clique sur 🔊 et répète à voix haute"],["2️⃣","Répète","Les cartes te font réviser sans effort"],["3️⃣","Joue","Les jeux fixent les mots dans la mémoire"],["4️⃣","Parle","Les dialogues = du vrai français utile"]],
+    jourT:"Ta phrase d'aujourd'hui 🌞", jourP:"Une phrase par jour, apprise par cœur, et en un mois tu parles.",
+    parOuT:"Par où commencer ?", parOuP:"Clique sur le premier module. Il n'y a pas de mauvaise réponse ici. ❤️",
+    voirTout:"Voir les {n} modules →",
+    leconsT:"📚 Tous les modules", leconsP:"Fais-les dans l'ordre, mon amour — chaque module prépare le suivant.",
+    niveau:"Niveau", mots:"mots", decouvert:"découvert", retour:"← Retour", termine:"Terminé",
+    sub:{mots:"📝 Les mots", cartes:"🃏 Cartes", quiz:"🎯 Quiz", dialogue:"💬 Dialogue", ecrire:"✍️ Écrire"},
+    conseilMots:"Clique sur 🔊 puis <b>répète à voix haute</b>. C'est le secret n°1.",
+    toutEcouter:"▶️ Tout écouter", stopAudio:"⏹️ Arrêter",
+    finirLecture:"✅ J'ai lu tous les mots (+15 ⭐)",
+    ecouteRepete:"🎧 Écoute et répète après moi…",
+    carte:"Carte", clicRetourner:"clique sur la carte pour la retourner 👆",
+    prec:"← Précédent", connais:"Je la connais ✅", melanger:"🔀 Mélanger",
+    question:"Question", score:"Score", suivant:"Suivant →",
+    commentDit:"Comment dit-on en français ?", queVeutDire:"Qu'est-ce que ça veut dire ?",
+    bonnesRep:"bonnes réponses", rejouer:"🔁 Rejouer", revoirMots:"📝 Revoir les mots",
+    bonneRep:"La bonne réponse :",
+    dialoguesP:"Voici une vraie conversation. Écoute, puis joue le rôle en bleu à voix haute 🎭",
+    personne:"👤 La personne", toiHalima:"💙 Toi, Halima",
+    ecouterConv:"🎧 Écouter toute la conversation", jaiRepete:"✅ Je l'ai répété (+10 ⭐)",
+    dictee:"Dictée", ecouteEcris:"Écoute et écris le mot en français",
+    reecouter:"🔊 Réécouter", indice:"Indice", ecrisIci:"Écris ici…", verifier:"Vérifier",
+    parfait:"✅ Parfait !", onEcrit:"❌ On écrit :", motsBienEcrits:"mots bien écrits", recommencer:"🔁 Recommencer",
+    alphaT:"🔤 L'alphabet français", alphaP:"Clique sur chaque lettre pour l'entendre. Commence par là, ma chérie — après, tu pourras lire n'importe quel mot.",
+    sonsT:"🎵 Les sons qui piègent tout le monde", sonsP:"Le français ne se lit pas comme il s'écrit. Voici les sons à connaître absolument.",
+    reglesT:"📌 3 règles d'or de la prononciation",
+    regles:[["1. Les lettres muettes","On n'entend presque jamais le <b>-e</b>, <b>-s</b>, <b>-t</b>, <b>-d</b> à la fin. « peti<b>t</b> » → « peti »."],
+            ["2. Le H ne se dit pas","« <b>h</b>ôtel » → « otèl », « <b>h</b>eure » → « eur ». Jamais de souffle !"],
+            ["3. La liaison","On colle les mots : « les_amis » → « lé<b>z</b>ami », « vous_avez » → « vou<b>z</b>avé »."]],
+    alphaFini:"✅ J'ai écouté tout l'alphabet (+10 ⭐)",
+    jeuxT:"🎮 La salle de jeux", jeuxP:"Apprendre en jouant, c'est apprendre deux fois plus vite. Choisis ton jeu, mon amour !",
+    grammT:"📖 La grammaire sans douleur", grammP:"Pas de règles compliquées : juste l'essentiel, expliqué simplement. Clique pour ouvrir.",
+    grammFini:"✅ J'ai lu une leçon (+10 ⭐)",
+    progT:"🏆 Tes progrès, Halima", progP:"Regarde tout ce que tu as déjà accompli. Je te l'avais dit : tu es capable. ❤️",
+    motsAppris:"mots appris", precision:"de bonnes réponses",
+    progTotale:"Progression totale", surTotal:"mots sur",
+    parModule:"Module par module", tesBadges:"Tes badges",
+    lettreT:"Un mot de moi, pour toi",
+    lettre:"Halima, mon amour. Apprendre une langue, ce n'est pas être parfaite : c'est oser dire un mot, puis deux, puis une phrase. Chaque fois que tu ouvres ce site, tu deviens un peu plus libre. Je ne suis pas pressé, et tu ne dois pas l'être non plus. Va à ton rythme. Je suis là, et je serai toujours fier de toi. ❤️",
+    ecouterMsg:"🔊 Écoute ce message en français",
+    reset:"🗑️ Réinitialiser ma progression", resetQ:"Tout remettre à zéro ?",
+    footer:"Fait avec ❤️, patience et beaucoup de tendresse pour <b>mon amour Halima</b>.",
+    footer2:"Chaque mot appris te rapproche un peu plus de moi. Bon courage, ma vie ! 💐",
+    bienvenue:"Bienvenue mon amour Halima 💖 Prête à apprendre ?",
+    nouveauBadge:"🏅 Nouveau badge :",
+    // jeux
+    jMemo:"Jeu de mémoire", jMemoD:"Retrouve les paires : mot français ↔ arabe.",
+    jPhrase:"Construis la phrase", jPhraseD:"Remets les mots dans le bon ordre.",
+    jPendu:"Le mot caché", jPenduD:"Devine le mot lettre par lettre.",
+    jOreille:"Fine oreille", jOreilleD:"Écoute et choisis le bon mot.",
+    jRapide:"Défi 60 secondes", jRapideD:"Combien de mots en une minute ?",
+    jPaires:"Relie les paires", jPairesD:"Associe chaque mot à sa traduction.",
+    coups:"Coups", nouvellePartie:"🔁 Nouvelle partie", trouvePaires:"Trouve les 8 paires.",
+    traduisEnFr:"Traduis en français :", cliqueMots:"Clique sur les mots ci-dessous ⬇️",
+    tousPlaces:"✔️ Tous les mots sont placés", verifPhrase:"✅ Vérifier",
+    autrePhrase:"➡️ Autre phrase", indiceAudio:"🔊 Indice audio", presque:"❌ Presque ! La bonne phrase :",
+    penduIndice:"Indice", nouveauMot:"🔁 Nouveau mot", ecouter:"🔊 Écouter",
+    motEtait:"Le mot était", bravoMot:"🎉 Bravo ! Le mot était",
+    oreilleP:"Clique sur le haut-parleur, écoute bien, puis choisis le mot que tu entends.",
+    plusLent:"🐢 Plus lentement", motSuivant:"➡️ Mot suivant", oreilleOk:"✅ Ton oreille est excellente !",
+    defiP:"Réponds vite ! Une erreur = −3 secondes.", finDefi:"bonnes réponses !",
+    relie:"Clique un mot français, puis sa traduction.", bravoRelie:"🎉 Tout est relié !",
+    // divers
+    fermer:"Fermer", oui:"Oui", non:"Non"
+  },
+  ar:{
+    dir:"rtl", nom:"الدارجة",
+    marque:"الفرنسية بالساهل", dedi:"لحبيبتي حليمة ❤️",
+    nav:{accueil:"🏡 الرئيسية", lecons:"📚 الدروس", alphabet:"🔤 الأصوات", jeux:"🎮 الألعاب", grammaire:"📖 القواعد", progres:"🏆 تقدّمي"},
+    dediBadge:"💌 مدير خصيصا لحبيبتي حليمة",
+    heroT:"تعلّمي الفرنسية،<br>خطوة صغيرة كل نهار",
+    heroP:"هاذ الموقع ديرتهولك يا عزيزتي. بلا ضغط وبلا امتحان: غير كلمات وأصوات وألعاب وحب بزاف. ماتهدريش الفرنسية؟ مليح — نبداو من الزيرو مع بعض. 🌸",
+    btnStart:"🚀 ابداي دروك", btnSons:"🔊 اسمعي الأصوات", btnEcoute:"💬 اسمعيني",
+    statMots:"كلمة تعلّمتيها", statTotal:"كلمة في الموقع", statXp:"نجمة ⭐", statJours:"نهار ورا نهار 🔥",
+    commentT:"كيفاش يخدم الموقع؟ ساهل بزاف", commentP:"٤ خطوات، كل نهار، ١٠ دقايق يكفيو.",
+    etapes:[["1️⃣","اسمعي","اضغطي 🔊 ومن بعد عاودي بصوت عالي"],["2️⃣","عاودي","البطاقات يراجعو معاك بلا تعب"],["3️⃣","العبي","الألعاب يثبّتو الكلمات في راسك"],["4️⃣","هدري","الحوارات = فرنسية بالصح تنفعك"]],
+    jourT:"جملة اليوم 🌞", jourP:"جملة وحدة كل نهار تحفظيها، وفي شهر تهدري.",
+    parOuT:"منين تبداي؟", parOuP:"اضغطي على الدرس الأول. ماكاش جواب غالط هنا. ❤️",
+    voirTout:"شوفي الدروس الكل ({n}) ←",
+    leconsT:"📚 الدروس الكل", leconsP:"روحي بالترتيب يا حبيبتي — كل درس يوجّدك للي بعده.",
+    niveau:"المستوى", mots:"كلمة", decouvert:"كمّلتيه", retour:"← ارجعي", termine:"كمّلتيه",
+    sub:{mots:"📝 الكلمات", cartes:"🃏 البطاقات", quiz:"🎯 كويز", dialogue:"💬 حوار", ecrire:"✍️ الكتابة"},
+    conseilMots:"اضغطي 🔊 ومن بعد <b>عاودي بصوت عالي</b>. هذا هو السر الأول.",
+    toutEcouter:"▶️ اسمعي الكل", stopAudio:"⏹️ وقّفي",
+    finirLecture:"✅ قريت الكلمات الكل (+15 ⭐)",
+    ecouteRepete:"🎧 اسمعي وعاودي وراي…",
+    carte:"بطاقة", clicRetourner:"اضغطي على البطاقة باش تقلبيها 👆",
+    prec:"← لي فات", connais:"نعرفها ✅", melanger:"🔀 خلّطي",
+    question:"سؤال", score:"النتيجة", suivant:"لي جاي ←",
+    commentDit:"كيفاش نقولوها بالفرنسية؟", queVeutDire:"واش تعني؟",
+    bonnesRep:"جواب صحيح", rejouer:"🔁 عاودي العب", revoirMots:"📝 راجعي الكلمات",
+    bonneRep:"الجواب الصحيح:",
+    dialoguesP:"هذا حوار بالصح. اسمعي، ومن بعد لعبي الدور الأزرق بصوت عالي 🎭",
+    personne:"👤 الشخص", toiHalima:"💙 نتِ، حليمة",
+    ecouterConv:"🎧 اسمعي الحوار كامل", jaiRepete:"✅ عاودته (+10 ⭐)",
+    dictee:"إملاء", ecouteEcris:"اسمعي واكتبي الكلمة بالفرنسية",
+    reecouter:"🔊 عاودي اسمعي", indice:"تلميح", ecrisIci:"اكتبي هنا…", verifier:"شوفي",
+    parfait:"✅ مليح بزاف!", onEcrit:"❌ تتكتب هكذا:", motsBienEcrits:"كلمة كتبتيها صحيحة", recommencer:"🔁 من جديد",
+    alphaT:"🔤 الأبجدية الفرنسية", alphaP:"اضغطي على كل حرف باش تسمعيه. ابداي من هنا يا عزيزتي — من بعد تقراي أي كلمة.",
+    sonsT:"🎵 الأصوات لي يصعّبو على الكل", sonsP:"الفرنسية ماتتقراش كيما تتكتب. هاذو أهم الأصوات لازم تعرفيهم.",
+    reglesT:"📌 ٣ قواعد ذهبية في النطق",
+    regles:[["١. الحروف لي ماتتسمعش","في الغالب ماتسمعيش <b>-e</b> و<b>-s</b> و<b>-t</b> و<b>-d</b> في سالية الكلمة. « peti<b>t</b> » تتقرا « پوتي »."],
+            ["٢. حرف H ماتتقراش","« <b>h</b>ôtel » تتقرا « أوتيل »، « <b>h</b>eure » تتقرا « أور ». عمرك تنفخي فيها!"],
+            ["٣. الوصل (liaison)","نوصلو الكلمات: « les_amis » ← « ليزامي »، « vous_avez » ← « فوزافي »."]],
+    alphaFini:"✅ سمعت الأبجدية كاملة (+10 ⭐)",
+    jeuxT:"🎮 قاعة الألعاب", jeuxP:"كي تتعلّمي وانتِ تلعبي، تحفظي بزوج مرات كثر. خيّري لعبتك يا حبيبتي!",
+    grammT:"📖 قواعد بلا وجع راس", grammP:"ماكاش قواعد معقّدة: غير الضروري، مشروح بالساهل. اضغطي باش تحلّي.",
+    grammFini:"✅ قريت درس (+10 ⭐)",
+    progT:"🏆 التقدّم تاعك يا حليمة", progP:"شوفي كل واش ديرتي. قلتلك: راكي تقدري. ❤️",
+    motsAppris:"كلمة تعلّمتيها", precision:"نسبة الجوابات الصحاح",
+    progTotale:"التقدّم الكامل", surTotal:"كلمة من",
+    parModule:"درس بدرس", tesBadges:"الأوسمة تاعك",
+    lettreT:"كلمة مني، ليك",
+    lettre:"حليمة، يا حبيبتي. تتعلّمي لغة ماشي معناه تكوني كاملة: معناه تجرّي وتقولي كلمة، ومن بعد زوج، ومن بعد جملة. كل مرة تحلّي فيها هاذ الموقع، تولّي حرة كثر. أنا ماراني شي مزروب، ونتِ تاني ماتزربيش. روحي على راحتك. راني هنا، وراني ديما فخور بيك. ❤️",
+    ecouterMsg:"🔊 اسمعي هاذ الرسالة بالفرنسية",
+    reset:"🗑️ صفّري التقدّم تاعي", resetQ:"تحبي تمسحي كل شي؟",
+    footer:"مدير بـ ❤️ وصبر وحنانة كبيرة لـ <b>حبيبتي حليمة</b>.",
+    footer2:"كل كلمة تتعلّميها تقرّبك مني كثر. ربي يوفقك يا حياتي! 💐",
+    bienvenue:"مرحبا بيك يا حبيبتي حليمة 💖 راكي واجدة باش تتعلّمي؟",
+    nouveauBadge:"🏅 وسام جديد:",
+    jMemo:"لعبة الذاكرة", jMemoD:"لقّي الأزواج: كلمة فرنسية ↔ بالدارجة.",
+    jPhrase:"ركّبي الجملة", jPhraseD:"رتّبي الكلمات بالترتيب الصحيح.",
+    jPendu:"الكلمة المخبية", jPenduD:"خمّني الكلمة حرف بحرف.",
+    jOreille:"وذن حادة", jOreilleD:"اسمعي وخيّري الكلمة الصحيحة.",
+    jRapide:"تحدي ٦٠ ثانية", jRapideD:"شحال من كلمة في دقيقة؟",
+    jPaires:"وصّلي الأزواج", jPairesD:"اربطي كل كلمة مع الترجمة تاعها.",
+    coups:"المحاولات", nouvellePartie:"🔁 لعبة جديدة", trouvePaires:"لقّي التمن أزواج.",
+    traduisEnFr:"ترجمي للفرنسية:", cliqueMots:"اضغطي على الكلمات لتحت ⬇️",
+    tousPlaces:"✔️ الكلمات الكل مرتّبين", verifPhrase:"✅ شوفي",
+    autrePhrase:"➡️ جملة أخرى", indiceAudio:"🔊 تلميح بالصوت", presque:"❌ قريب! الجملة الصحيحة:",
+    penduIndice:"تلميح", nouveauMot:"🔁 كلمة جديدة", ecouter:"🔊 اسمعي",
+    motEtait:"الكلمة كانت", bravoMot:"🎉 برافو! الكلمة كانت",
+    oreilleP:"اضغطي على مكبر الصوت، اسمعي مليح، ومن بعد خيّري الكلمة لي سمعتيها.",
+    plusLent:"🐢 بشويّة", motSuivant:"➡️ الكلمة لي جاية", oreilleOk:"✅ وذنك حادة!",
+    defiP:"جاوبي بالزربة! كل غلطة = −٣ ثواني.", finDefi:"جواب صحيح!",
+    relie:"اضغطي كلمة فرنسية، ومن بعد الترجمة تاعها.", bravoRelie:"🎉 وصّلتي الكل!",
+    fermer:"سكّري", oui:"إيه", non:"لا"
+  }
+};
+
+/* Encouragements bilingues */
+const MOTS_DOUX = {
+  fr:["Bravo mon amour, tu progresses vraiment ! ❤️","Halima, je suis fier de toi 🌹","Tu vois ? Tu es capable ! 💪",
+      "Encore un mot de plus dans ton cœur 💗","Chaque jour tu parles mieux, ma vie 🥰","Tu es la plus courageuse ✨",
+      "Continue mon amour, c'est magnifique ! 🎉","Doucement mais sûrement — tu y arrives 🌸"],
+  ar:["برافو يا حبيبتي، راكي تتقدّمي بالصح! ❤️","حليمة، راني فخور بيك 🌹","شفتي؟ راكي تقدري! 💪",
+      "كلمة أخرى دخلت لقلبك 💗","كل نهار تهدري أحسن يا حياتي 🥰","راكي الأشجع ✨",
+      "كمّلي يا حبيبتي، هذا زين بزاف! 🎉","شويّة بشويّة — بصح راكي توصلي 🌸"]
+};
+
+/* ============================================================
+   APP v2 — PARTIE 1 : noyau, langue, progression, accueil, leçons, module
+   ============================================================ */
+"use strict";
+
+/* ---------- Langue ---------- */
+let LANG = localStorage.getItem("halima_lang");
+if (LANG !== "fr" && LANG !== "ar") LANG = "fr";
+function t(){ return T[LANG]; }
+function estAr(){ return LANG === "ar"; }
+
+/* ---------- Progression ---------- */
+const CLE = "halima_fr_v1";
+const vide = {xp:0, streak:0, dernierJour:"", vus:{}, quizOk:0, quizTotal:0, badges:[], jours:[], phrases:0, ecoute:0};
+let P = Object.assign({}, vide);
+try { const s = localStorage.getItem(CLE); if (s) P = Object.assign({}, vide, JSON.parse(s)); } catch(e){}
+function sauve(){ try{ localStorage.setItem(CLE, JSON.stringify(P)); }catch(e){} }
+
+const TOTAL_MOTS = MODULES.reduce((a,m)=>a+m.mots.length,0);
+const $ = s => document.querySelector(s);
+const $$ = s => Array.prototype.slice.call(document.querySelectorAll(s));
+function esc(x){ return String(x).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+/* ---------- Utilitaires ---------- */
+function melange(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); const x=a[i]; a[i]=a[j]; a[j]=x; } return a; }
+function auHasard(a){ return a[Math.floor(Math.random()*a.length)]; }
+function motDoux(){ return auHasard(MOTS_DOUX[LANG]); }
+function aujourdhui(){ return new Date().toISOString().slice(0,10); }
+
+let toastTimer = null;
+function toast(msg){
+  const el = $("#toast");
+  el.innerHTML = msg;
+  el.style.direction = t().dir;
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>el.classList.remove("show"), 2900);
+}
+
+function confettis(n){
+  n = n || 40;
+  const cols = ["#ff5c8a","#7c5cff","#3ecfff","#22c98a","#ffc75f","#ff8fb1"];
+  for(let i=0;i<n;i++){
+    const d = document.createElement("div");
+    d.className = "conf";
+    d.style.left = Math.random()*100+"vw";
+    d.style.top = "-20px";
+    d.style.background = auHasard(cols);
+    d.style.borderRadius = Math.random()>.5 ? "50%" : "3px";
+    d.style.animationDuration = (1.6+Math.random()*1.6)+"s";
+    d.style.animationDelay = (Math.random()*.35)+"s";
+    document.body.appendChild(d);
+    setTimeout(()=>d.remove(), 3600);
+  }
+}
+
+/* ---------- Voix (TTS) ---------- */
+let VOIX = null;
+function chargeVoix(){
+  if(!("speechSynthesis" in window)) return;
+  const v = speechSynthesis.getVoices().filter(x=>/^fr/i.test(x.lang));
+  VOIX = v.find(x=>/(Amelie|Amélie|Audrey|Julie|Virginie|Hortense|female|femme)/i.test(x.name)) || v[0] || null;
+}
+if("speechSynthesis" in window){ chargeVoix(); speechSynthesis.onvoiceschanged = chargeVoix; }
+
+function dis(txt, vitesse){
+  if(!("speechSynthesis" in window)) { toast(estAr()? "🔇 الصوت غير متاح على هذا الجهاز" : "🔇 La voix n'est pas disponible ici"); return; }
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(String(txt));
+  u.lang = "fr-FR";
+  u.rate = vitesse || .85;
+  u.pitch = 1.05;
+  if(VOIX) u.voice = VOIX;
+  speechSynthesis.speak(u);
+  return u;
+}
+function stopVoix(){ if("speechSynthesis" in window) speechSynthesis.cancel(); }
+
+/* Lit une liste de textes l'un après l'autre */
+function disSuite(liste, i, fin){
+  i = i || 0;
+  if(i >= liste.length){ if(fin) fin(); return; }
+  const u = dis(liste[i]);
+  if(!u){ if(fin) fin(); return; }
+  u.onend = ()=> setTimeout(()=>disSuite(liste, i+1, fin), 380);
+}
+
+/* ---------- XP / badges / streak ---------- */
+function ajouteXP(n){
+  P.xp += n; sauve(); majHUD();
+  if(P.xp>=50) gagneBadge("xp50");
+  if(P.xp>=200) gagneBadge("xp200");
+  if(P.xp>=500) gagneBadge("xp500");
+  if(P.xp>=1000) gagneBadge("xp1000");
+}
+function gagneBadge(id){
+  if(P.badges.indexOf(id)>=0) return;
+  const b = BADGES.find(x=>x.id===id); if(!b) return;
+  P.badges.push(id); sauve();
+  toast(t().nouveauBadge+" "+b.ico+" "+b.t[LANG]);
+  confettis(55);
+}
+function majStreak(){
+  const h = aujourdhui();
+  if(P.dernierJour === h) return;
+  const hier = new Date(Date.now()-86400000).toISOString().slice(0,10);
+  P.streak = (P.dernierJour === hier) ? P.streak+1 : 1;
+  P.dernierJour = h;
+  if(P.jours.indexOf(h)<0) P.jours.push(h);
+  if(P.streak>=3) gagneBadge("streak3");
+  if(P.streak>=7) gagneBadge("streak7");
+  sauve(); majHUD();
+}
+function majHUD(){
+  $("#hudXp").textContent = P.xp;
+  $("#hudStreak").textContent = P.streak;
+}
+function marqueVu(modId, motFr){
+  if(!P.vus[modId]) P.vus[modId] = [];
+  if(P.vus[modId].indexOf(motFr)<0){ P.vus[modId].push(motFr); sauve(); }
+}
+function progresModule(m){
+  const v = P.vus[m.id] ? P.vus[m.id].length : 0;
+  return Math.min(100, Math.round(v/m.mots.length*100));
+}
+function motsVus(){ let n=0; for(const k in P.vus) n += P.vus[k].length; return n; }
+function modulesFinis(){ return MODULES.filter(m=>progresModule(m)>=100).length; }
+function verifieBadgesModules(){
+  const f = modulesFinis();
+  if(f>=3) gagneBadge("mod3");
+  if(f>=8) gagneBadge("mod8");
+  if(f>=MODULES.length) gagneBadge("tout");
+}
+
+/* ---------- Navigation ---------- */
+const VUES = ["accueil","lecons","module","alphabet","jeux","grammaire","progres"];
+let VUE = "accueil";
+let CTX = null;
+
+function rendNav(){
+  const n = t().nav;
+  $("#nav").innerHTML = ["accueil","lecons","alphabet","jeux","grammaire","progres"]
+    .map(k=>`<button data-v="${k}" class="${VUE===k?'on':''}">${n[k]}</button>`).join("");
+  $$("#nav button").forEach(b=> b.onclick = ()=> nav(b.dataset.v));
+}
+
+function nav(id, ctx){
+  stopVoix();
+  arreteChrono();
+  VUE = id; CTX = ctx || null;
+  VUES.forEach(v=> $("#v-"+v).classList.toggle("on", v===id));
+  rendNav();
+  const f = {accueil:rAccueil, lecons:rLecons, module:rModule, alphabet:rAlphabet, jeux:rJeux, grammaire:rGrammaire, progres:rProgres}[id];
+  if(f) f(ctx);
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* ---------- Changement de langue ---------- */
+function setLang(l){
+  if(l!==LANG){
+    LANG = l;
+    localStorage.setItem("halima_lang", l);
+    appliqueLangue();
+    rendTout();
+    toast(l==="ar" ? "🌍 كل الموقع بالعربية الآن" : "🌍 Tout le site est en français");
+  }
+}
+function appliqueLangue(){
+  const d = t().dir;
+  document.documentElement.setAttribute("dir", d);
+  document.documentElement.setAttribute("lang", LANG);
+  document.title = estAr() ? "الفرنسية من أجل حبيبتي حليمة ❤️" : "Le Français pour mon amour Halima ❤️";
+  $("#marque").textContent = t().marque;
+  $("#dedi").textContent = t().dedi;
+  $("#footTxt").innerHTML = t().footer;
+  $("#footTxt2").textContent = t().footer2;
+  $$("#langsel button").forEach(b=> b.classList.toggle("on", b.dataset.l===LANG));
+}
+function rendTout(){ rendNav(); nav(VUE, CTX); }
+
+/* ============================================================
+   VUE ACCUEIL
+   ============================================================ */
+function rAccueil(){
+  const L = t();
+  const phrase = PHRASES_JOUR[new Date().getDate() % PHRASES_JOUR.length];
+  const premiers = MODULES.slice(0,6);
+  $("#v-accueil").innerHTML = `
+    <div class="hero">
+      <div class="dedicace">${L.dediBadge}</div>
+      <h1>${L.heroT}</h1>
+      <p class="sub">${L.heroP}</p>
+      <div class="cta">
+        <button class="btn" id="aStart">${L.btnStart}</button>
+        <button class="btn ghost" id="aSons">${L.btnSons}</button>
+        <button class="btn vert" id="aEcoute">${L.btnEcoute}</button>
+      </div>
+    </div>
+
+    <div class="grid g4 mt2">
+      <div class="stat"><b>${motsVus()}</b><span>${L.statMots}</span></div>
+      <div class="stat"><b>${TOTAL_MOTS}</b><span>${L.statTotal}</span></div>
+      <div class="stat"><b>${P.xp}</b><span>${L.statXp}</span></div>
+      <div class="stat"><b>${P.streak}</b><span>${L.statJours}</span></div>
+    </div>
+
+    <h2 class="sec">${L.commentT}</h2>
+    <p class="secsub">${L.commentP}</p>
+    <div class="grid g4">
+      ${L.etapes.map(e=>`<div class="card center"><div style="font-size:2rem">${e[0]}</div>
+        <h3 style="margin:6px 0 4px;font-size:1.02rem">${e[1]}</h3>
+        <p class="mini">${e[2]}</p></div>`).join("")}
+    </div>
+
+    <h2 class="sec">${L.jourT}</h2>
+    <p class="secsub">${L.jourP}</p>
+    <div class="card">
+      <div class="row" style="justify-content:space-between">
+        <div class="ltrbox" style="flex:1;min-width:200px">
+          <div style="font-size:1.25rem;font-weight:900">${esc(phrase.fr)}</div>
+          <div style="color:var(--rose);font-weight:700;font-size:.85rem">${esc(phrase.ph)}</div>
+        </div>
+        <button class="spk" id="aPhrase">🔊</button>
+      </div>
+      <div class="rtlbox mt" style="color:var(--gris);font-weight:700">${esc(phrase.ar)}</div>
+    </div>
+
+    <h2 class="sec">${L.parOuT}</h2>
+    <p class="secsub">${L.parOuP}</p>
+    <div class="grid g3">${premiers.map(carteModule).join("")}</div>
+    <div class="center mt2"><button class="btn ghost" id="aTout">${L.voirTout.replace("{n}", MODULES.length)}</button></div>
+  `;
+  $("#aStart").onclick = ()=> nav("lecons");
+  $("#aSons").onclick  = ()=> nav("alphabet");
+  $("#aTout").onclick  = ()=> nav("lecons");
+  $("#aEcoute").onclick = ()=> dis(estAr()
+    ? "Bonjour Halima, je t'aime. Tu vas apprendre le français, doucement, et je suis fier de toi."
+    : "Bonjour Halima, mon amour. Bienvenue sur ton site. Apprends doucement, je suis fier de toi.");
+  $("#aPhrase").onclick = ()=>{ dis(phrase.fr); ajouteXP(2); majStreak(); };
+  brancheCartesModules();
+}
+
+function carteModule(m){
+  const L = t();
+  const p = progresModule(m);
+  return `<div class="card modcard" data-mod="${m.id}">
+    <div class="ico">${m.ico}</div>
+    <h3>${esc(m.t[LANG])}</h3>
+    <p>${esc(m.d[LANG])}</p>
+    <span class="tag">${L.niveau} ${m.niv} · ${m.mots.length} ${L.mots}</span>
+    <div class="bar"><i style="width:${p}%"></i></div>
+    <div class="mini mt" style="font-weight:800">${p}% ${p>=100?"✅ "+L.termine:L.decouvert}</div>
+  </div>`;
+}
+function brancheCartesModules(){
+  $$(".modcard").forEach(c=> c.onclick = ()=>{
+    const m = MODULES.find(x=>x.id===c.dataset.mod);
+    if(m) nav("module", {id:m.id, sub:"mots"});
+  });
+}
+
+/* ============================================================
+   VUE LEÇONS
+   ============================================================ */
+function rLecons(){
+  const L = t();
+  let html = `<h2 class="sec">${L.leconsT}</h2><p class="secsub">${L.leconsP}</p>`;
+  [1,2,3,4].forEach(niv=>{
+    const list = MODULES.filter(m=>m.niv===niv);
+    if(!list.length) return;
+    html += `<h3 style="margin:22px 0 10px;font-weight:900;color:var(--violet)">${L.niveau} ${niv} ${"⭐".repeat(niv)}</h3>
+      <div class="grid g3">${list.map(carteModule).join("")}</div>`;
+  });
+  $("#v-lecons").innerHTML = html;
+  brancheCartesModules();
+}
+
+/* ============================================================
+   VUE MODULE
+   ============================================================ */
+const SOUS = ["mots","cartes","quiz","dialogue","ecrire"];
+
+function rModule(ctx){
+  if(!ctx || !ctx.id) return nav("lecons");
+  const m = MODULES.find(x=>x.id===ctx.id);
+  if(!m) return nav("lecons");
+  const sub = ctx.sub || "mots";
+  CTX = {id:m.id, sub:sub};
+  const L = t();
+  const p = progresModule(m);
+  $("#v-module").innerHTML = `
+    <div class="row mt2" style="justify-content:space-between">
+      <button class="btn ghost sm" id="mRetour">${L.retour}</button>
+      <div class="mini" style="font-weight:800">${L.niveau} ${m.niv} · ${m.mots.length} ${L.mots}</div>
+    </div>
+    <div class="center" style="margin:14px 0 4px">
+      <div style="font-size:3rem">${m.ico}</div>
+      <h2 style="font-size:1.8rem;font-weight:900">${esc(m.t[LANG])}</h2>
+      <p class="mini" style="max-width:520px;margin:6px auto 0">${esc(m.d[LANG])}</p>
+    </div>
+    <div class="card" style="padding:14px 18px">
+      <div class="progtxt"><span>${L.progTotale}</span><span>${p}%</span></div>
+      <div class="bar"><i style="width:${p}%"></i></div>
+    </div>
+    <div class="subtabs" id="mSub">${SOUS.map(s=>`<button data-s="${s}" class="${s===sub?'on':''}">${L.sub[s]}</button>`).join("")}</div>
+    <div id="mBody"></div>`;
+  $("#mRetour").onclick = ()=> nav("lecons");
+  $$("#mSub button").forEach(b=> b.onclick = ()=>{ stopVoix(); nav("module", {id:m.id, sub:b.dataset.s}); });
+  ({mots:sMots, cartes:sCartes, quiz:sQuiz, dialogue:sDialogue, ecrire:sEcrire})[sub](m);
+}
+
+/* ----- Sous-vue : les mots ----- */
+function sMots(m){
+  const L = t();
+  $("#mBody").innerHTML = `
+    <div class="card" style="background:linear-gradient(135deg,#fff6fa,#f6f2ff)"><div class="mini" style="font-weight:700">💡 ${L.conseilMots}</div></div>
+    <div class="row mt" style="justify-content:center">
+      <button class="btn sm" id="mAll">${L.toutEcouter}</button>
+      <button class="btn ghost sm" id="mStop">${L.stopAudio}</button>
+    </div>
+    <div class="grid mt" style="gap:10px">
+      ${m.mots.map((w,i)=>`<div class="mot" data-i="${i}">
+        <div class="em">${w.em||"•"}</div>
+        <div class="txt">
+          <div class="fr ltrbox">${esc(w.fr)}</div>
+          <div class="ph ltrbox">${esc(w.ph)} <span style="color:var(--gris)">· ${esc(w.pa)}</span></div>
+          <div class="tr rtlbox">${esc(w.ar)}</div>
+        </div>
+        <button class="spk" data-p="${i}">🔊</button>
+      </div>`).join("")}
+    </div>
+    <div class="center mt2"><button class="btn vert" id="mLu">${L.finirLecture}</button></div>`;
+
+  $$("#mBody .spk").forEach(b=> b.onclick = e=>{
+    e.stopPropagation();
+    const w = m.mots[+b.dataset.p];
+    dis(w.fr); marqueVu(m.id, w.fr); majStreak(); ajouteXP(1);
+  });
+  $$("#mBody .mot").forEach(el=> el.onclick = ()=>{
+    const w = m.mots[+el.dataset.i];
+    dis(w.fr); marqueVu(m.id, w.fr); majStreak();
+  });
+  $("#mAll").onclick = ()=>{
+    toast(L.ecouteRepete);
+    m.mots.forEach(w=>marqueVu(m.id,w.fr));
+    disSuite(m.mots.map(w=>w.fr));
+    majStreak();
+  };
+  $("#mStop").onclick = ()=> stopVoix();
+  $("#mLu").onclick = ()=>{
+    m.mots.forEach(w=>marqueVu(m.id,w.fr));
+    ajouteXP(15); majStreak(); gagneBadge("debut"); verifieBadgesModules();
+    confettis(45); toast(motDoux());
+    nav("module",{id:m.id,sub:"mots"});
+  };
+}
+
+/* ----- Sous-vue : cartes ----- */
+let fcOrdre = [], fcI = 0, fcFlip = false;
+function sCartes(m){
+  const L = t();
+  fcOrdre = m.mots.map((_,i)=>i); fcI = 0; fcFlip = false;
+  $("#mBody").innerHTML = `
+    <div class="center mini" id="fcNum"></div>
+    <div class="fc mt" id="fc"><div class="fcin">
+      <div class="fcf"><div class="big" id="fcEm"></div><div class="w ltrbox" id="fcFr"></div><div style="color:var(--rose);font-weight:800" class="ltrbox" id="fcPh"></div><div class="mini">${L.clicRetourner}</div></div>
+      <div class="fcb"><div class="big" id="fcEm2" style="font-size:2.4rem"></div><div class="w rtlbox" id="fcAr"></div><div style="opacity:.85" id="fcPa"></div></div>
+    </div></div>
+    <div class="row mt2" style="justify-content:center">
+      <button class="btn ghost sm" id="fcPrec">${L.prec}</button>
+      <button class="spk" id="fcSpk">🔊</button>
+      <button class="btn vert sm" id="fcOk">${L.connais}</button>
+      <button class="btn sm" id="fcNext">${L.suivant}</button>
+    </div>
+    <div class="center mt"><button class="btn ghost sm" id="fcMel">${L.melanger}</button></div>`;
+
+  function montre(){
+    const w = m.mots[fcOrdre[fcI]];
+    fcFlip = false; $("#fc").classList.remove("flip");
+    $("#fcNum").textContent = `${t().carte} ${fcI+1} / ${fcOrdre.length}`;
+    $("#fcEm").textContent = w.em||"🌸"; $("#fcEm2").textContent = w.em||"🌸";
+    $("#fcFr").textContent = w.fr; $("#fcPh").textContent = w.ph;
+    $("#fcAr").textContent = w.ar; $("#fcPa").textContent = w.pa;
+  }
+  $("#fc").onclick = ()=>{
+    fcFlip = !fcFlip;
+    $("#fc").classList.toggle("flip", fcFlip);
+    if(fcFlip){ const w=m.mots[fcOrdre[fcI]]; dis(w.fr); marqueVu(m.id,w.fr); majStreak(); }
+  };
+  $("#fcSpk").onclick = e=>{ e.stopPropagation(); dis(m.mots[fcOrdre[fcI]].fr); };
+  $("#fcNext").onclick = ()=>{ fcI = (fcI+1)%fcOrdre.length; montre(); };
+  $("#fcPrec").onclick = ()=>{ fcI = (fcI-1+fcOrdre.length)%fcOrdre.length; montre(); };
+  $("#fcMel").onclick = ()=>{ fcOrdre = melange(fcOrdre); fcI=0; montre(); toast("🔀"); };
+  $("#fcOk").onclick = ()=>{
+    const w = m.mots[fcOrdre[fcI]];
+    marqueVu(m.id, w.fr); ajouteXP(3); majStreak(); verifieBadgesModules();
+    if(fcI === fcOrdre.length-1){ confettis(50); toast(motDoux()); }
+    fcI = (fcI+1)%fcOrdre.length; montre();
+  };
+  montre();
+}
+
+/* ----- Sous-vue : quiz ----- */
+let qList = [], qI = 0, qScore = 0;
+function sQuiz(m){
+  const L = t();
+  qList = melange(m.mots).slice(0, Math.min(10, m.mots.length));
+  qI = 0; qScore = 0;
+  poseQ(m);
+}
+function poseQ(m){
+  const L = t();
+  if(qI >= qList.length) return finQuiz(m);
+  const w = qList[qI];
+  const versFr = Math.random() > .45;
+  const autres = melange(MODULES.reduce((a,x)=>a.concat(x.mots),[]).filter(x=>x.fr!==w.fr)).slice(0,3);
+  const opts = melange([w].concat(autres));
+  $("#mBody").innerHTML = `
+    <div class="qbox">
+      <div class="row" style="justify-content:space-between">
+        <span class="mini" style="font-weight:800">${L.question} ${qI+1}/${qList.length}</span>
+        <span class="mini" style="font-weight:800">${L.score} : ${qScore} ⭐</span>
+      </div>
+      <div class="bar mt"><i style="width:${qI/qList.length*100}%"></i></div>
+      <div class="card mt" style="text-align:center">
+        <div class="mini" style="font-weight:800">${versFr ? L.commentDit : L.queVeutDire}</div>
+        <div style="font-size:2.4rem;margin:6px 0">${w.em||"❓"}</div>
+        <div class="qq ${versFr?'rtlbox':'ltrbox'}">${esc(versFr ? w.ar : w.fr)}</div>
+        ${versFr ? "" : `<button class="spk" id="qSpk" style="margin-top:8px">🔊</button>`}
+      </div>
+      <div class="opts" id="qOpts">
+        ${opts.map((o,i)=>`<button class="opt ${versFr?'ltrbox':'rtlbox'}" data-i="${i}">${esc(versFr ? o.fr : o.ar)}</button>`).join("")}
+      </div>
+      <div id="qFb"></div>
+    </div>`;
+  if(!versFr) $("#qSpk").onclick = ()=> dis(w.fr);
+  else dis(w.fr, .9);
+
+  $$("#qOpts .opt").forEach(b=> b.onclick = ()=>{
+    const choix = opts[+b.dataset.i];
+    const bon = choix.fr === w.fr;
+    $$("#qOpts .opt").forEach((x,i)=>{
+      x.disabled = true;
+      if(opts[i].fr === w.fr) x.classList.add("bon");
+      else if(x===b) x.classList.add("mauvais");
+    });
+    P.quizTotal++;
+    if(bon){
+      P.quizOk++; qScore++; ajouteXP(5); marqueVu(m.id, w.fr);
+      $("#qFb").innerHTML = `<div class="fb ok">✅ ${esc(motDoux())}</div>`;
+      dis(w.fr);
+    } else {
+      $("#qFb").innerHTML = `<div class="fb no">${t().bonneRep} <b class="ltrbox">${esc(w.fr)}</b> — ${esc(w.ar)}</div>`;
+      dis(w.fr, .75);
+    }
+    sauve(); majStreak();
+    if(P.quizOk>=10) gagneBadge("quiz10");
+    if(P.quizOk>=50) gagneBadge("quiz50");
+    if(P.quizOk>=200) gagneBadge("quiz200");
+    const nx = document.createElement("button");
+    nx.className = "btn mt"; nx.style.width = "100%";
+    nx.textContent = t().suivant;
+    nx.onclick = ()=>{ qI++; poseQ(m); };
+    $("#qFb").appendChild(nx);
+  });
+}
+function finQuiz(m){
+  const L = t();
+  const pc = Math.round(qScore/qList.length*100);
+  if(pc>=80) confettis(70);
+  verifieBadgesModules();
+  $("#mBody").innerHTML = `<div class="card center">
+    <div style="font-size:3.4rem">${pc>=80?"🏆":pc>=50?"👏":"💪"}</div>
+    <h3 style="font-size:1.5rem;margin:8px 0">${qScore} / ${qList.length} ${L.bonnesRep}</h3>
+    <p class="mini">${esc(motDoux())}</p>
+    <div class="row mt2" style="justify-content:center">
+      <button class="btn" id="qRe">${L.rejouer}</button>
+      <button class="btn ghost" id="qMots">${L.revoirMots}</button>
+    </div></div>`;
+  $("#qRe").onclick = ()=> sQuiz(m);
+  $("#qMots").onclick = ()=> nav("module",{id:m.id,sub:"mots"});
+}
+
+/* ----- Sous-vue : dialogue ----- */
+function sDialogue(m){
+  const L = t();
+  $("#mBody").innerHTML = `
+    <p class="secsub center">${L.dialoguesP}</p>
+    ${m.dialogue.map((d,i)=>`
+      <div class="dlg lui">
+        <button class="spk" data-d="q${i}">🔊</button>
+        <div style="flex:1">
+          <div class="who">${L.personne}</div>
+          <div class="l1 ltrbox">${esc(d.q)}</div>
+          <div class="l2 rtlbox">${esc(d.qa)}</div>
+        </div>
+      </div>
+      <div class="dlg moi">
+        <button class="spk" data-d="r${i}">🔊</button>
+        <div style="flex:1">
+          <div class="who">${L.toiHalima}</div>
+          <div class="l1 ltrbox">${esc(d.r)}</div>
+          <div class="l2 rtlbox">${esc(d.ra)}</div>
+        </div>
+      </div>`).join("")}
+    <div class="row mt2" style="justify-content:center">
+      <button class="btn" id="dAll">${L.ecouterConv}</button>
+      <button class="btn ghost sm" id="dStop">${L.stopAudio}</button>
+      <button class="btn vert" id="dOk">${L.jaiRepete}</button>
+    </div>`;
+  $$("#mBody .spk").forEach(b=> b.onclick = ()=>{
+    const k = b.dataset.d, i = +k.slice(1), d = m.dialogue[i];
+    dis(k[0]==="q" ? d.q : d.r); majStreak();
+  });
+  $("#dAll").onclick = ()=>{
+    const suite = [];
+    m.dialogue.forEach(d=>{ suite.push(d.q); suite.push(d.r); });
+    disSuite(suite); toast(L.ecouteRepete); majStreak();
+  };
+  $("#dStop").onclick = ()=> stopVoix();
+  $("#dOk").onclick = ()=>{ ajouteXP(10); majStreak(); confettis(40); toast(motDoux()); };
+}
+
+/* ----- Sous-vue : dictée / écrire ----- */
+let dOrdre = [], dI = 0, dOk = 0;
+function sEcrire(m){
+  dOrdre = melange(m.mots).slice(0, Math.min(10, m.mots.length));
+  dI = 0; dOk = 0;
+  poseDictee(m);
+}
+function poseDictee(m){
+  const L = t();
+  if(dI >= dOrdre.length){
+    confettis(50);
+    $("#mBody").innerHTML = `<div class="card center">
+      <div style="font-size:3.2rem">✍️</div>
+      <h3 style="font-size:1.4rem;margin:8px 0">${dOk} / ${dOrdre.length} ${L.motsBienEcrits}</h3>
+      <p class="mini">${esc(motDoux())}</p>
+      <button class="btn mt2" id="dRe">${L.recommencer}</button></div>`;
+    $("#dRe").onclick = ()=> sEcrire(m);
+    return;
+  }
+  const w = dOrdre[dI];
+  $("#mBody").innerHTML = `
+    <div class="qbox card">
+      <div class="row" style="justify-content:space-between">
+        <span class="mini" style="font-weight:800">${L.dictee} ${dI+1}/${dOrdre.length}</span>
+        <span class="mini" style="font-weight:800">${dOk} ✅</span>
+      </div>
+      <p class="center mt" style="font-weight:800">${L.ecouteEcris}</p>
+      <div class="center" style="font-size:3rem">${w.em||"🔊"}</div>
+      <div class="row" style="justify-content:center">
+        <button class="btn sm" id="eSpk">${L.reecouter}</button>
+        <button class="btn ghost sm" id="eLent">${L.plusLent}</button>
+        <button class="btn ghost sm" id="eInd">💡 ${L.indice}</button>
+      </div>
+      <div class="center mini mt rtlbox" id="eIndice"></div>
+      <input class="saisie mt ltrbox" id="eIn" placeholder="${L.ecrisIci}" autocomplete="off" spellcheck="false">
+      <div class="center mt"><button class="btn" id="eVer">${L.verifier}</button></div>
+      <div id="eFb"></div>
+    </div>`;
+  const norm = s => s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z' ]/g,"").replace(/\s+/g," ").trim();
+  dis(w.fr, .8);
+  $("#eSpk").onclick = ()=> dis(w.fr, .8);
+  $("#eLent").onclick = ()=> dis(w.fr, .5);
+  $("#eInd").onclick = ()=> { $("#eIndice").textContent = w.ar + "  ·  " + w.ph; };
+  const valide = ()=>{
+    const v = $("#eIn").value;
+    if(!v.trim()) return;
+    const bon = norm(v) === norm(w.fr);
+    if(bon){ dOk++; ajouteXP(6); marqueVu(m.id,w.fr); $("#eFb").innerHTML = `<div class="fb ok">${L.parfait} <b class="ltrbox">${esc(w.fr)}</b></div>`; }
+    else $("#eFb").innerHTML = `<div class="fb no">${L.onEcrit} <b class="ltrbox">${esc(w.fr)}</b></div>`;
+    dis(w.fr);
+    majStreak();
+    $("#eIn").disabled = true; $("#eVer").disabled = true;
+    setTimeout(()=>{ dI++; poseDictee(m); }, bon?1100:2100);
+  };
+  $("#eVer").onclick = valide;
+  $("#eIn").onkeydown = e=>{ if(e.key==="Enter") valide(); };
+  setTimeout(()=>{ const i=$("#eIn"); if(i) i.focus(); }, 100);
+}
+
+/* ============================================================
+   APP v2 — PARTIE 2 : alphabet, jeux, grammaire, progrès, démarrage
+   ============================================================ */
+
+/* ============================================================
+   VUE ALPHABET & SONS
+   ============================================================ */
+function rAlphabet(){
+  const L = t();
+  $("#v-alphabet").innerHTML = `
+    <h2 class="sec">${L.alphaT}</h2><p class="secsub">${L.alphaP}</p>
+    <div class="alpha">
+      ${ALPHABET.map((a,i)=>`<div class="al" data-a="${i}">
+        <b>${a[0]}</b><small>${esc(a[1])}</small><div class="mini">${esc(a[2])}</div>
+      </div>`).join("")}
+    </div>
+    <div class="center mt2"><button class="btn vert" id="alFini">${L.alphaFini}</button>
+      <button class="btn ghost sm" id="alAll" style="margin-inline-start:8px">${L.toutEcouter}</button></div>
+
+    <h2 class="sec">${L.sonsT}</h2><p class="secsub">${L.sonsP}</p>
+    <div class="grid g2">
+      ${SONS.map((s,i)=>`<div class="son" data-s="${i}">
+        <div class="s ltrbox">${esc(s.s)}</div>
+        <div style="flex:1">
+          <div class="mini ltrbox" style="font-weight:800;color:var(--sombre)">${esc(s.ex)}</div>
+          <div class="mini">${esc(s[LANG])} <b>${esc(s.pa)}</b></div>
+        </div>
+        <div style="font-size:1.4rem">${s.em}</div>
+        <button class="spk" data-son="${i}">🔊</button>
+      </div>`).join("")}
+    </div>
+
+    <h2 class="sec">${L.reglesT}</h2>
+    <div class="grid g3">
+      ${L.regles.map(r=>`<div class="card"><h3 style="font-size:1rem;margin-bottom:6px">${r[0]}</h3><p class="mini" style="line-height:1.7">${r[1]}</p></div>`).join("")}
+    </div>`;
+
+  $$(".al").forEach(el=> el.onclick = ()=>{
+    const a = ALPHABET[+el.dataset.a];
+    dis(a[0] + ". " + a[3], .75);
+    majStreak(); ajouteXP(1);
+    el.style.transform = "scale(1.12)";
+    setTimeout(()=>el.style.transform="", 220);
+  });
+  $$("[data-son]").forEach(b=> b.onclick = e=>{
+    e.stopPropagation();
+    const s = SONS[+b.dataset.son];
+    disSuite(s.ex.split(",").map(x=>x.trim()));
+    majStreak(); ajouteXP(1);
+  });
+  $$(".son").forEach(el=> el.onclick = ()=>{ const s=SONS[+el.dataset.s]; dis(s.ex.split(",")[0].trim()); });
+  $("#alAll").onclick = ()=>{ disSuite(ALPHABET.map(a=>a[0]+". "+a[3])); toast(L.ecouteRepete); };
+  $("#alFini").onclick = ()=>{ ajouteXP(10); majStreak(); confettis(45); toast(motDoux()); };
+}
+
+/* ============================================================
+   VUE JEUX
+   ============================================================ */
+function listeJeux(){
+  const L = t();
+  return [
+    {id:"memoire", ico:"🧠", t:L.jMemo,   d:L.jMemoD},
+    {id:"paires",  ico:"🔗", t:L.jPaires, d:L.jPairesD},
+    {id:"phrase",  ico:"🧩", t:L.jPhrase, d:L.jPhraseD},
+    {id:"pendu",   ico:"🎪", t:L.jPendu,  d:L.jPenduD},
+    {id:"oreille", ico:"👂", t:L.jOreille,d:L.jOreilleD},
+    {id:"rapide",  ico:"⚡", t:L.jRapide, d:L.jRapideD}
+  ];
+}
+function rJeux(){
+  const L = t();
+  $("#v-jeux").innerHTML = `
+    <h2 class="sec">${L.jeuxT}</h2><p class="secsub">${L.jeuxP}</p>
+    <div class="grid g3" id="jGrille">
+      ${listeJeux().map(j=>`<div class="card jeucard" data-j="${j.id}">
+        <div class="ico">${j.ico}</div><h3>${j.t}</h3><p>${j.d}</p>
+      </div>`).join("")}
+    </div>
+    <div id="jZone" class="mt2"></div>`;
+  $$(".jeucard").forEach(c=> c.onclick = ()=> lanceJeu(c.dataset.j));
+}
+function lanceJeu(id){
+  arreteChrono(); stopVoix();
+  ({memoire:jMemoire, paires:jPaires, phrase:jPhrase, pendu:jPendu, oreille:jOreille, rapide:jRapide})[id]();
+  setTimeout(()=>{ const z=$("#jZone"); if(z) z.scrollIntoView({behavior:"smooth", block:"start"}); }, 80);
+}
+function tousLesMots(){ return MODULES.reduce((a,m)=>a.concat(m.mots),[]); }
+/* Sélecteurs limités à la zone de jeu : évite de capturer des éléments
+   d'autres vues qui portent les mêmes attributs (grammaire, dialogue…). */
+function $j(sel){ const z = $("#jZone"); return z ? z.querySelector(sel) : null; }
+function $$j(sel){ const z = $("#jZone"); return z ? Array.prototype.slice.call(z.querySelectorAll(sel)) : []; }
+function cadreJeu(titre, corps){
+  return `<div class="card"><div class="row" style="justify-content:space-between;margin-bottom:12px">
+      <h3 style="font-size:1.2rem">${titre}</h3>
+      <button class="btn ghost sm" id="jFermer">✖ ${t().fermer}</button>
+    </div>${corps}</div>`;
+}
+function brancheFermer(){ const b=$("#jFermer"); if(b) b.onclick = ()=>{ arreteChrono(); stopVoix(); $("#jZone").innerHTML=""; }; }
+
+/* ----- Jeu 1 : mémoire ----- */
+function jMemoire(){
+  const L = t();
+  const sel = melange(tousLesMots()).slice(0,8);
+  let cartes = melange(sel.map(w=>({k:w.fr, txt:w.fr, ltr:true, w:w})).concat(sel.map(w=>({k:w.fr, txt:w.ar, ltr:false, w:w}))));
+  let ouvert = [], trouve = 0, coups = 0, bloque = false;
+  $("#jZone").innerHTML = cadreJeu("🧠 "+L.jMemo, `
+    <p class="mini center">${L.trouvePaires}</p>
+    <div class="row center mt" style="justify-content:center"><span class="chip">${L.coups} : <b id="mmC">0</b></span></div>
+    <div class="memo mt" id="mmG">${cartes.map((c,i)=>`<button class="mc" data-i="${i}"><span class="${c.ltr?'ltrbox':'rtlbox'}">${esc(c.txt)}</span></button>`).join("")}</div>
+    <div class="center mt2"><button class="btn ghost sm" id="mmNew">${L.nouvellePartie}</button></div>`);
+  brancheFermer();
+  $j("#mmNew").onclick = jMemoire;
+  $$j("#mmG .mc").forEach(b=> b.onclick = ()=>{
+    if(bloque || b.classList.contains("open") || b.classList.contains("done")) return;
+    const c = cartes[+b.dataset.i];
+    b.classList.add("open");
+    if(c.ltr) dis(c.w.fr);
+    ouvert.push({b:b, c:c});
+    if(ouvert.length===2){
+      coups++; $j("#mmC").textContent = coups; bloque = true;
+      const [a,d] = ouvert;
+      if(a.c.k === d.c.k && a.b !== d.b){
+        setTimeout(()=>{
+          a.b.classList.add("done"); d.b.classList.add("done");
+          a.b.classList.remove("open"); d.b.classList.remove("open");
+          ouvert=[]; bloque=false; trouve++; ajouteXP(4); majStreak();
+          if(trouve===8){ gagneBadge("memo"); confettis(70); toast(motDoux()); }
+        }, 480);
+      } else {
+        setTimeout(()=>{ a.b.classList.remove("open"); d.b.classList.remove("open"); ouvert=[]; bloque=false; }, 850);
+      }
+    }
+  });
+}
+
+/* ----- Jeu 2 : relie les paires ----- */
+function jPaires(){
+  const L = t();
+  const sel = melange(tousLesMots()).slice(0,6);
+  const gauche = melange(sel), droite = melange(sel);
+  let selG = null, faits = 0;
+  $("#jZone").innerHTML = cadreJeu("🔗 "+L.jPaires, `
+    <p class="mini center">${L.relie}</p>
+    <div class="relie mt">
+      <div style="display:grid;gap:10px">${gauche.map((w,i)=>`<button class="ltrbox" data-g="${i}">${esc(w.fr)}</button>`).join("")}</div>
+      <div style="display:grid;gap:10px">${droite.map((w,i)=>`<button class="rtlbox" data-d="${i}">${esc(w.ar)}</button>`).join("")}</div>
+    </div>
+    <div class="center mt2"><button class="btn ghost sm" id="rlNew">${L.nouvellePartie}</button></div>`);
+  brancheFermer();
+  $("#rlNew").onclick = jPaires;
+  $$j("[data-g]").forEach(b=> b.onclick = ()=>{
+    if(b.classList.contains("ok")) return;
+    $$j("[data-g]").forEach(x=>x.classList.remove("sel"));
+    b.classList.add("sel"); selG = gauche[+b.dataset.g];
+    dis(selG.fr);
+  });
+  $$j("[data-d]").forEach(b=> b.onclick = ()=>{
+    if(b.classList.contains("ok") || !selG) return;
+    const w = droite[+b.dataset.d];
+    const bg = $$j("[data-g]").find(x=>x.classList.contains("sel"));
+    if(w.fr === selG.fr){
+      b.classList.add("ok"); if(bg){ bg.classList.remove("sel"); bg.classList.add("ok"); }
+      selG = null; faits++; ajouteXP(4); majStreak();
+      if(faits === sel.length){ confettis(60); toast(L.bravoRelie+" "+motDoux()); }
+    } else {
+      b.classList.add("no");
+      setTimeout(()=>b.classList.remove("no"), 500);
+    }
+  });
+}
+
+/* ----- Jeu 3 : construis la phrase ----- */
+let phFaites = 0;
+function jPhrase(){
+  const L = t();
+  const p = auHasard(PHRASES_JEU);
+  const mots = p.fr.split(" ");
+  let placés = [];
+  $("#jZone").innerHTML = cadreJeu("🧩 "+L.jPhrase, `
+    <p class="mini center">${L.traduisEnFr}</p>
+    <p class="center rtlbox" style="font-size:1.25rem;font-weight:900;margin:8px 0">${esc(p.ar)}</p>
+    <div class="zone ltrbox" id="phZone"><span class="mini">${L.cliqueMots}</span></div>
+    <div class="jetons" id="phJetons">${melange(mots).map((w,i)=>`<button class="jeton ltrbox" data-w="${esc(w)}">${esc(w)}</button>`).join("")}</div>
+    <div class="row mt2" style="justify-content:center">
+      <button class="btn" id="phVer">${L.verifPhrase}</button>
+      <button class="btn ghost sm" id="phAudio">${L.indiceAudio}</button>
+      <button class="btn ghost sm" id="phNew">${L.autrePhrase}</button>
+    </div>
+    <div id="phFb"></div>`);
+  brancheFermer();
+  function maj(){
+    $j("#phZone").innerHTML = placés.length
+      ? placés.map((w,i)=>`<button class="jeton" data-r="${i}">${esc(w)}</button>`).join("")
+      : `<span class="mini">${L.cliqueMots}</span>`;
+    $$j("#phZone [data-r]").forEach(b=> b.onclick = ()=>{
+      const i = +b.dataset.r, w = placés[i];
+      placés.splice(i,1);
+      const j = document.createElement("button");
+      j.className = "jeton ltrbox"; j.dataset.w = w; j.textContent = w;
+      j.onclick = ()=>{ placés.push(w); j.remove(); maj(); };
+      $j("#phJetons").appendChild(j);
+      maj();
+    });
+  }
+  $$j("#phJetons .jeton").forEach(b=> b.onclick = ()=>{ placés.push(b.dataset.w); b.remove(); maj(); });
+  $j("#phAudio").onclick = ()=> dis(p.fr, .7);
+  $j("#phNew").onclick = jPhrase;
+  $j("#phVer").onclick = ()=>{
+    const rep = placés.join(" ");
+    if(rep === p.fr){
+      phFaites++; ajouteXP(12); majStreak(); confettis(55);
+      $j("#phFb").innerHTML = `<div class="fb ok">✅ ${esc(motDoux())}</div>`;
+      dis(p.fr);
+      if(phFaites>=5) gagneBadge("phrase");
+      setTimeout(jPhrase, 2200);
+    } else {
+      $j("#phFb").innerHTML = `<div class="fb no">${L.presque} <b class="ltrbox">${esc(p.fr)}</b></div>`;
+      dis(p.fr, .7);
+    }
+  };
+  maj();
+}
+
+/* ----- Jeu 4 : le mot caché (pendu) ----- */
+function jPendu(){
+  const L = t();
+  const w = auHasard(tousLesMots().filter(x=>/^[A-Za-zÀ-ÿ' ]{4,12}$/.test(x.fr)));
+  const cible = w.fr.toUpperCase();
+  const lettres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  let trouvees = [], vies = 6, fini = false;
+  $("#jZone").innerHTML = cadreJeu("🎪 "+L.jPendu, `
+    <p class="center mini">${L.penduIndice} : <b class="rtlbox">${esc(w.ar)}</b> ${w.em||""}</p>
+    <div class="vies center" id="pdV"></div>
+    <div class="pendu ltrbox" id="pdM"></div>
+    <div class="lettres" id="pdL">${lettres.map(l=>`<button data-l="${l}">${l}</button>`).join("")}</div>
+    <div class="center mt2">
+      <button class="btn ghost sm" id="pdSpk">${L.ecouter}</button>
+      <button class="btn ghost sm" id="pdNew">${L.nouveauMot}</button>
+    </div>
+    <div id="pdFb"></div>`);
+  brancheFermer();
+  $j("#pdNew").onclick = jPendu;
+  $j("#pdSpk").onclick = ()=> dis(w.fr);
+  function affiche(){
+    $j("#pdV").textContent = "❤️".repeat(vies) + "🖤".repeat(6-vies);
+    $j("#pdM").textContent = cible.split("").map(c=>{
+      if(!/[A-ZÀ-Ý]/.test(c)) return c === " " ? " · " : c;
+      return trouvees.indexOf(c)>=0 ? c : "_";
+    }).join(" ");
+  }
+  function gagne(){ return cible.split("").every(c=> !/[A-ZÀ-Ý]/.test(c) || trouvees.indexOf(c)>=0); }
+  $$j("#pdL button").forEach(b=> b.onclick = ()=>{
+    if(fini) return;
+    const l = b.dataset.l; b.disabled = true;
+    if(cible.indexOf(l)>=0){ trouvees.push(l); }
+    else { vies--; }
+    affiche();
+    if(gagne()){
+      fini = true; ajouteXP(15); majStreak(); gagneBadge("pendu"); confettis(65);
+      $j("#pdFb").innerHTML = `<div class="fb ok">${L.bravoMot} <b class="ltrbox">${esc(w.fr)}</b> — ${esc(w.ar)}</div>`;
+      dis(w.fr);
+      $$j("#pdL button").forEach(x=>x.disabled=true);
+    } else if(vies<=0){
+      fini = true;
+      $j("#pdFb").innerHTML = `<div class="fb no">${L.motEtait} : <b class="ltrbox">${esc(w.fr)}</b> — ${esc(w.ar)}</div>`;
+      dis(w.fr, .7);
+      $$j("#pdL button").forEach(x=>x.disabled=true);
+      trouvees = cible.split(""); affiche();
+    }
+  });
+  affiche();
+}
+
+/* ----- Jeu 5 : fine oreille ----- */
+let orOk = 0;
+function jOreille(){
+  const L = t();
+  const cible = auHasard(tousLesMots());
+  const opts = melange([cible].concat(melange(tousLesMots().filter(x=>x.fr!==cible.fr)).slice(0,3)));
+  $("#jZone").innerHTML = cadreJeu("👂 "+L.jOreille, `
+    <p class="mini center">${L.oreilleP}</p>
+    <div class="center mt"><button class="spk" id="orSpk" style="width:76px;height:76px;font-size:2rem">🔊</button></div>
+    <div class="row mt" style="justify-content:center">
+      <button class="btn ghost sm" id="orLent">${L.plusLent}</button>
+    </div>
+    <div class="opts mt" id="orOpts">${opts.map((o,i)=>`<button class="opt ltrbox" data-i="${i}">${esc(o.fr)}</button>`).join("")}</div>
+    <div id="orFb"></div>
+    <div class="center mt2"><button class="btn ghost sm" id="orNew">${L.motSuivant}</button></div>`);
+  brancheFermer();
+  $j("#orSpk").onclick = ()=> dis(cible.fr, .85);
+  $j("#orLent").onclick = ()=> dis(cible.fr, .5);
+  $j("#orNew").onclick = jOreille;
+  setTimeout(()=>dis(cible.fr, .85), 250);
+  $$j("#orOpts .opt").forEach(b=> b.onclick = ()=>{
+    const o = opts[+b.dataset.i];
+    $$j("#orOpts .opt").forEach((x,i)=>{ x.disabled=true; if(opts[i].fr===cible.fr) x.classList.add("bon"); else if(x===b) x.classList.add("mauvais"); });
+    if(o.fr === cible.fr){
+      orOk++; ajouteXP(5); majStreak();
+      $j("#orFb").innerHTML = `<div class="fb ok">✅ ${esc(cible.fr)} — ${esc(cible.ar)}</div>`;
+      if(orOk>=10){ gagneBadge("oreille"); }
+      confettis(25);
+    } else {
+      $j("#orFb").innerHTML = `<div class="fb no">${L.bonneRep} <b class="ltrbox">${esc(cible.fr)}</b> — ${esc(cible.ar)}</div>`;
+    }
+    dis(cible.fr, .7);
+    setTimeout(jOreille, 1900);
+  });
+}
+
+/* ----- Jeu 6 : défi 60 secondes ----- */
+let chrono = null;
+function arreteChrono(){ if(chrono){ clearInterval(chrono); chrono = null; } }
+function jRapide(){
+  const L = t();
+  let temps = 60, score = 0, fini = false;
+  $("#jZone").innerHTML = cadreJeu("⚡ "+L.jRapide, `
+    <p class="mini center">${L.defiP}</p>
+    <div class="chrono mt" id="rpT">60</div>
+    <div class="center mini" style="font-weight:800">${L.score} : <span id="rpS">0</span></div>
+    <div id="rpQ" class="mt"></div>`);
+  brancheFermer();
+  arreteChrono();
+  chrono = setInterval(()=>{
+    temps--;
+    const el = $j("#rpT"); if(!el){ arreteChrono(); return; }
+    el.textContent = Math.max(0,temps);
+    if(temps<=0){ arreteChrono(); finRapide(); }
+  }, 1000);
+
+  function question(){
+    if(fini) return;
+    const w = auHasard(tousLesMots());
+    const opts = melange([w].concat(melange(tousLesMots().filter(x=>x.fr!==w.fr)).slice(0,3)));
+    const q = $j("#rpQ"); if(!q) return;
+    q.innerHTML = `
+      <div class="center rtlbox" style="font-size:1.5rem;font-weight:900;margin:6px 0">${esc(w.em||"")} ${esc(w.ar)}</div>
+      <div class="opts">${opts.map((o,i)=>`<button class="opt ltrbox" data-i="${i}">${esc(o.fr)}</button>`).join("")}</div>`;
+    $$j("#rpQ .opt").forEach(b=> b.onclick = ()=>{
+      if(opts[+b.dataset.i].fr === w.fr){
+        score++; $j("#rpS").textContent = score;
+        b.classList.add("bon"); ajouteXP(2);
+        P.quizOk++; P.quizTotal++; sauve();
+      } else {
+        b.classList.add("mauvais");
+        temps = Math.max(0, temps-3);
+        $j("#rpT").textContent = temps;
+        P.quizTotal++; sauve();
+      }
+      setTimeout(question, 220);
+    });
+  }
+  function finRapide(){
+    fini = true;
+    majStreak();
+    if(score>=10) confettis(70);
+    if(P.quizOk>=10) gagneBadge("quiz10");
+    if(P.quizOk>=50) gagneBadge("quiz50");
+    const q = $j("#rpQ"); if(!q) return;
+    q.innerHTML = `<div class="center">
+      <div style="font-size:3rem">${score>=15?"🏆":score>=8?"👏":"💪"}</div>
+      <h3 style="font-size:1.4rem;margin:8px 0">${score} ${L.finDefi}</h3>
+      <p class="mini">${esc(motDoux())}</p>
+      <button class="btn mt2" id="rpRe">${L.rejouer}</button></div>`;
+    $j("#rpRe").onclick = jRapide;
+  }
+  question();
+}
+
+/* ============================================================
+   VUE GRAMMAIRE
+   ============================================================ */
+function rGrammaire(){
+  const L = t();
+  $("#v-grammaire").innerHTML = `
+    <h2 class="sec">${L.grammT}</h2><p class="secsub">${L.grammP}</p>
+    ${GRAMMAIRE.map((g,i)=>`<div class="acc" data-g="${i}">
+      <button>${esc(g.t[LANG])}<span style="color:var(--rose)">▾</span></button>
+      <div class="corps">${g.c[LANG]}</div>
+    </div>`).join("")}
+    <div class="center mt2"><button class="btn vert" id="grOk">${L.grammFini}</button></div>`;
+  $$(".acc").forEach(a=>{
+    a.querySelector("button").onclick = ()=>{
+      const ouvert = a.classList.contains("open");
+      $$(".acc").forEach(x=>x.classList.remove("open"));
+      if(!ouvert){ a.classList.add("open"); majStreak(); }
+    };
+  });
+  $("#grOk").onclick = ()=>{ ajouteXP(10); majStreak(); confettis(40); toast(motDoux()); };
+}
+
+/* ============================================================
+   VUE PROGRÈS
+   ============================================================ */
+function rProgres(){
+  const L = t();
+  const vus = motsVus();
+  const pc = Math.round(vus/TOTAL_MOTS*100);
+  const prec = P.quizTotal ? Math.round(P.quizOk/P.quizTotal*100) : 0;
+  $("#v-progres").innerHTML = `
+    <h2 class="sec">${L.progT}</h2><p class="secsub">${L.progP}</p>
+    <div class="grid g4">
+      <div class="stat"><b>${P.xp}</b><span>${L.statXp}</span></div>
+      <div class="stat"><b>${vus}</b><span>${L.motsAppris}</span></div>
+      <div class="stat"><b>${prec}%</b><span>${L.precision}</span></div>
+      <div class="stat"><b>${P.streak}</b><span>${L.statJours}</span></div>
+    </div>
+
+    <div class="card mt2">
+      <div class="progtxt"><span>${L.progTotale}</span><span>${vus} ${L.surTotal} ${TOTAL_MOTS} — ${pc}%</span></div>
+      <div class="bar" style="height:16px"><i style="width:${pc}%"></i></div>
+    </div>
+
+    <h2 class="sec">${L.parModule}</h2>
+    <div class="grid g2">
+      ${MODULES.map(m=>{ const p=progresModule(m); return `<div class="card" style="padding:14px 16px;cursor:pointer" data-pm="${m.id}">
+        <div class="row" style="justify-content:space-between"><span style="font-weight:800">${m.ico} ${esc(m.t[LANG])}</span><span class="mini" style="font-weight:800">${p}%</span></div>
+        <div class="bar"><i style="width:${p}%"></i></div></div>`; }).join("")}
+    </div>
+
+    <h2 class="sec">${L.tesBadges} (${P.badges.length}/${BADGES.length})</h2>
+    <div class="grid g4">
+      ${BADGES.map(b=>`<div class="badge ${P.badges.indexOf(b.id)>=0?'gagne':''}">
+        <div class="b">${b.ico}</div><h4>${esc(b.t[LANG])}</h4><p>${esc(b.d[LANG])}</p></div>`).join("")}
+    </div>
+
+    <h2 class="sec">${L.lettreT}</h2>
+    <div class="lettreamour">
+      <p>${esc(L.lettre)}</p>
+      <div class="center mt"><button class="btn sm" id="prLettre">${L.ecouterMsg}</button></div>
+    </div>
+
+    <div class="center mt2"><button class="btn ghost sm" id="prReset">${L.reset}</button></div>`;
+
+  $$("[data-pm]").forEach(c=> c.onclick = ()=> nav("module",{id:c.dataset.pm, sub:"mots"}));
+  $("#prLettre").onclick = ()=> dis("Halima, mon amour. Apprendre une langue, ce n'est pas être parfaite. C'est oser dire un mot, puis deux, puis une phrase. Va à ton rythme. Je suis là, et je serai toujours fier de toi.", .82);
+  $("#prReset").onclick = ()=>{
+    if(confirm(L.resetQ)){
+      P = JSON.parse(JSON.stringify(vide));
+      sauve(); majHUD(); nav("progres");
+      toast(L.reset);
+    }
+  };
+}
+
+/* ============================================================
+   DÉMARRAGE
+   ============================================================ */
+function pluieDeCoeurs(){
+  const c = $("#coeurs");
+  const em = ["❤️","💖","💕","🌸","✨","💗","🌷"];
+  for(let i=0;i<16;i++){
+    const d = document.createElement("div");
+    d.className = "coeur";
+    d.textContent = auHasard(em);
+    d.style.left = Math.random()*100+"vw";
+    d.style.animationDuration = (13+Math.random()*14)+"s";
+    d.style.animationDelay = (-Math.random()*22)+"s";
+    d.style.fontSize = (13+Math.random()*16)+"px";
+    c.appendChild(d);
+  }
+}
+
+function demarre(){
+  appliqueLangue();
+  $$("#langsel button").forEach(b=> b.onclick = ()=> setLang(b.dataset.l));
+  majHUD();
+  majStreak();
+  pluieDeCoeurs();
+  rendNav();
+  nav("accueil");
+  setTimeout(()=>toast(t().bienvenue), 900);
+}
+
+if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", demarre);
+else demarre();
+
+</script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a2e32ae76f071d5c',t:'MTc4NzI0NzQ2Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
